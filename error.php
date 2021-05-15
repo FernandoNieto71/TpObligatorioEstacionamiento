@@ -43,7 +43,7 @@
   <div class="jumbotron mt-3">
     <h1>Inconvenientes con la conexion</h1>
     <p class="lead">Seguro es un problema de usted, nuestro sistema funciona bien.</p>
-    <a class="btn btn-lg btn-primary" href="bienvenido.php" role="button">Ir a bienvenido</a>
+    <a class="btn btn-lg btn-primary" href="index.php" role="button">Ir a bienvenido</a>
   </div>
 </div>
 <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
