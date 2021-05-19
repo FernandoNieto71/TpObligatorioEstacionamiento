@@ -123,7 +123,7 @@
         <h4 class="my-0 font-weight-normal">Estadia</h4>
       </div>
       <div class="card-body">
-        <h1 class="card-title pricing-card-title">$450 <small class="text-muted">/ mo</small></h1>
+        <h1 class="card-title pricing-card-title">$450 <!--small class="text-muted">/ mo</small--></h1>
         <ul class="list-unstyled mt-3 mb-4">
           <li>Desde la tercer hora</li>
           <li>hasta la duodecima</li>
