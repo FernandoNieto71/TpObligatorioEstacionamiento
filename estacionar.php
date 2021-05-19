@@ -15,7 +15,7 @@
     <!-- Bootstrap core CSS -->
 <!--link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet"-->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-
+<!--no funciona .center-h-->
 
     <style>
       .bd-placeholder-img {
@@ -27,11 +27,17 @@
         user-select: none;
       }
 
+      .center-h {
+         justify-content:  center;
+
+      }
+
       @media (min-width: 768px) {
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
         }
       }
+      
     </style>
 
     
@@ -52,55 +58,79 @@
 </div>
 
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-  <h1 class="display-4">Pricing</h1>
-  <p class="lead">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It’s built with default Bootstrap components and utilities with little customization.</p>
+  <h1 class="display-4">Estacionamiento Wilde</h1>
+  <p class="lead">Bienvenidos a la pagina de tareas de nuestra playa de estacionamiento. <br>
+  Ingrese el numero de dominio y seleccione Ingreso o Egreso</p>
 </div>
 
+<div class ="justify-content-center">
+  <div class="container">
+    <!--div class="card-deck mb-3 text-center"-->
+      <form id=miform"  method="post"><!--action="primerPag.html"-->
+        <input name="patente" type="text" id="patente" class="btn btn-lg btn-block btn-outline-primary mayusc-text"> 
+        <ul class="list-unstyled mt-3 mb-4">
+         <h5 align = "center">Ingrese Patente del Vehiculo</h5>
+        </ul>
+  
+        <div align = "center">
+         <input name="movimiento" type="radio" value="I"> Ingreso  <input name="movimiento" type="radio" value="E"> Egreso
+        </div>
+        <br/>
+        <div align = "center">
+          <input type="submit" value="Enviar">
+        </div>
+
+      </form>
+    <!--/div-->
+  </div>
+</div>
+<br><br>
+</div>
 <div class="container">
   <div class="card-deck mb-3 text-center">
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Free</h4>
+        <h4 class="my-0 font-weight-normal">Fraccion hora</h4>
       </div>
       <div class="card-body">
-        <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
+        <h1 class="card-title pricing-card-title">$45 <!--small class="text-muted">/ mo</small--></h1>
         <ul class="list-unstyled mt-3 mb-4">
-          <li>10 users included</li>
-          <li>2 GB of storage</li>
-          <li>Email support</li>
-          <li>Help center access</li>
+          <li>Cada 10 minutos.</li>
+          <li>Pasado los 60</li>
+          <li>minutos se cobra</li>
+          <li>por hora.</li>
         </ul>
-        <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
+        <!--button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button-->
       </div>
     </div>
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Pro</h4>
+        <h4 class="my-0 font-weight-normal">Hora</h4>
       </div>
       <div class="card-body">
-        <h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h1>
+        <h1 class="card-title pricing-card-title">$150 <!--small class="text-muted">/ mo</small--></h1>
         <ul class="list-unstyled mt-3 mb-4">
-          <li>20 users included</li>
-          <li>10 GB of storage</li>
-          <li>Priority email support</li>
-          <li>Help center access</li>
+          <li>Por el total de horas</li>
+          <li>desde que el vehiculo </li>
+          <li>ingreso hasta que salio</li>
+          <!--li>Help center access</li-->
         </ul>
-        <button type="button" class="btn btn-lg btn-block btn-primary">Get started</button>
+        <!--button type="button" class="btn btn-lg btn-block btn-primary">Get started</button-->
       </div>
     </div>
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Enterprise</h4>
+        <h4 class="my-0 font-weight-normal">Estadia</h4>
       </div>
       <div class="card-body">
-        <h1 class="card-title pricing-card-title">$29 <small class="text-muted">/ mo</small></h1>
+        <h1 class="card-title pricing-card-title">$450 <small class="text-muted">/ mo</small></h1>
         <ul class="list-unstyled mt-3 mb-4">
-          <li>30 users included</li>
-          <li>15 GB of storage</li>
-          <li>Phone and email support</li>
-          <li>Help center access</li>
+          <li>Desde la tercer hora</li>
+          <li>hasta la duodecima</li>
+          <li>hora que el vehiculo</li>
+          <li>esta en custodia</li>
         </ul>
-        <button type="button" class="btn btn-lg btn-block btn-primary">Contact us</button>
+        <!--button type="button" class="btn btn-lg btn-block btn-primary">Contact us</button-->
       </div>
     </div>
   </div>
