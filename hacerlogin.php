@@ -54,7 +54,9 @@ switch($ingreso){
 		header ("Location: errorLoginClave.php");
 		break;
 	case 2:
-		header ("Location: estacionar.php");
+		/*echo '<a href="' . htmlspecialchars("/estacionar.php?correo=&mail=" .
+        urlencode($mail)) . '">'."\n";*/
+		header ("Location: estacionar.php?$mail");
 		break;
 }
     

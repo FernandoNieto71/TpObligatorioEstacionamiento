@@ -66,7 +66,7 @@
 <div class ="justify-content-center">
   <div class="container">
     <!--div class="card-deck mb-3 text-center"-->
-      <form id=miform"  method="post"><!--action="primerPag.html"-->
+      <form id=miform"  action="hacerestacionar.php" method="post"><!--action="primerPag.html"-->
         <input name="patente" type="text" id="patente" class="btn btn-lg btn-block btn-outline-primary mayusc-text"> 
         <ul class="list-unstyled mt-3 mb-4">
          <h5 align = "center">Ingrese Patente del Vehiculo</h5>
@@ -111,6 +111,7 @@
         <h1 class="card-title pricing-card-title">$150 <!--small class="text-muted">/ mo</small--></h1>
         <ul class="list-unstyled mt-3 mb-4">
           <li>Por el total de horas</li>
+          <li>y proporcional minutos</li>
           <li>desde que el vehiculo </li>
           <li>ingreso hasta que salio</li>
           <!--li>Help center access</li-->
