@@ -56,7 +56,7 @@ switch($ingreso){
 	case 2:
 		/*echo '<a href="' . htmlspecialchars("/estacionar.php?correo=&mail=" .
         urlencode($mail)) . '">'."\n";*/
-		header ("Location: estacionar.php?$mail");
+		header ("Location: estacionar.php?&correo=$mail");
 		break;
 }
     

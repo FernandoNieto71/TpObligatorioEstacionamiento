@@ -4,7 +4,11 @@
 echo "<br/>";
 
 var_dump($_POST);*/
+
+include_once "modificarArchivo.php";
+
 if(isset($_POST["movimiento"]) && isset($_POST["patente"])){
+	$correo=$_POST["correo"];
 	$movimiento=$_POST["movimiento"];
 	$patente=$_POST["patente"];
 }else{
@@ -15,11 +19,14 @@ if($movimiento=='I'){
 
 
 $ahora=date("Y-m-d H:i:s");
-$renglon="\n".$patente."=>".$movimiento."=>".$ahora;
+$renglon="\n".$patente."=>".$movimiento."=>".$ahora."=>".$correo;
 $archivo=fopen("estacionado.txt", "a");
 fwrite($archivo, $renglon);
 fclose($archivo);
-}else{
+echo "se realizo el ingreso ";
+$nada="";
+header ("Location: estacionar.php?&correo=$correo");
+} else{
 	//echo "patente ".$patente." movimiento ".$movimiento;
 	$listadoEstacionado=array();
 	$archivo=fopen("estacionado.txt", "r");
@@ -58,6 +65,8 @@ fclose($archivo);
 			}
 			$NoExiste = 2;
 			echo "<br>entrada ".$datos[2]." salida ".$salida." duracion ".$minutos. " valor $".$valor;
+			//modificarEstacionado($datos[0],$datos[1],$datos[2],$datos[3],$salida,$valor);
+			//no funciona;
 			break;
 			} else {
 			$NoExiste=1;

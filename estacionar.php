@@ -1,3 +1,9 @@
+<?php
+//var_dump($_GET);
+$correo = $_GET["correo"];
+//echo "el correo es ".$correo;
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -37,6 +43,15 @@
           font-size: 3.5rem;
         }
       }
+
+      .recuadro{
+        display: flex;
+        margin: auto;
+        width: 50%;
+        height: 35px;
+        text-align: center;
+        border-color: lightskyblue;
+      }
       
     </style>
 
@@ -67,7 +82,10 @@
   <div class="container">
     <!--div class="card-deck mb-3 text-center"-->
       <form id=miform"  action="hacerestacionar.php" method="post"><!--action="primerPag.html"-->
-        <input name="patente" type="text" id="patente" class="btn btn-lg btn-block btn-outline-primary mayusc-text"> 
+        <input name="correo" type="text" id="correo" class="btn btn-lg btn-block btn-outline-primary mayusc-text" value="<?php echo $correo;?>"> 
+        <br>
+        <!--input name="patente" type="text" id="patente" class="btn btn-lg btn-block btn-outline-primary mayusc-text"-->
+        <input name="patente" type="text" id="patente" class="recuadro">  
         <ul class="list-unstyled mt-3 mb-4">
          <h5 align = "center">Ingrese Patente del Vehiculo</h5>
         </ul>
@@ -179,3 +197,5 @@
     
   </body>
 </html>
+
+
