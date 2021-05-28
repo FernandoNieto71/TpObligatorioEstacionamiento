@@ -4,8 +4,8 @@
 echo "<br/>";
 
 var_dump($_POST);*/
-
-include_once "modificarArchivo.php";
+//vincula con archivo que contiene funciones
+include_once "funcionesEstacionamiento.php";
 
 if(isset($_POST["movimiento"]) && isset($_POST["patente"])){
 	$correo=$_POST["correo"];
@@ -20,27 +20,14 @@ if($movimiento=='I'){
 
 $ahora=date("Y-m-d H:i:s");
 $renglon="\n".$patente."=>".$movimiento."=>".$ahora."=>".$correo;
-$archivo=fopen("estacionado.txt", "a");
-fwrite($archivo, $renglon);
-fclose($archivo);
-echo "se realizo el ingreso ";
+/*$funcion que guarda en archivo el ingreso*/
+guardarEstacionado($renglon);
 $nada="";
 header ("Location: estacionar.php?&correo=$correo");
 } else{
 	//echo "patente ".$patente." movimiento ".$movimiento;
-	$listadoEstacionado=array();
-	$archivo=fopen("estacionado.txt", "r");
-	while(!feof($archivo)){
-		
-		$renglon=fgets($archivo);
-		$datosEstacionado=explode("=>", $renglon);
-		if(isset($datosEstacionado[1]))//[0]!=" ")
-		{
-			$listadoEstacionado[]=$datosEstacionado;
-		}
-	}
-	fclose($archivo);
-
+	//funcion que busca registros en estacionado y devuelve vector
+	$listadoEstacionado = recorreEstacionado();
 	$NoExiste=0;
 	
 	foreach ($listadoEstacionado as $datos) {
@@ -49,22 +36,15 @@ header ("Location: estacionar.php?&correo=$correo");
 		if($datos[1]=='I'){
 			//echo "Auto egresado existe";
 			$salida=date("Y-m-d H:i:s");
-			$minutos= (strtotime($salida)-strtotime($datos[2]))/60; 
-			$minutos = abs($minutos); 
-			$minutos = floor($minutos);
+			//llama a funcion que calcula el tiempo*/
+			$minutos=calculaTiempo($datos[2], $salida);
 			
-			if($minutos<60){
-				$valor=$minutos/10;
-				$valor=abs($valor);
-				$valor=floor($valor);
-				$valor=$valor*45;
-			} else if($minutos < 180){
-				$valor=$minutos/60*150;
-			} else if($minutos < 720){
-				$valor=450;
-			}
+			//funcion que devuelve valor
+			$valor=calculaImporte($minutos);
+			
 			$NoExiste = 2;
 			echo "<br>entrada ".$datos[2]." salida ".$salida." duracion ".$minutos. " valor $".$valor;
+			//$mostrar="<br>entrada ".$datos[2]." salida ".$salida." duracion ".$minutos. " valor $".$valor;
 			//modificarEstacionado($datos[0],$datos[1],$datos[2],$datos[3],$salida,$valor);
 			//no funciona;
 			break;
@@ -81,6 +61,7 @@ header ("Location: estacionar.php?&correo=$correo");
 	if($NoExiste==0){
 		echo "<br>No existe el vehiculo";
 	}
+	//header ("Location: estacionar.php?&correo=$correo&patente=$mostrar");
 }
 //var_dump($listadoDeUsuario);
     

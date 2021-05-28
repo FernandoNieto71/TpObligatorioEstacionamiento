@@ -1,6 +1,11 @@
 <?php
 //var_dump($_GET);
-$correo = $_GET["correo"];
+//&& isset($_POST["patente"]))
+if(isset($_GET["correo"])) {
+$correo = $_GET["correo"];}
+else {
+  $correo ="";
+}
 //echo "el correo es ".$correo;
 ?>
 
