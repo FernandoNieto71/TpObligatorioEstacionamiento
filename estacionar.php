@@ -12,7 +12,8 @@ $correo = $_GET["correo"];
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.80.0">
-    <title>Pricing example · Bootstrap v4.6</title>
+    <title>Movimiento de playa v4.6</title>
+    <link rel="shortcut icon" href="imagen/favicon.ico">
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/pricing/">
 
