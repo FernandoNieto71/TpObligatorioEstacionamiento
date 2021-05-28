@@ -6,11 +6,11 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.80.0">
-    <title>Jumbotron Template · Bootstrap v4.6</title>
+    <title>Estacionamiento Wilde</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/jumbotron/">
 
-    
+    <link rel="shortcut icon" href="http://i.autos.com.ar/config_autos_www/favicon.ico">
 
     <!-- Bootstrap core CSS -->
 <!--link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet"-->
