@@ -10,7 +10,7 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/jumbotron/">
 
-    <link rel="shortcut icon" href="http://i.autos.com.ar/config_autos_www/favicon.ico">
+    <link rel="shortcut icon" href="imagen/favicon.ico">
 
     <!-- Bootstrap core CSS -->
 <!--link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet"-->
