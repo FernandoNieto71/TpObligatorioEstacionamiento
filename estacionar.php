@@ -6,6 +6,11 @@ $correo = $_GET["correo"];}
 else {
   $correo ="";
 }
+if(isset($_GET["patente"])) {
+$patente = $_GET["patente"];}
+else {
+  $patente ="";
+}
 //echo "el correo es ".$correo;
 ?>
 
@@ -17,8 +22,11 @@ else {
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.80.0">
-    <title>Movimiento de playa v4.6</title>
-    <link rel="shortcut icon" href="imagen/favicon.ico">
+    <!--title>Movimiento de playa v4.6</title>
+    <link rel="shortcut icon" href="imagen/favicon.ico"-->
+    <?php 
+    include_once("titulo.php");
+    ?>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/pricing/">
 
@@ -53,7 +61,7 @@ else {
       .recuadro{
         display: flex;
         margin: auto;
-        width: 50%;
+        width: 65%;
         height: 35px;
         text-align: center;
         border-color: lightskyblue;
@@ -91,7 +99,7 @@ else {
         <input name="correo" type="text" id="correo" class="btn btn-lg btn-block btn-outline-primary mayusc-text" value="<?php echo $correo;?>"> 
         <br>
         <!--input name="patente" type="text" id="patente" class="btn btn-lg btn-block btn-outline-primary mayusc-text"-->
-        <input name="patente" type="text" id="patente" class="recuadro">  
+        <input name="patente" type="text" id="patente" class="recuadro" value=<?php echo $patente;?>">  
         <ul class="list-unstyled mt-3 mb-4">
          <h5 align = "center">Ingrese Patente del Vehiculo</h5>
         </ul>

@@ -6,11 +6,14 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.80.0">
-    <title>Estacionamiento Wilde</title>
-
+    <!--title>Estacionamiento Wilde</title>
+    <link rel="shortcut icon" href="imagen/favicon.ico"-->
+    <?php 
+    include_once("titulo.php");
+    ?>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/jumbotron/">
 
-    <link rel="shortcut icon" href="imagen/favicon.ico">
+    
 
     <!-- Bootstrap core CSS -->
 <!--link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet"-->

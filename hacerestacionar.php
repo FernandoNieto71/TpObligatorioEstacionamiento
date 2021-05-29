@@ -43,8 +43,8 @@ header ("Location: estacionar.php?&correo=$correo");
 			$valor=calculaImporte($minutos);
 			
 			$NoExiste = 2;
-			echo "<br>entrada ".$datos[2]." salida ".$salida." duracion ".$minutos. " valor $".$valor;
-			//$mostrar="<br>entrada ".$datos[2]." salida ".$salida." duracion ".$minutos. " valor $".$valor;
+			//echo "<br>entrada ".$datos[2]." salida ".$salida." duracion ".$minutos. " valor $".$valor;
+			$mostrar="entrada ".$datos[2]." salida ".$salida." duracion ".$minutos. " valor $".$valor;
 			//modificarEstacionado($datos[0],$datos[1],$datos[2],$datos[3],$salida,$valor);
 			//no funciona;
 			break;
@@ -61,7 +61,8 @@ header ("Location: estacionar.php?&correo=$correo");
 	if($NoExiste==0){
 		echo "<br>No existe el vehiculo";
 	}
-	//header ("Location: estacionar.php?&correo=$correo&patente=$mostrar");
+	//$mostrar="hola";
+	header ("Location: estacionar.php?&correo=$correo&patente=$mostrar");
 }
 //var_dump($listadoDeUsuario);
     
