@@ -1,34 +1,34 @@
 <?php
 //funcion que calcula el tiempo
 function calculaTiempo($entrada, $salida){
-  $minutos= (strtotime($salida)-strtotime($entrada))/60; 
-  $minutos = abs($minutos); 
-  $minutos = floor($minutos);
-  return $minutos;
+  $segundo= (strtotime($salida)-strtotime($entrada)); 
+  /*$segundo = abs($segundo); 
+  $segundo = floor($segundo);*/
+  return $segundo;
 }
 
 //funcion que calcula importe
-function calculaImporte($minutos){
-  if($minutos<60){
-        $valor=$minutos/10;
-        $valor=abs($valor);
+function calculaImporte($segundo){
+  if($segundo<3600){
+        $valor=$segundo*.075;
+        /*$valor=abs($valor);
         $valor=floor($valor);
-        $valor=$valor*45;
+        $valor=$valor*45;*/
         if($valor>150){
           $valor=150;
         }
-      } else if($minutos < 180){
-        $valor=$minutos/60*150;
+      } else if($segundo < 10800){
+        $valor=$segundo*.041667;
         if($valor>450){
           $valor=450;
         }
-      } else if($minutos < 720){
+      } else if($segundo < 43200){
         $valor=450;
       } else {
-        $tiempo=$minutos/1440;
-        $tiempo=abs($tiempo);
+        $valor=$segundo*.00521;
+        /*$tiempo=abs($tiempo);
         $tiempo=floor($tiempo);
-        $valor = 450 * ($tiempo);
+        $valor = 450 * ($tiempo);*/
       }
       return $valor;
 }
@@ -36,6 +36,14 @@ function calculaImporte($minutos){
 //guardar estacionado
 function guardarEstacionado($renglon){
   $archivo=fopen("estacionado.txt", "a");
+  fwrite($archivo, $renglon);
+  fclose($archivo);
+  echo "se realizo el ingreso ";
+}
+
+//guarda salidas
+function guardarSalidas($renglon){
+  $archivo=fopen("salidas.txt", "a");
   fwrite($archivo, $renglon);
   fclose($archivo);
   echo "se realizo el ingreso ";

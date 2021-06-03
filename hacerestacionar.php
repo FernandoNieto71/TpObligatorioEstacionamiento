@@ -36,15 +36,18 @@ header ("Location: estacionar.php?&correo=$correo");
 		if($datos[1]=='I'){
 			//echo "Auto egresado existe";
 			$salida=date("Y-m-d H:i:s");
+			$egreso=$salida;
 			//llama a funcion que calcula el tiempo*/
-			$minutos=calculaTiempo($datos[2], $salida);
+			$segundo=calculaTiempo($datos[2], $salida);
 			
 			//funcion que devuelve valor
-			$valor=calculaImporte($minutos);
-			
+			$valor=calculaImporte($segundo);
+			$renglon="\n".$patente."=>".$movimiento."=>".$egreso."=>".$valor."=>".$correo;
+			guardarSalidas($renglon);
 			$NoExiste = 2;
 			//echo "<br>entrada ".$datos[2]." salida ".$salida." duracion ".$minutos. " valor $".$valor;
-			$mostrar="entrada ".$datos[2]." salida ".$salida." duracion ".$minutos. " valor $".$valor;
+			//$mostrar="entrada=$datos[2]-salida=$salida-duracion=$minutos-valor=$valor";
+			$mostrar="valor=$valor a";
 			//modificarEstacionado($datos[0],$datos[1],$datos[2],$datos[3],$salida,$valor);
 			//no funciona;
 			break;
