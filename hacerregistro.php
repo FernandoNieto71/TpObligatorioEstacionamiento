@@ -7,23 +7,10 @@ var_dump($_POST);*/
 $mail=$_POST["correo"];
 $clave=$_POST["clave"];
 $copiaclave=$_POST["copiaclave"];
-$pasar = 0;
-/*$copiaclave=$_POST["copiaclave"];
-echo "Su mail es ".$mail. " , la clave es ".$clave. " y la copia es ".$copiaclave;*/
-$archivo=fopen("usuarios.txt", "r");
-while(!feof($archivo)){
-	//echo "renglon: ".fgets($archivo)."<br>";
-	$renglon=fgets($archivo);
-	$datosDeUnUsuario=explode("=>", $renglon);
-	//echo $datosDeUnUsuario[0];
-	if($datosDeUnUsuario[0]==$mail)//[0]!=" ")
-		{
-			//echo "usuario repetido";
-			//header ("Location: errorUsuario.php");
-			$pasar = 1;
-		}
-	}
-fclose($archivo);
+include_once "funcionesLogin.php";
+
+/* revisa si existe el usuario */
+$pasar=revisaUsuario($mail);
 if($pasar == 0){
 	if($clave==$copiaclave){
 		date_default_timezone_set("America/Argentina/Buenos_Aires");

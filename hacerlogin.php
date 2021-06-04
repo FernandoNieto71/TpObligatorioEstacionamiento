@@ -10,42 +10,19 @@ if(isset($_POST["correo"]) && isset($_POST["clave"])){
 }else{
 	die();
 }
-//if(issset())
+include_once "funcionesLogin.php";
 
-$listadoDeUsuario=array();
-$archivo=fopen("usuarios.txt", "r");
-while(!feof($archivo)){
-	//echo "renglon: ".fgets($archivo)."<br>";
-	$renglon=fgets($archivo);
-	$datosDeUnUsuario=explode("=>", $renglon);
-	if(isset($datosDeUnUsuario[1]))//[0]!=" ")
-	{
-		$listadoDeUsuario[]=$datosDeUnUsuario;
-	}
-	/*var_dump($datosDeUnUsuario);
-	echo "<br>";*/
-	/*if($datosDeUnUsuario[0]==$mail){
-		if($datosDeUnUsuario[1]==$clave){
-			echo "Bienvenido";
-		}
-	}*/
-}
-fclose($archivo);
+//devuelve los datos de usuarios
+$listadoDeUsuario=cargaUsuarios();
 
 //var_dump($listadoDeUsuario);
 $ingreso=0;
 
-foreach ($listadoDeUsuario as $datos) {
-	if($datos[0]==$mail){
-		$ingreso++;
-		if($datos[1]==$clave){
-			//echo "Bienvenido";
-			$ingreso++;
-			$ing_clave="Ingreso";
-			break;
-		}
-	}
-}
+//revisa si existe usuario, si la clave esta bien y da acceso
+$ingreso=func_ingreso($listadoDeUsuario, $mail, $clave);
+
+
+echo $ingreso;
 switch($ingreso){
 	case 0:
 		header ("Location: errorLogin.php");
