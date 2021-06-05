@@ -97,6 +97,7 @@ else {
 <div class ="justify-content-center">
   <div class="container">
     <!--div class="card-deck mb-3 text-center"-->
+
       <form id=miform"  action="hacerestacionar.php" method="post"><!--action="primerPag.html"-->
         <input name="correo" type="text" id="correo" class="btn btn-lg btn-block btn-outline-primary mayusc-text" value="<?php echo $correo;?>"> 
         <br>
@@ -115,9 +116,20 @@ else {
         </div>
 
       </form>
+
     <!--/div-->
   </div>
 </div>
+<table>
+<tr>
+  <th width="250"></th>
+  <th width="650">
+    <?php include "tablaEstacionado.php";?>
+  </th>
+  <th width="650">
+    <?php include "tablaSalidas.php";?>
+  </th>
+</table>
 <br><br>
 </div>
 <div class="container">

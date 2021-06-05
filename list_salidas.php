@@ -1,20 +1,11 @@
 <?php
 
-
+include_once "funcionesEstacionamiento.php";
 $renglones="";
-$listadoEstacionado=array();
-$archivo=fopen("salidas.txt", "r");
 
-while(!feof($archivo)){
-    $renglon=fgets($archivo);
-    $datosEstacionado=explode("=>", $renglon);
-    if(isset($datosEstacionado[1]))//[0]!=" ")
-    {
-      $listadoEstacionado[]=$datosEstacionado;
-      
-    }
-  }
-fclose($archivo);
+$listadoEstacionado=array();
+$listadoEstacionado=recorreSalidas();
+
 echo "Listado de salidas\n";
 foreach ($listadoEstacionado as $datos) {
    if(isset($datos[1])){

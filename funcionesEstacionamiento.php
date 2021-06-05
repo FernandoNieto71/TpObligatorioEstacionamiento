@@ -9,28 +9,29 @@ function calculaTiempo($entrada, $salida){
 
 //funcion que calcula importe
 function calculaImporte($segundo){
-  if($segundo<3600){
-        $valor=$segundo*.075;
-        /*$valor=abs($valor);
-        $valor=floor($valor);
-        $valor=$valor*45;*/
-        if($valor>150){
-          $valor=150;
+  $indice=0;
+  if($segundo<3600){//menor a una hora
+        //$valor=$segundo*.075;
+        $indice=.075;
+        if($segundo>3000){
+          $indice=.041667;
         }
-      } else if($segundo < 10800){
-        $valor=$segundo*.041667;
-        if($valor>450){
-          $valor=450;
-        }
-      } else if($segundo < 43200){
+      } else if($segundo < 10800){//menor a 3 horas
+        //$valor=$segundo*.041667;
+        $indice=.041667;
+        
+      } else if($segundo < 43200){//menor a 12 horas
         $valor=450;
+        $indice=0;
       } else {
-        $valor=$segundo*.00521;
-        /*$tiempo=abs($tiempo);
-        $tiempo=floor($tiempo);
-        $valor = 450 * ($tiempo);*/
+        //$valor=$segundo*.00521;//diario
+        $indice=.00521;
       }
-      return $valor;
+      if($indice!=0){
+        $valor=$segundo*$indice;
+      }
+      
+      return sprintf('%.2f', $valor);//$valor;
 }
 
 //guardar estacionado
@@ -65,6 +66,24 @@ function recorreEstacionado(){
   fclose($archivo);
   return $listadoEstacionado;
 }
+
+//recorre salida
+function recorreSalidas(){
+  $listadoSalidas=array();
+  $archivo=fopen("salidas.txt", "r");
+  while(!feof($archivo)){
+    
+    $renglon=fgets($archivo);
+    $datosSalidas=explode("=>", $renglon);
+    if(isset($datosSalidas[1]))//[0]!=" ")
+    {
+      $listadoSalidas[]=$datosSalidas;
+    }
+  }
+  fclose($archivo);
+  return $listadoSalidas;
+}
+
 
 //guardar cobrado
 function modificarEstacionado($patente, $movimiento, $horaIngreso,$correo,$horaSalida,$valor){

@@ -6,6 +6,7 @@ echo "<br/>";
 var_dump($_POST);*/
 //vincula con archivo que contiene funciones
 include_once "funcionesEstacionamiento.php";
+include_once "estacionamiento.php";
 
 if(isset($_POST["movimiento"]) && isset($_POST["patente"])){
 	$correo=$_POST["correo"];
@@ -27,7 +28,8 @@ header ("Location: estacionar.php?&correo=$correo");
 } else{
 	//echo "patente ".$patente." movimiento ".$movimiento;
 	//funcion que busca registros en estacionado y devuelve vector
-	$listadoEstacionado = recorreEstacionado();
+	//$listadoEstacionado = recorreEstacionado();
+	$listadoEstacionado=estacionamiento::leer();
 	$NoExiste=0;
 	
 	foreach ($listadoEstacionado as $datos) {
