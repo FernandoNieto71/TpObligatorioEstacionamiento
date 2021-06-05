@@ -50,7 +50,7 @@ header ("Location: estacionar.php?&correo=$correo");
 			//echo "<br>entrada ".$datos[2]." salida ".$salida." duracion ".$minutos. " valor $".$valor;
 			//$mostrar="entrada=$datos[2]-salida=$salida-duracion=$minutos-valor=$valor";
 			$mostrar="valor=$valor a";
-			//modificarEstacionado($datos[0],$datos[1],$datos[2],$datos[3],$salida,$valor);
+			modificarEstacionado($datos[0],$datos[1],$datos[2],$dato[3]);
 			//no funciona;
 			break;
 			} else {
@@ -61,10 +61,12 @@ header ("Location: estacionar.php?&correo=$correo");
 		}
 	}
 	if($NoExiste==1){
-		echo "<br>la patente ".$patente." ya se retiro";
+		//echo "<br>la patente ".$patente." ya se retiro";
+		$mostrar="$patente_se_retiro a";
 	}
 	if($NoExiste==0){
-		echo "<br>No existe el vehiculo";
+		//echo "<br>No existe el vehiculo";
+		$mostrar="No_existe_vehiculo a";
 	}
 	//$mostrar="hola";
 	header ("Location: estacionar.php?&correo=$correo&patente=$mostrar");
