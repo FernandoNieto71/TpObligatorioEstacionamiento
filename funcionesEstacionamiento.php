@@ -96,6 +96,7 @@ function modificarEstacionado($patente, $tipo, $horaIngreso, $mail)
             $sout[]=$dato;
           }
         }*/
+        
         file_put_contents("estacionado.txt", $listadoDePatentes);
     }
 

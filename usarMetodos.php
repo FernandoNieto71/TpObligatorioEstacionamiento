@@ -5,6 +5,7 @@ estacionamiento::saludar();
 estacionamiento::crearTablaEstacionado();
 estacionamiento::crearTablaSalidas();
 
+
 ?>
 
 

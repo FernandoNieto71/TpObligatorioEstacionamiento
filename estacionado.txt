@@ -1,12 +1,4 @@
-nos316=>I=>2021-05-26 15:32:23=>sofia@mail.com
-sofia@mail.com
-fernando@mail.com
-fernando@mail.com
-fernando@mail.com
-fernando@mail.com
-fernando@mail.com
-fernando@mail.com
-sofia@mail.com
-abc111=>I=>2021-06-04 15:08:06=>fernando@mail.com
-sofia@mail.com
-fernando@mail.com
+
+rew544=>I=>2021-06-11 21:54:06=>fernando@mail.com
+poi432=>I=>2021-06-11 21:54:20=>fernando@mail.com
+vhs234=>I=>2021-06-11 21:56:27=>fernando@mail.com

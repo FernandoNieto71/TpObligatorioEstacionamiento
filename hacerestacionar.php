@@ -23,8 +23,9 @@ $ahora=date("Y-m-d H:i:s");
 $renglon="\n".$patente."=>".$movimiento."=>".$ahora."=>".$correo;
 /*$funcion que guarda en archivo el ingreso*/
 guardarEstacionado($renglon);
-$nada="";
-header ("Location: estacionar.php?&correo=$correo");
+estacionamiento::crearTablaEstacionado();
+$nada="ingrese_patente a";
+header ("Location: estacionar.php?&correo=$correo&patente=$nada");
 } else{
 	//echo "patente ".$patente." movimiento ".$movimiento;
 	//funcion que busca registros en estacionado y devuelve vector
@@ -46,11 +47,13 @@ header ("Location: estacionar.php?&correo=$correo");
 			$valor=calculaImporte($segundo);
 			$renglon="\n".$patente."=>".$movimiento."=>".$egreso."=>".$valor."=>".$correo;
 			guardarSalidas($renglon);
+			
 			$NoExiste = 2;
 			//echo "<br>entrada ".$datos[2]." salida ".$salida." duracion ".$minutos. " valor $".$valor;
 			//$mostrar="entrada=$datos[2]-salida=$salida-duracion=$minutos-valor=$valor";
 			$mostrar="valor=$valor a";
-			modificarEstacionado($datos[0],$datos[1],$datos[2],$dato[3]);
+			modificarEstacionado($datos[0],$datos[1],$datos[2],$datos[3]);
+			estacionamiento::crearTablaSalidas();
 			//no funciona;
 			break;
 			} else {

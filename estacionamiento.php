@@ -86,6 +86,15 @@ class estacionamiento{
 		fclose($archivo);
 	}
 
+	public static function retornarListadoAutocomplit() {
+		$arrayPatentes = estacionamiento::leer("estacionados");
+		$listadoRetorno="";
+		foreach($arrayPatentes as $datos){
+			$listadoRetorno.="\"$datos[0]\","; 
+		}
+		return $listadoRetorno;
+	}
+
 }
 
 ?>
