@@ -102,11 +102,13 @@ else {
         <input name="correo" type="text" id="correo" class="btn btn-lg btn-block btn-outline-primary mayusc-text" value="<?php echo $correo;?>"> 
         <br>
         <!--input name="patente" type="text" id="patente" class="btn btn-lg btn-block btn-outline-primary mayusc-text"-->
-        <input name="patente" type="text" id="patente" class="recuadro" value=<?php echo $patente;?>  required autofocus id="autocomplete">  
+        <input name="patente" type="text" id="autocomplete" class="recuadro" value=<?php echo $patente;?>  required autofocus id="autocomplete">  
         <ul class="list-unstyled mt-3 mb-4">
          <h5 align = "center">Ingrese Patente del Vehiculo</h5>
+         <br><br>
+         <input name="gnc" type="checkbox" id="decla" value="1" "text-align:center; vertical-align: middle;"> Vehiculo a GNC</td>
         </ul>
-  
+        
         <div align = "center">
          <input name="movimiento" type="radio" value="I"> Ingreso  <input name="movimiento" type="radio" value="E"> Egreso
         </div>

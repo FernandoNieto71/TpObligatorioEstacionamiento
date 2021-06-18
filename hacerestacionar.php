@@ -12,6 +12,7 @@ if(isset($_POST["movimiento"]) && isset($_POST["patente"])){
 	$correo=$_POST["correo"];
 	$movimiento=$_POST["movimiento"];
 	$patente=$_POST["patente"];
+	$gnc=$_POST["gnc"];
 }else{
 	die();
 }
@@ -20,7 +21,12 @@ if($movimiento=='I'){
 
 
 $ahora=date("Y-m-d H:i:s");
-$renglon="\n".$patente."=>".$movimiento."=>".$ahora."=>".$correo;
+if($gnc==1){
+	//$gnc=1;
+}else{
+	$gnc=0;
+}
+$renglon="\n".$patente."=>".$movimiento."=>".$ahora."=>".$gnc."=>".$correo;
 /*$funcion que guarda en archivo el ingreso*/
 guardarEstacionado($renglon);
 estacionamiento::crearTablaEstacionado();
