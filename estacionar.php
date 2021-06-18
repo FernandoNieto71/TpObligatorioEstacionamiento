@@ -105,8 +105,22 @@ else {
         <input name="patente" type="text" id="autocomplete" class="recuadro" value=<?php echo $patente;?>  required autofocus id="autocomplete">  
         <ul class="list-unstyled mt-3 mb-4">
          <h5 align = "center">Ingrese Patente del Vehiculo</h5>
-         <br><br>
-         <input name="gnc" type="checkbox" id="decla" value="1" "text-align:center; vertical-align: middle;"> Vehiculo a GNC</td>
+         <br>
+         <div style="text-align:center;">
+         <table>
+          <tr>
+            <input name="categoria" type="radio" value="S"> Normal  <input name="categoria" type="radio" value="C"> Camioneta <input name="categoria" type="radio" value="A"> Alta Gama 
+          </tr>
+          <tr>
+            <br>
+            <br>
+          </tr>
+          
+          <tr>
+            <input name="gnc" type="checkbox" id="decla" value="1" "text-align:center; vertical-align: middle;"> Vehiculo a GNC</td>
+          </tr>
+        </table>
+      </div>
         </ul>
         
         <div align = "center">

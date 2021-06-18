@@ -1,17 +1,16 @@
 
-rew544=>I=>2021-06-11 21:54:06=>fernando@mail.com
-poi432=>I=>2021-06-11 21:54:20=>fernando@mail.com
 vhs234=>I=>2021-06-11 21:56:27=>fernando@mail.com
 sss231=>I=>2021-06-18 19:08:50=>fernando@mail.com
-aws321=>I=>2021-06-18 19:10:13=>0=>fernando@mail.com
+=>fernando@mail.com
 tgv123=>I=>2021-06-18 19:10:33=>=>fernando@mail.com
 eee222=>I=>2021-06-18 19:12:12=>0=>fernando@mail.com
 cdc444=>I=>2021-06-18 19:12:30=>0=>fernando@mail.com
 ded444=>I=>2021-06-18 19:12:48=>0=>fernando@mail.com
-rfr333=>I=>2021-06-18 19:12:59=>0=>fernando@mail.com
+=>fernando@mail.com
 ere555=>I=>2021-06-18 19:15:25=>0=>fernando@mail.com
 trt444=>I=>2021-06-18 19:15:43=>0=>fernando@mail.com
-rer434=>I=>2021-06-18 19:16:09=>0=>fernando@mail.com
+=>fernando@mail.com
 frf=>I=>2021-06-18 19:17:04=>2=>fernando@mail.com
 rrr333=>I=>2021-06-18 19:17:33=>1=>fernando@mail.com
 eeerrr=>I=>2021-06-18 19:17:46=>0=>fernando@mail.com
+ytr444=>I=>2021-06-18 19:37:54=>1=>fernando@mail.com

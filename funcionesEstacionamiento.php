@@ -8,8 +8,26 @@ function calculaTiempo($entrada, $salida){
 }
 
 //funcion que calcula importe
-function calculaImporte($segundo){
+function calculaImporte($segundo,$gnc,$categoria){
   $indice=0;
+  $porcentaje=0;
+  if($gnc==1){
+    $porcentaje=$porcentaje+0.1;
+  }
+  switch ($categoria) {
+    case 'N':
+      // code...
+      break;
+    case 'C':
+      $porcentaje=$porcentaje+0.1;
+      break;
+    case 'A':
+      $porcentaje=$porcentaje+0.2;
+      break;   
+    /*default:
+      // code...
+      break;*/
+  }
   if($segundo<3600){//menor a una hora
         //$valor=$segundo*.075;
         $indice=.075;
@@ -21,14 +39,14 @@ function calculaImporte($segundo){
         $indice=.041667;
         
       } else if($segundo < 43200){//menor a 12 horas
-        $valor=450;
+        $valor=450 * $porcentaje;
         $indice=0;
       } else {
         //$valor=$segundo*.00521;//diario
         $indice=.00521;
       }
       if($indice!=0){
-        $valor=$segundo*$indice;
+        $valor=$segundo*$indice * $porcentaje;
       }
       
       return sprintf('%.2f', $valor);//$valor;
@@ -86,9 +104,9 @@ function recorreSalidas(){
 
 
 //guardar cobrado
-function modificarEstacionado($patente, $tipo, $horaIngreso, $mail)
+function modificarEstacionado($patente, $tipo, $horaIngreso, $gnc, $categoria,$mail)
     {
-        $registro = $patente."=>".$tipo."=>".$horaIngreso."=>".$mail;
+        $registro = $patente."=>".$tipo."=>".$horaIngreso."=>".$gnc."=>".$categoria."=>".$mail;
         $listadoDePatentes = file_get_contents("estacionado.txt");
         $listadoDePatentes = str_replace($registro, '', $listadoDePatentes);
         /*foreach($listadoDePatentes as $dato){

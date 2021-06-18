@@ -45,3 +45,12 @@ hzs696=>E=>2021-06-11 21:52:43=>1317.74=>fernando@mail.com
 abc111=>E=>2021-06-11 21:53:37=>1318.12=>fernando@mail.com
 ab123cv=>E=>2021-06-11 21:54:36=>1317.45=>fernando@mail.com
 arl333=>E=>2021-06-11 21:55:03=>150.38=>fernando@mail.com
+rew544=>E=>2021-06-18 20:14:41=>0.00=>fernando@mail.com
+poi432=>E=>2021-06-18 20:15:05=>0.00=>fernando@mail.com
+rfr333=>E=>2021-06-18 20:17:07=>0.00=>fernando@mail.com
+aws321=>E=>2021-06-18 20:19:22=>172.88=>fernando@mail.com
+rer434=>E=>2021-06-18 20:20:24=>0.00=>fernando@mail.com
+ttt666=>E=>2021-06-18 20:20:41=>31.73=>fernando@mail.com
+tre345=>E=>2021-06-18 20:21:47=>29.00=>fernando@mail.com
+ert543=>E=>2021-06-18 20:22:00=>43.79=>fernando@mail.com
+lkj555=>E=>2021-06-18 20:46:32=>0.32=>fernando@mail.com=>2021-06-18 20:46:11=>1=>C=>fernando@mail.com
