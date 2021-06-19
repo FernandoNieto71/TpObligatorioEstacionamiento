@@ -33,6 +33,7 @@ switch($ingreso){
 	case 2:
 		/*echo '<a href="' . htmlspecialchars("/estacionar.php?correo=&mail=" .
         urlencode($mail)) . '">'."\n";*/
+        setcookie("mail",$mail);
         $nada="ingrese_patente del";
 		header ("Location: estacionar.php?&correo=$mail&patente=$nada");
 		break;

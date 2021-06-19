@@ -14,6 +14,7 @@ else {
   $patente =" ";
 }
 //echo "el correo es ".$correo;
+echo '¡Hola ' . htmlspecialchars($_COOKIE["mail"]) . '!';
 ?>
 
 <!doctype html>

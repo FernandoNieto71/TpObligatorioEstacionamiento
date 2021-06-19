@@ -10,10 +10,8 @@ function calculaTiempo($entrada, $salida){
 //funcion que calcula importe
 function calculaImporte($segundo,$gnc,$categoria){
   $indice=0;
-  $porcentaje=0;
-  if($gnc==1){
-    $porcentaje=$porcentaje+0.1;
-  }
+  $porcentaje=1;
+
   switch ($categoria) {
     case 'N':
       // code...
@@ -48,7 +46,10 @@ function calculaImporte($segundo,$gnc,$categoria){
       if($indice!=0){
         $valor=$segundo*$indice * $porcentaje;
       }
-      
+  
+  if($gnc==1){
+    $valor=$valor + 50;
+  }  
       return sprintf('%.2f', $valor);//$valor;
 }
 

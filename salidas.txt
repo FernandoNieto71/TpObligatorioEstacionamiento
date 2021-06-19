@@ -54,3 +54,19 @@ ttt666=>E=>2021-06-18 20:20:41=>31.73=>fernando@mail.com
 tre345=>E=>2021-06-18 20:21:47=>29.00=>fernando@mail.com
 ert543=>E=>2021-06-18 20:22:00=>43.79=>fernando@mail.com
 lkj555=>E=>2021-06-18 20:46:32=>0.32=>fernando@mail.com=>2021-06-18 20:46:11=>1=>C=>fernando@mail.com
+ytr444=>E=>2021-06-18 21:09:46=>50.00=>fernando@mail.com=>2021-06-18 19:37:54=>1=>fernando@mail.com
+=>
+ytr444=>E=>2021-06-18 21:10:14=>50.00=>fernando@mail.com=>2021-06-18 19:37:54=>1=>fernando@mail.com
+=>
+rrr333=>E=>2021-06-18 21:11:21=>50.00=>fernando@mail.com=>2021-06-18 19:17:33=>1=>fernando@mail.com
+=>
+eeerrr=>E=>2021-06-18 21:11:42=>0.00=>fernando@mail.com=>2021-06-18 19:17:46=>0=>fernando@mail.com
+=>
+eee444=>E=>2021-06-18 21:14:15=>50.31=>fernando@mail.com=>2021-06-18 21:13:34=>1=>C=>fernando@mail.com
+
+rrr666=>E=>2021-06-18 21:14:29=>0.00=>fernando@mail.com=>2021-06-18 21:13:45=>0=>S=>fernando@mail.com
+rrr666=>E=>2021-06-18 21:15:05=>0.18=>fernando@mail.com=>2021-06-18 21:14:53=>0=>A=>fernando@mail.com
+rrr666=>E=>2021-06-18 21:15:35=>0.00=>fernando@mail.com=>2021-06-18 21:15:24=>0=>S=>fernando@mail.com
+rrr666=>E=>2021-06-18 21:16:17=>0.00=>fernando@mail.com=>2021-06-18 20:15:55=>0=>S=>fernando@mail.com
+rrr666=>E=>2021-06-18 21:17:21=>0.90=>fernando@mail.com=>2021-06-18 21:17:09=>0=>S=>fernando@mail.com
+rrr666=>E=>2021-06-18 21:17:49=>50.49=>fernando@mail.com=>2021-06-18 21:17:43=>1=>C=>fernando@mail.com
