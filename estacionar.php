@@ -1,13 +1,14 @@
 <?php
 //var_dump($_GET);
 //&& isset($_POST["patente"]))
-/*if(isset($_GET["correo"])) {
+if(isset($_GET["correo"])) {
 $correo = $_GET["correo"];
 }
 else {
-  $correo ="";
+  //$correo ="";
+  header ("Location: error.php");
 }
-if(isset($_GET["patente"])) {
+/*if(isset($_GET["patente"])) {
 //$patente = $_GET["patente"];
 }
 else {
@@ -91,9 +92,14 @@ $correo=htmlspecialchars($_COOKIE["mail"]);
   <nav class="my-2 my-md-0 mr-md-3">
     <a class="p-2 text-dark" href="list_salidas.php">Listar Salidas</a>
     <a class="p-2 text-dark" href="list_estacionados.php">Listar Entradas</a>
-    <!--a class="p-2 text-dark" href="#">Support</a>
-    <a class="p-2 text-dark" href="#">Pricing</a-->
+    <a class="p-2 text-dark" href="gen_salidasPDF.php">Salida PDF</a>
+    <!--a class="p-2 text-dark" href="#">Pricing</a-->
   </nav>
+  <form enctype="multipart/form-data" action="subir.php" method="POST">
+    <input type="hidden" name="MAX_FILE_SIZE" value="512000" />
+   <p> Enviar mi archivo: <input name="subir_archivo" type="file" /></p>
+   <p> <input type="submit" value="Enviar Archivo" /></p>
+</form>
   <!--a class="btn btn-outline-primary" href="#">Sign up</a-->
 </div>
 

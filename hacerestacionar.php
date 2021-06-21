@@ -15,7 +15,8 @@ if(isset($_POST["movimiento"]) && isset($_POST["patente"])){
 	
 	
 }else{
-	die();
+	//die();
+	header ("Location: error.php");
 }
 if(isset($_POST["gnc"])){
 	$gnc=$_POST["gnc"];

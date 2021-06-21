@@ -1,1 +1,1 @@
-<h4>Cobrado</h4><table border=1><tr><th>patente</th><td>asd345</td></tr><tr><th>Importe</th><td>121,82</td><tr><th>Hora Entrada</th><td>2021-06-21 00:23:17</td></tr><tr><th>Hora Salida</th><td>2021-06-21 00:36:35</td></tr><tr><th>Duracion</th><td>13</td></tr></table>
+<h4>Cobrado</h4><table border=1><tr><th>patente</th><td>asd345</td></tr><tr><th>Importe</th><td>No Existe Vehiculo</td></tr></table>
