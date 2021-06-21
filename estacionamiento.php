@@ -12,9 +12,6 @@ class estacionamiento{
 		$listaDeAutosLeida=array();
 		$listaDeAutosLeida=recorreEstacionado();
 
-
-
-
 		return $listaDeAutosLeida;
 	}
 
@@ -86,8 +83,83 @@ class estacionamiento{
 		fclose($archivo);
 	}
 
+public static function crearTablaCobro($patente,$valor,$existe,$entrada,$salida,$segundo){
+
+		//$listado=estacionamiento::leerSalidas();
+	
+		$tablaHtml="<h4>Cobrado</h4><table border=1>";
+		$tablaHtml.="<tr>";
+		$tablaHtml.="<th>";
+		$tablaHtml.="patente";
+		$tablaHtml.="</th>";
+		$tablaHtml.="<td>";
+		$tablaHtml.=$patente;
+		$tablaHtml.="</td>";
+		$tablaHtml.="</tr>";
+		$tablaHtml.="<tr>";
+		$tablaHtml.="<th>";
+		$tablaHtml.="Importe";
+		$tablaHtml.="</th>";
+		$tablaHtml.="<td>";
+		switch($existe){
+			case 0:
+				$valor="No Existe Vehiculo";
+				$tablaHtml.=$valor;
+				$tablaHtml.="</td>";
+				break;
+			case 1:
+			$valor="Vehiculo se retiro";
+				$tablaHtml.=$valor;
+				$tablaHtml.="</td>";
+				break;
+			case 2:
+				$tablaHtml.=number_format($valor,2,',','.');
+				$tablaHtml.="</td>";
+				$tablaHtml.="<tr>";
+				$tablaHtml.="<th>";
+				$tablaHtml.="Hora Entrada";
+				$tablaHtml.="</th>";
+				$tablaHtml.="<td>";
+				$tablaHtml.=$entrada;
+				$tablaHtml.="</td>";
+				$tablaHtml.="</tr>";
+				$tablaHtml.="<tr>";
+				$tablaHtml.="<th>";
+				$tablaHtml.="Hora Salida";
+				$tablaHtml.="</th>";
+				$tablaHtml.="<td>";
+				$tablaHtml.=$salida;
+				$tablaHtml.="</td>";
+				$tablaHtml.="</tr>";
+				$tablaHtml.="<tr>";
+				$tablaHtml.="<th>";
+				$tablaHtml.="Duracion";
+				$tablaHtml.="</th>";
+				$tablaHtml.="<td>";
+				$minutos=$segundo/60;
+				$tablaHtml.=number_format($minutos,0,',','.');
+				$tablaHtml.="</td>";
+				//$tablaHtml.="</tr>";								
+				break;
+			case 3:
+			$valor="";
+				$tablaHtml.=$valor;
+				$tablaHtml.="</td>";
+				break;
+	}
+		//$tablaHtml.="</td>";
+		$tablaHtml.="</tr>";
+		$tablaHtml.="</table>";
+		
+
+		$archivo=fopen("tablaCobro.php","w");
+		fwrite($archivo,$tablaHtml);
+		fclose($archivo);
+		
+	}
+
 	public static function retornarListadoAutocomplit() {
-		$arrayPatentes = estacionamiento::leer("estacionados");
+		$arrayPatentes = estacionamiento::leer();//"estacionados"
 		$listadoRetorno="";
 		foreach($arrayPatentes as $datos){
 			$listadoRetorno.="\"$datos[0]\","; 

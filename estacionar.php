@@ -1,20 +1,24 @@
 <?php
 //var_dump($_GET);
 //&& isset($_POST["patente"]))
-if(isset($_GET["correo"])) {
+/*if(isset($_GET["correo"])) {
 $correo = $_GET["correo"];
 }
 else {
   $correo ="";
 }
 if(isset($_GET["patente"])) {
-$patente = $_GET["patente"];
+//$patente = $_GET["patente"];
 }
 else {
   $patente =" ";
-}
+}*/
 //echo "el correo es ".$correo;
+include_once "estacionamiento.php";
+estacionamiento::crearTablaEstacionado();
+estacionamiento::crearTablaSalidas();
 echo '¡Hola ' . htmlspecialchars($_COOKIE["mail"]) . '!';
+$correo=htmlspecialchars($_COOKIE["mail"]);
 ?>
 
 <!doctype html>
@@ -83,14 +87,14 @@ echo '¡Hola ' . htmlspecialchars($_COOKIE["mail"]) . '!';
   <body>
     
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-  <h5 class="my-0 mr-md-auto font-weight-normal">Company name</h5>
+  <h5 class="my-0 mr-md-auto font-weight-normal">Estacionamiento Wilde</h5>
   <nav class="my-2 my-md-0 mr-md-3">
-    <a class="p-2 text-dark" href="#">Features</a>
-    <a class="p-2 text-dark" href="#">Enterprise</a>
-    <a class="p-2 text-dark" href="#">Support</a>
-    <a class="p-2 text-dark" href="#">Pricing</a>
+    <a class="p-2 text-dark" href="list_salidas.php">Listar Salidas</a>
+    <a class="p-2 text-dark" href="list_estacionados.php">Listar Entradas</a>
+    <!--a class="p-2 text-dark" href="#">Support</a>
+    <a class="p-2 text-dark" href="#">Pricing</a-->
   </nav>
-  <a class="btn btn-outline-primary" href="#">Sign up</a>
+  <!--a class="btn btn-outline-primary" href="#">Sign up</a-->
 </div>
 
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
@@ -107,7 +111,7 @@ echo '¡Hola ' . htmlspecialchars($_COOKIE["mail"]) . '!';
         <input name="correo" type="text" id="correo" class="btn btn-lg btn-block btn-outline-primary mayusc-text" value="<?php echo $correo;?>"> 
         <br>
         <!--input name="patente" type="text" id="patente" class="btn btn-lg btn-block btn-outline-primary mayusc-text"-->
-        <input name="patente" type="text" id="autocomplete" class="recuadro"   placeholder="Ingrese Patente" required autofocus>  
+        <input name="patente" type="text" id="autocomplete" class="recuadro" placeholder="Ingrese Patente" required autofocus>  <!--value="<?php //$patente; ?>"-->
         <ul class="list-unstyled mt-3 mb-4">
          <h5 align = "center">Ingrese Patente del Vehiculo</h5>
          <br>
@@ -142,6 +146,10 @@ echo '¡Hola ' . htmlspecialchars($_COOKIE["mail"]) . '!';
   </div>
 </div>
 <table>
+  <th width="450"></th>
+  <th width="450"><?php include "tablaCobro.php"; ?></th>
+  </table>
+<table>
 <tr>
   <th width="250"></th>
   <th width="650">
@@ -150,6 +158,7 @@ echo '¡Hola ' . htmlspecialchars($_COOKIE["mail"]) . '!';
   <th width="650">
     <?php include "tablaSalidas.php";?>
   </th>
+</tr>
 </table>
 <br><br>
 </div>

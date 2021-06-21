@@ -1,72 +1,45 @@
-hzr977=>E=>2021-06-03 19:37:48=>3155.32=>fernando@mail.com
-nos316=>E=>2021-06-03 19:55:13=>3683.31=>fernando@mail.com
-nos316=>E=>2021-06-03 19:56:00=>3683.55=>fernando@mail.com
-ae123zz=>E=>2021-06-04 19:17:26=>3598.67=>fernando@mail.com
-abc111=>E=>2021-06-04 19:22:20=>450.00=>fernando@mail.com
-hzr977=>E=>2021-06-04 22:10:19=>3653.15=>fernando@mail.com
-hzr977=>E=>2021-06-05 17:11:14=>4009.80=>fernando@mail.com
-ae123zz=>E=>2021-06-05 17:15:19=>4010.64=>fernando@mail.com
-ae123zz=>E=>2021-06-05 17:16:07=>4010.89=>fernando@mail.com
-ae123zz=>E=>2021-06-05 17:17:40=>4010.81=>fernando@mail.com
-hzr977=>E=>2021-06-05 17:18:02=>4011.92=>fernando@mail.com
-ae123zz=>E=>2021-06-05 17:21:46=>4011.97=>fernando@mail.com
-ae123zz=>E=>2021-06-05 17:23:03=>4012.29=>fernando@mail.com
-ae123zz=>E=>2021-06-05 17:23:26=>4013.17=>fernando@mail.com
-ae123zz=>E=>2021-06-05 17:24:33=>4012.96=>fernando@mail.com
-hzr977=>E=>2021-06-05 17:24:56=>4014.08=>fernando@mail.com
-ae123zz=>E=>2021-06-05 17:25:16=>4013.06=>fernando@mail.com
-ae123zz=>E=>2021-06-05 17:26:34=>4013.39=>fernando@mail.com
-mbl234=>E=>2021-06-05 17:27:05=>3567.66=>fernando@mail.com
-vpu677=>E=>2021-06-05 17:28:38=>4907.86=>fernando@mail.com
-ae123zz=>E=>2021-06-05 17:29:58=>4014.46=>fernando@mail.com
-poi432=>E=>2021-06-05 17:41:46=>1.72=>fernando@mail.com
-poi432=>E=>2021-06-05 17:49:16=>35.48=>fernando@mail.com
-mbl234=>E=>2021-06-05 17:50:58=>3575.12=>fernando@mail.com
-poi432=>E=>2021-06-05 17:52:42=>50.92=>fernando@mail.com
-poi432=>E=>2021-06-05 18:01:07=>88.80=>fernando@mail.com
-jdd111=>E=>2021-06-05 18:14:08=>4031.17=>fernando@mail.com
-jdd111=>E=>2021-06-05 18:16:37=>4031.95=>fernando@mail.com
-jdd111=>E=>2021-06-05 18:22:27=>4033.77=>fernando@mail.com
-ae123zz=>E=>2021-06-05 18:24:02=>2.48=>fernando@mail.com
-nos316=>E=>2021-06-08 23:07:06=>5994.02=>fernando@mail.com
-hrz696=>E=>2021-06-08 23:14:39=>5.33=>fernando@mail.com
-jdl246=>E=>2021-06-08 23:16:19=>13.88=>fernando@mail.com
-nos316=>E=>2021-06-08 23:36:00=>103.20=>fernando@mail.com
-abc111=>E=>2021-06-08 23:36:30=>1959.50=>fernando@mail.com
-nos316=>E=>2021-06-08 23:53:13=>74.33=>fernando@mail.com
-jdl246=>E=>2021-06-08 23:53:45=>74.92=>fernando@mail.com
-nos316=>E=>2021-06-08 23:54:17=>79.12=>fernando@mail.com
-jdl246=>E=>2021-06-08 23:54:57=>80.33=>fernando@mail.com
-jdl246=>E=>2021-06-08 23:56:11=>75.67=>fernando@mail.com
-nos316=>E=>2021-06-11 20:18:07=>1288.35=>fernando@mail.com
-red321=>E=>2021-06-11 20:55:34=>1.50=>fernando@mail.com
-opi123=>E=>2021-06-11 21:52:12=>140.46=>fernando@mail.com
-hzs696=>E=>2021-06-11 21:52:43=>1317.74=>fernando@mail.com
-abc111=>E=>2021-06-11 21:53:37=>1318.12=>fernando@mail.com
-ab123cv=>E=>2021-06-11 21:54:36=>1317.45=>fernando@mail.com
-arl333=>E=>2021-06-11 21:55:03=>150.38=>fernando@mail.com
-rew544=>E=>2021-06-18 20:14:41=>0.00=>fernando@mail.com
-poi432=>E=>2021-06-18 20:15:05=>0.00=>fernando@mail.com
-rfr333=>E=>2021-06-18 20:17:07=>0.00=>fernando@mail.com
-aws321=>E=>2021-06-18 20:19:22=>172.88=>fernando@mail.com
-rer434=>E=>2021-06-18 20:20:24=>0.00=>fernando@mail.com
-ttt666=>E=>2021-06-18 20:20:41=>31.73=>fernando@mail.com
-tre345=>E=>2021-06-18 20:21:47=>29.00=>fernando@mail.com
-ert543=>E=>2021-06-18 20:22:00=>43.79=>fernando@mail.com
 lkj555=>E=>2021-06-18 20:46:32=>0.32=>fernando@mail.com=>2021-06-18 20:46:11=>1=>C=>fernando@mail.com
-ytr444=>E=>2021-06-18 21:09:46=>50.00=>fernando@mail.com=>2021-06-18 19:37:54=>1=>fernando@mail.com
-=>
-ytr444=>E=>2021-06-18 21:10:14=>50.00=>fernando@mail.com=>2021-06-18 19:37:54=>1=>fernando@mail.com
-=>
-rrr333=>E=>2021-06-18 21:11:21=>50.00=>fernando@mail.com=>2021-06-18 19:17:33=>1=>fernando@mail.com
-=>
-eeerrr=>E=>2021-06-18 21:11:42=>0.00=>fernando@mail.com=>2021-06-18 19:17:46=>0=>fernando@mail.com
-=>
+ytr444=>E=>2021-06-18 21:09:46=>50.00=>fernando@mail.com=>2021-06-18 19:37:54=>1=>C=>fernando@mail.com
+ytr444=>E=>2021-06-18 21:10:14=>50.00=>fernando@mail.com=>2021-06-18 19:37:54=>1=>C=>fernando@mail.com
+rrr333=>E=>2021-06-18 21:11:21=>50.00=>fernando@mail.com=>2021-06-18 19:17:33=>1=>C=>fernando@mail.com
+eeerrr=>E=>2021-06-18 21:11:42=>0.00=>fernando@mail.com=>2021-06-18 19:17:46=>0=>C=>fernando@mail.com
 eee444=>E=>2021-06-18 21:14:15=>50.31=>fernando@mail.com=>2021-06-18 21:13:34=>1=>C=>fernando@mail.com
-
 rrr666=>E=>2021-06-18 21:14:29=>0.00=>fernando@mail.com=>2021-06-18 21:13:45=>0=>S=>fernando@mail.com
 rrr666=>E=>2021-06-18 21:15:05=>0.18=>fernando@mail.com=>2021-06-18 21:14:53=>0=>A=>fernando@mail.com
 rrr666=>E=>2021-06-18 21:15:35=>0.00=>fernando@mail.com=>2021-06-18 21:15:24=>0=>S=>fernando@mail.com
 rrr666=>E=>2021-06-18 21:16:17=>0.00=>fernando@mail.com=>2021-06-18 20:15:55=>0=>S=>fernando@mail.com
 rrr666=>E=>2021-06-18 21:17:21=>0.90=>fernando@mail.com=>2021-06-18 21:17:09=>0=>S=>fernando@mail.com
 rrr666=>E=>2021-06-18 21:17:49=>50.49=>fernando@mail.com=>2021-06-18 21:17:43=>1=>C=>fernando@mail.com
+asd345=>E=>2021-06-20 22:02:33=>183.79=>fernando@mail.com=>2021-06-20 21:09:02=>1=>S=>fernando@mail.com
+porque=>E=>2021-06-20 22:08:53=>1.43=>fernando@mail.com=>2021-06-20 22:08:34=>0=>S=>fernando@mail.com
+ttt444=>E=>2021-06-20 22:12:45=>119.85=>fernando@mail.com=>2021-06-20 21:46:07=>0=>S=>fernando@mail.com
+tgb123=>E=>2021-06-20 22:13:41=>270.79=>fernando@mail.com=>2021-06-20 20:45:22=>1=>S=>fernando@mail.com
+eee111=>E=>2021-06-20 22:15:23=>223.47=>fernando@mail.com=>2021-06-20 21:36:50=>1=>S=>fernando@mail.com
+ggg444=>E=>2021-06-20 23:11:35=>276.09=>fernando@mail.com=>2021-06-20 21:41:09=>1=>S=>fernando@mail.com
+ffr444=>E=>2021-06-20 23:16:05=>283.21=>fernando@mail.com=>2021-06-20 21:42:48=>1=>S=>fernando@mail.com
+asd345=>E=>2021-06-20 23:24:50=>329.21=>fernando@mail.com=>2021-06-20 21:33:09=>1=>S=>fernando@mail.com
+rrr333=>E=>2021-06-20 23:25:27=>1027.78=>fernando@mail.com=>2021-06-18 19:17:33=>1=>S=>fernando@mail.com
+cdc444=>E=>2021-06-20 23:32:29=>981.56=>fernando@mail.com=>2021-06-18 19:12:30=>0=>S=>fernando@mail.com
+ded444=>E=>2021-06-20 23:34:28=>982.09=>fernando@mail.com=>2021-06-18 19:12:48=>0=>S=>fernando@mail.com
+ddd111=>E=>2021-06-20 23:36:24=>343.67=>fernando@mail.com=>2021-06-20 21:38:56=>1=>S=>fernando@mail.com
+www111=>E=>2021-06-20 23:38:14=>344.84=>fernando@mail.com=>2021-06-20 21:40:18=>1=>S=>fernando@mail.com
+rrr333=>E=>2021-06-20 23:40:33=>1032.50=>fernando@mail.com=>2021-06-18 19:17:33=>1=>S=>fernando@mail.com
+rrr333=>E=>2021-06-20 23:40:52=>1032.60=>fernando@mail.com=>2021-06-18 19:17:33=>1=>S=>fernando@mail.com
+rrr333=>E=>2021-06-20 23:42:48=>1033.21=>fernando@mail.com=>2021-06-18 19:17:33=>1=>S=>fernando@mail.com
+aqw333=>E=>2021-06-20 23:45:13=>353.75=>fernando@mail.com=>2021-06-20 21:43:43=>1=>S=>fernando@mail.com
+rrr333=>E=>2021-06-20 23:48:49=>1035.09=>fernando@mail.com=>2021-06-18 19:17:33=>1=>A=>fernando@mail.com
+qwe432=>E=>2021-06-20 23:54:31=>265.46=>fernando@mail.com=>2021-06-20 22:08:20=>0=>S=>fernando@mail.com
+frf=>E=>2021-06-20 23:56:45=>987.72=>fernando@mail.com=>2021-06-18 19:17:04=>2=>S=>fernando@mail.com
+frf=>E=>2021-06-20 23:59:58=>988.72=>fernando@mail.com=>2021-06-18 19:17:04=>2=>S=>fernando@mail.com
+frf=>E=>2021-06-21 00:04:31=>990.14=>fernando@mail.com=>2021-06-18 19:17:04=>2=>S=>fernando@mail.com
+rrr333=>E=>2021-06-21 00:04:51=>1040.10=>fernando@mail.com=>2021-06-18 19:17:33=>1=>S=>fernando@mail.com
+rrr333=>E=>2021-06-21 00:06:34=>1040.63=>fernando@mail.com=>2021-06-18 19:17:33=>1=>S=>fernando@mail.com
+trt444=>E=>2021-06-21 00:07:00=>991.34=>fernando@mail.com=>2021-06-18 19:15:43=>0=>S=>fernando@mail.com
+rrr333=>E=>2021-06-21 00:08:37=>1041.28=>fernando@mail.com=>2021-06-18 19:17:33=>1=>A=>fernando@mail.com
+rrr333=>E=>2021-06-21 00:11:45=>1240.71=>fernando@mail.com=>2021-06-18 19:17:33=>1=>A=>fernando@mail.com
+frf=>E=>2021-06-21 00:16:51=>1093.40=>fernando@mail.com=>2021-06-18 19:17:04=>2=>C=>fernando@mail.com
+trt444=>E=>2021-06-21 00:17:43=>1193.63=>fernando@mail.com=>2021-06-18 19:15:43=>0=>A=>fernando@mail.com
+ere555=>E=>2021-06-21 00:18:27=>1194.02=>fernando@mail.com=>2021-06-18 19:15:25=>0=>A=>fernando@mail.com
+cdc444=>E=>2021-06-21 00:20:36=>1195.92=>fernando@mail.com=>2021-06-18 19:12:30=>0=>A=>fernando@mail.com
+vhs234=>E=>2021-06-21 00:29:43=>4509.13=>fernando@mail.com=>2021-06-11 21:56:27=>0=>C=>fernando@mail.com
+asd345=>E=>2021-06-21 00:36:35=>121.82=>fernando@mail.com=>2021-06-21 00:23:17=>1=>A=>fernando@mail.com

@@ -1,27 +1,7 @@
+sss231=>I=>2021-06-18 19:08:50=>1=>C=>fernando@mail.com
+tgv123=>I=>2021-06-18 19:10:33=>0=>A=>fernando@mail.com
+eee222=>I=>2021-06-18 19:12:12=>0=>N=>fernando@mail.com
 
-vhs234=>I=>2021-06-11 21:56:27=>fernando@mail.com
-sss231=>I=>2021-06-18 19:08:50=>fernando@mail.com
-=>fernando@mail.com
-tgv123=>I=>2021-06-18 19:10:33=>=>fernando@mail.com
-eee222=>I=>2021-06-18 19:12:12=>0=>fernando@mail.com
-cdc444=>I=>2021-06-18 19:12:30=>0=>fernando@mail.com
-ded444=>I=>2021-06-18 19:12:48=>0=>fernando@mail.com
-=>fernando@mail.com
-ere555=>I=>2021-06-18 19:15:25=>0=>fernando@mail.com
-trt444=>I=>2021-06-18 19:15:43=>0=>fernando@mail.com
-=>fernando@mail.com
-frf=>I=>2021-06-18 19:17:04=>2=>fernando@mail.com
-rrr333=>I=>2021-06-18 19:17:33=>1=>fernando@mail.com
-
-
-
-tgb123=>I=>2021-06-20 20:45:22=>1=>S=>fernando@mail.com
-asd345=>I=>2021-06-20 21:09:02=>1=>S=>fernando@mail.com
-asd345=>I=>2021-06-20 21:33:09=>1=>S=>fernando@mail.com
-eee111=>I=>2021-06-20 21:36:50=>1=>S=>fernando@mail.com
-ddd111=>I=>2021-06-20 21:38:56=>1=>S=>fernando@mail.com
-www111=>I=>2021-06-20 21:40:18=>1=>S=>fernando@mail.com
-ggg444=>I=>2021-06-20 21:41:09=>1=>S=>fernando@mail.com
-ffr444=>I=>2021-06-20 21:42:48=>1=>S=>fernando@mail.com
-aqw333=>I=>2021-06-20 21:43:43=>1=>S=>fernando@mail.com
-ttt444=>I=>2021-06-20 21:46:07=>0=>S=>fernando@mail.com
+hzs696=>I=>2021-06-21 00:34:42=>1=>C=>fernando@mail.com
+ery545=>I=>2021-06-21 00:35:29=>0=>A=>fernando@mail.com
+ab345re=>I=>2021-06-21 00:36:17=>0=>C=>fernando@mail.com

@@ -42,10 +42,11 @@ if($gnc==1){
 $renglon="\n".$patente."=>".$movimiento."=>".$ahora."=>".$gnc."=>".$categoria."=>".$correo;
 /*$funcion que guarda en archivo el ingreso*/
 guardarEstacionado($renglon);
-estacionamiento::crearTablaEstacionado();
+//estacionamiento::crearTablaEstacionado();
 include_once "generarAutocompletar.php";  
 $nada="ingrese_patente a";
-header ("Location: estacionar.php?&correo=$correo&patente=$nada");
+estacionamiento::crearTablaCobro("",$valor,3,$entrada,$salida,$segundo);
+header ("Location: estacionar.php");//?&correo=$correo&patente=$nada
 } else{
 	//echo "patente ".$patente." movimiento ".$movimiento;
 	//funcion que busca registros en estacionado y devuelve vector
@@ -61,6 +62,7 @@ header ("Location: estacionar.php?&correo=$correo&patente=$nada");
 			$salida=date("Y-m-d H:i:s");
 			$egreso=$salida;
 			//llama a funcion que calcula el tiempo*/
+			$entrada=$datos[2];
 			$segundo=calculaTiempo($datos[2], $salida);
 			
 			//funcion que devuelve valor
@@ -73,7 +75,8 @@ header ("Location: estacionar.php?&correo=$correo&patente=$nada");
 			//$mostrar="entrada=$datos[2]-salida=$salida-duracion=$minutos-valor=$valor";
 			$mostrar="valor=$valor a";
 			modificarEstacionado($datos[0],$datos[1],$datos[2],$datos[3],$datos[4],$datos[5]);
-			estacionamiento::crearTablaSalidas();
+			//estacionamiento::crearTablaSalidas();
+			
 			//no funciona;
 			break;
 			} else {
@@ -82,8 +85,12 @@ header ("Location: estacionar.php?&correo=$correo&patente=$nada");
 			} 
 		
 		}
+
 	}
-	if($NoExiste==1){
+	/*estacionamiento::crearTablaEstacionado();
+	estacionamiento::crearTablaSalidas();*/
+	estacionamiento::crearTablaCobro($patente,$valor,$NoExiste,$entrada,$salida,$segundo);
+	/*if($NoExiste==1){
 		//echo "<br>la patente ".$patente." ya se retiro";
 		$mostrar="$patente_se_retiro a";
 	}
@@ -91,8 +98,8 @@ header ("Location: estacionar.php?&correo=$correo&patente=$nada");
 		//echo "<br>No existe el vehiculo";
 		$mostrar="No_existe_vehiculo a";
 	}
-	//$mostrar="hola";
-	header ("Location: estacionar.php?&correo=$correo&patente=$mostrar");
+	//$mostrar="hola";*/
+	header ("Location: estacionar.php"); 		//&correo=$correo&patente=$mostrar");
 }
 //var_dump($listadoDeUsuario);
   
