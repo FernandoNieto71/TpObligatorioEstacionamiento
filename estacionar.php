@@ -33,7 +33,11 @@ echo '¡Hola ' . htmlspecialchars($_COOKIE["mail"]) . '!';
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/pricing/">
 
-    
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.autocomplete.min.js"></script>
+    <script type="text/javascript" src="js/funcionAutoCompletar.js"></script>
+ 
+
 
     <!-- Bootstrap core CSS -->
 <!--link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet"-->
@@ -103,7 +107,7 @@ echo '¡Hola ' . htmlspecialchars($_COOKIE["mail"]) . '!';
         <input name="correo" type="text" id="correo" class="btn btn-lg btn-block btn-outline-primary mayusc-text" value="<?php echo $correo;?>"> 
         <br>
         <!--input name="patente" type="text" id="patente" class="btn btn-lg btn-block btn-outline-primary mayusc-text"-->
-        <input name="patente" type="text" id="autocomplete" class="recuadro" value=<?php echo $patente;?>  required autofocus id="autocomplete">  
+        <input name="patente" type="text" id="autocomplete" class="recuadro"   placeholder="Ingrese Patente" required autofocus>  
         <ul class="list-unstyled mt-3 mb-4">
          <h5 align = "center">Ingrese Patente del Vehiculo</h5>
          <br>

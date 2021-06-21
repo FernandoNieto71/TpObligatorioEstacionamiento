@@ -43,6 +43,7 @@ $renglon="\n".$patente."=>".$movimiento."=>".$ahora."=>".$gnc."=>".$categoria."=
 /*$funcion que guarda en archivo el ingreso*/
 guardarEstacionado($renglon);
 estacionamiento::crearTablaEstacionado();
+include_once "generarAutocompletar.php";  
 $nada="ingrese_patente a";
 header ("Location: estacionar.php?&correo=$correo&patente=$nada");
 } else{
@@ -94,6 +95,6 @@ header ("Location: estacionar.php?&correo=$correo&patente=$nada");
 	header ("Location: estacionar.php?&correo=$correo&patente=$mostrar");
 }
 //var_dump($listadoDeUsuario);
-    
+  
 
 ?>
