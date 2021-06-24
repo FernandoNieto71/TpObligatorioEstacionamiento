@@ -45,7 +45,7 @@
   <body>
     
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <a class="navbar-brand" href="#">Nombre de la aplicacion</a>
+  <!--a class="navbar-brand" href="#">Nombre de la aplicacion</a-->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -53,7 +53,7 @@
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="login.php">Login</a>
@@ -61,14 +61,14 @@
       <li class="nav-item">
         <a class="nav-link" href="registro.php">Registrate</a>
       </li>
-      <li class="nav-item dropdown">
+      <!--li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
         <div class="dropdown-menu" aria-labelledby="dropdown01">
           <a class="dropdown-item" href="#">Action</a>
           <a class="dropdown-item" href="#">Another action</a>
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
-      </li>
+      </li-->
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
@@ -97,7 +97,7 @@
         <p>Nuestro personal, al llegar el cliente, lo recibira y le indicara lugar donde estacionar el 
         vehiculo. Dependiendo del servicio, en cuanto al tiempo, debera dejar la llave o se la podra llevar.
       Al retirarse se le entregara un ticket con los datos de patente y hora de ingreso</p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        <!--p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p-->
       </div>
       <div class="col-md-4">
         <h2>Retiro</h2>
@@ -105,12 +105,14 @@
         a nuestros empleados que hara el retiro del mismo. Luego de presentar el ticket y abonar
        prodra retirar el mismo. En el caso que sea una hora pico, nuestros empleados lo llevaran 
      hasta la puerta.</p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        <!--p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p-->
       </div>
       <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Playing ping pong all night long, everything's all neon and hazy. Yeah, she's so in demand. She's sweet as pie but if you break her heart. But down to earth. It's time to face the music I'm no longer your muse. I guess that I forgot I had a choice.</p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        <h2>Adminitracion</h2>
+        <p>Los empleados administradores pueden ingresar el vehiculo para mas tarde retirar el 
+        mismo. El sistema mostrara hora de ingreso y de salida, el tiempo de duracion y el valor
+      del importe a cobrar. Tambien se pueden listar los vehiculos ya retirados.</p>
+        <!--p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p-->
       </div>
     </div>
 

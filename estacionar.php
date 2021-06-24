@@ -109,65 +109,6 @@ $correo=htmlspecialchars($_COOKIE["mail"]);
   Ingrese el numero de dominio y seleccione Ingreso o Egreso</p>
 </div>
 
-<div class ="justify-content-center">
-  <div class="container">
-    <!--div class="card-deck mb-3 text-center"-->
-
-      <form id=miform"  action="hacerestacionar.php" method="post"><!--action="primerPag.html"-->
-        <input name="correo" type="text" id="correo" class="btn btn-lg btn-block btn-outline-primary mayusc-text" value="<?php echo $correo;?>"> 
-        <br>
-        <!--input name="patente" type="text" id="patente" class="btn btn-lg btn-block btn-outline-primary mayusc-text"-->
-        <input name="patente" type="text" id="autocomplete" class="recuadro" placeholder="Ingrese Patente" required autofocus>  <!--value="<?php //$patente; ?>"-->
-        <ul class="list-unstyled mt-3 mb-4">
-         <h5 align = "center">Ingrese Patente del Vehiculo</h5>
-         <br>
-         <div style="text-align:center;">
-         <table>
-          <tr>
-            <input name="categoria" type="radio" value="S"> Normal  <input name="categoria" type="radio" value="C"> Camioneta <input name="categoria" type="radio" value="A"> Alta Gama 
-          </tr>
-          <tr>
-            <br>
-            <br>
-          </tr>
-          
-          <tr>
-            <input name="gnc" type="checkbox" id="decla" value="1" "text-align:center; vertical-align: middle;"> Vehiculo a GNC</td>
-          </tr>
-        </table>
-      </div>
-        </ul>
-        
-        <div align = "center">
-         <input name="movimiento" type="radio" value="I"> Ingreso  <input name="movimiento" type="radio" value="E"> Egreso
-        </div>
-        <br/>
-        <div align = "center">
-          <input type="submit" value="Enviar">
-        </div>
-
-      </form>
-
-    <!--/div-->
-  </div>
-</div>
-<table>
-  <th width="450"></th>
-  <th width="450"><?php include "tablaCobro.php"; ?></th>
-  </table>
-<table>
-<tr>
-  <th width="250"></th>
-  <th width="650">
-    <?php include "tablaEstacionado.php";?>
-  </th>
-  <th width="650">
-    <?php include "tablaSalidas.php";?>
-  </th>
-</tr>
-</table>
-<br><br>
-</div>
 <div class="container">
   <div class="card-deck mb-3 text-center">
     <div class="card mb-4 shadow-sm">
@@ -218,7 +159,68 @@ $correo=htmlspecialchars($_COOKIE["mail"]);
     </div>
   </div>
 
-  <footer class="pt-4 my-md-5 pt-md-5 border-top">
+<div class ="justify-content-center">
+  <div class="container">
+    <!--div class="card-deck mb-3 text-center"-->
+
+      <form id=miform"  action="hacerestacionar.php" method="post"><!--action="primerPag.html"-->
+        <input name="correo" type="text" id="correo" class="btn btn-lg btn-block btn-outline-primary mayusc-text" value="<?php echo $correo;?>"> 
+        <br>
+        <!--input name="patente" type="text" id="patente" class="btn btn-lg btn-block btn-outline-primary mayusc-text"-->
+        <input name="patente" type="text" id="autocomplete" class="recuadro" placeholder="Ingrese Patente" required autofocus>  <!--value="<?php //$patente; ?>"-->
+        <ul class="list-unstyled mt-3 mb-4">
+         <h5 align = "center">Ingrese Patente del Vehiculo</h5>
+         <br>
+         <div style="text-align:center;">
+         <table>
+          <tr>
+            <input name="categoria" type="radio" value="S" checked> Normal  <input name="categoria" type="radio" value="C"> Camioneta <input name="categoria" type="radio" value="A"> Alta Gama 
+          </tr>
+          <tr>
+            <br>
+            <br>
+          </tr>
+          
+          <tr>
+            <input name="gnc" type="checkbox" id="decla" value="1" "text-align:center; vertical-align: middle;"> Vehiculo a GNC</td>
+          </tr>
+        </table>
+      </div>
+        </ul>
+        
+        <div align = "center">
+         <input name="movimiento" type="radio" value="I"> Ingreso  <input name="movimiento" type="radio" value="E"> Egreso
+        </div>
+        <br/>
+        <div align = "center">
+          <input type="submit" value="Enviar">
+        </div>
+
+      </form>
+
+    <!--/div-->
+  </div>
+</div>
+<table>
+  <th width="250"></th>
+  <th width="450"><?php include "tablaCobro.php"; ?></th>
+  </table>
+<table>
+<tr>
+  <th width="150"></th>
+  <th width="550">
+    <?php include "tablaEstacionado.php";?>
+  </th>
+  <th width="450">
+    <?php include "tablaSalidas.php";?>
+  </th>
+</tr>
+</table>
+<br><br>
+</div>
+
+
+  <!--footer class="pt-4 my-md-5 pt-md-5 border-top">
     <div class="row">
       <div class="col-12 col-md">
         <img class="mb-2" src="https://uxwing.com/wp-content/themes/uxwing/download/07-design-and-development/bootstrap-4.png" alt="" width="24" height="24">
@@ -254,7 +256,7 @@ $correo=htmlspecialchars($_COOKIE["mail"]);
         </ul>
       </div>
     </div>
-  </footer>
+  </footer-->
 </div>
 
 
