@@ -85,7 +85,7 @@
       <h1 class="display-3">Estacionamiento Wilde!</h1>
       <p>Esta es la pagina web de la empresa Estacionamieno Wilde. Aqui podra ingresar y egresar 
       vehiculos, obtener el arancel y listarlos.</p>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+      <!--p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p-->
     </div>
   </div>
 
