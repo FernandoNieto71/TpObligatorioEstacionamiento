@@ -33,12 +33,20 @@ class estacionamiento{
 		$tablaHtml.="</th>";
 
 		foreach($listado as $dato){
-			//if($empleado==$dato[5]){
+			if(!$empleado==""){
+				if($empleado==rtrim($dato[5])){
+					$tablaHtml.="<tr><td>$dato[5] </td>";
+					$tablaHtml.="<td>$dato[0] </td>";
+					$tablaHtml.="<td>$dato[2] </td>";
+					$tablaHtml.="<td width=\"15\"><Img src=\"archivos/".$dato[0].".jpg\" width=\"75%\"/></td></tr>";
+				} 
+			}else
+				{
 				$tablaHtml.="<tr><td>$dato[5] </td>";
 				$tablaHtml.="<td>$dato[0] </td>";
 				$tablaHtml.="<td>$dato[2] </td>";
-				$tablaHtml.="<td width=\"15\"><Img src=\"archivos/".$dato[0].".jpg\" width=\"75%\"/></td></tr>";
-			//}
+				$tablaHtml.="<td width=\"15\"><Img src=\"archivos/".$dato[0].".jpg\" width=\"75%\"/></td></tr>";					
+				}
 		}
 
 		$tablaHtml.="</table>";

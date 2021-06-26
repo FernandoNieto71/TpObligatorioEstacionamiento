@@ -93,11 +93,11 @@ $correo=htmlspecialchars($_COOKIE["mail"]);
 
 <div class="card mb-4 shadow-sm">
   <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Listado estacionado</h4>
+        <h4 class="my-0 font-weight-normal" align="center">Listado estacionado</h4>
   </div>
  
 
-<div class="card-body">
+<div class="card-body" align="center">
    <h1 class="card-title pricing-card-title"> <!--small class="text-muted">/ mo</small--></h1>
      <ul class="list-unstyled mt-3 mb-4">
         <li>Muestra los vehiculos</li>
@@ -121,7 +121,7 @@ $correo=htmlspecialchars($_COOKIE["mail"]);
   
   </tr>
   </table>
-<table>
+<table align="center">
 <tr>
   <th width="150"></th>
   <th width="650">
@@ -132,6 +132,7 @@ $correo=htmlspecialchars($_COOKIE["mail"]);
 </table>
 <br><br>
 </div>
+<div align="center"><th><a class="btn btn-primary btn-lg" href="estacionar.php?&correo" role="button">Volver </a></th></div>
 
 
   <!--footer class="pt-4 my-md-5 pt-md-5 border-top">
