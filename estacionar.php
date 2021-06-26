@@ -30,10 +30,10 @@ $correo=htmlspecialchars($_COOKIE["mail"]);
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.80.0">
-    <!--title>Movimiento de playa v4.6</title>
-    <link rel="shortcut icon" href="imagen/favicon.ico"-->
+    <title>Movimiento de playa</title>
+    <link rel="shortcut icon" href="imagen/favicon.ico">
     <?php 
-    include_once("titulo.php");
+    //include_once("titulo.php");
     ?>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/pricing/">
@@ -94,12 +94,19 @@ $correo=htmlspecialchars($_COOKIE["mail"]);
     <a class="p-2 text-dark" href="list_estacionados.php">Listar Entradas</a>
     <a class="p-2 text-dark" href="gen_salidasPDF.php">Salida PDF</a>
     <!--a class="p-2 text-dark" href="#">Pricing</a-->
-  </nav>
-  <form enctype="multipart/form-data" action="subir.php" method="POST">
+  <!--/nav-->
+  <form enctype="multipart/form-data" action="upload.php" method="POST">
     <input type="hidden" name="MAX_FILE_SIZE" value="512000" />
    <p> Enviar mi archivo: <input name="subir_archivo" type="file" /></p>
    <p> <input type="submit" value="Enviar Archivo" /></p>
 </form>
+  <form enctype="multipart/form-data" action="estacionarXlistado.php" method="POST">
+    <!--input type="hidden" name="MAX_FILE_SIZE" value="512000" /-->
+   <!--p> Listado por empleado <input name="subir_archivo" type="file" /></p-->
+   <input name="correo" type="text" class="recuadro">
+   <p> <input type="submit" value="Listado por empleado" /></p>
+</form>  
+</nav>
   <!--a class="btn btn-outline-primary" href="#">Sign up</a-->
 </div>
 
@@ -202,16 +209,19 @@ $correo=htmlspecialchars($_COOKIE["mail"]);
   </div>
 </div>
 <table>
+  <tr>
   <th width="250"></th>
   <th width="450"><?php include "tablaCobro.php"; ?></th>
+  <th><a class="btn btn-primary btn-lg" href="list_salidas.php" role="button">Ticket </a></th>
+  </tr>
   </table>
 <table>
 <tr>
   <th width="150"></th>
-  <th width="550">
+  <th width="650">
     <?php include "tablaEstacionado.php";?>
   </th>
-  <th width="450">
+  <th width="350">
     <?php include "tablaSalidas.php";?>
   </th>
 </tr>

@@ -15,7 +15,37 @@ class estacionamiento{
 		return $listaDeAutosLeida;
 	}
 
+	public static function crearTablaEstacionadoXempleado($empleado){
+		//$empleado="octavio@mail.com";
+		$listado=estacionamiento::leer();
+		$tablaHtml="<h4>Estacionados</h4><table border=1>";
+		$tablaHtml.="<th>";
+		$tablaHtml.="empleado";
+		$tablaHtml.="</th>";
+		$tablaHtml.="<th>";
+		$tablaHtml.="patente";
+		$tablaHtml.="</th>";
+		$tablaHtml.="<th>";
+		$tablaHtml.="ingreso";
+		$tablaHtml.="</th>";
+		$tablaHtml.="<th>";
+		$tablaHtml.="imagen";
+		$tablaHtml.="</th>";
 
+		foreach($listado as $dato){
+			//if($empleado==$dato[5]){
+				$tablaHtml.="<tr><td>$dato[5] </td>";
+				$tablaHtml.="<td>$dato[0] </td>";
+				$tablaHtml.="<td>$dato[2] </td>";
+				$tablaHtml.="<td width=\"15\"><Img src=\"archivos/".$dato[0].".jpg\" width=\"75%\"/></td></tr>";
+			//}
+		}
+
+		$tablaHtml.="</table>";
+		$archivo=fopen("tablaEstacionadoXempleado.php","w");
+		fwrite($archivo,$tablaHtml);
+		fclose($archivo);
+	}
 
 	public static function crearTablaEstacionado(){
 
@@ -28,11 +58,14 @@ class estacionamiento{
 		$tablaHtml.="<th>";
 		$tablaHtml.="ingreso";
 		$tablaHtml.="</th>";
+		$tablaHtml.="<th>";
+		$tablaHtml.="imagen";
+		$tablaHtml.="</th>";
 
 		foreach($listado as $dato){
 			$tablaHtml.="<tr><td>$dato[0] </td>";
-			$tablaHtml.="<td>$dato[2] </td></tr>";
-
+			$tablaHtml.="<td>$dato[2] </td>";
+			$tablaHtml.="<td width=\"15\"><Img src=\"archivos/".$dato[0].".jpg\" width=\"75%\"/></td></tr>";
 		}
 
 		$tablaHtml.="</table>";

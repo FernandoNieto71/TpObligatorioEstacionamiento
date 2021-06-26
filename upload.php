@@ -10,7 +10,7 @@ input[type=submit]{ background:#6ca16e; width:100%;
     padding:5px 15px; 
     background:#ccc; 
     cursor:pointer;
-	font-size:16px;
+    font-size:16px;
    
 }
 table td{ padding:5px;}
@@ -26,7 +26,7 @@ $subir_archivo = $directorio.basename($_FILES['subir_archivo']['name']);
 echo "<div>";
 if (move_uploaded_file($_FILES['subir_archivo']['tmp_name'], $subir_archivo)) {
       echo "El archivo es válido y se cargó correctamente.<br><br>";
-	   echo"<a href='".$subir_archivo."' target='_blank'><img src='".$subir_archivo."' width='150'></a>";
+       echo"<a href='".$subir_archivo."' target='_blank'><img src='".$subir_archivo."' width='150'></a>";
     } else {
        echo "La subida ha fallado";
     }
@@ -34,9 +34,9 @@ if (move_uploaded_file($_FILES['subir_archivo']['tmp_name'], $subir_archivo)) {
 ?>
 <br>
 <div style="border:1px solid #000000; text-transform:uppercase">  
-<h3 align="center"><div align="center"><a href="estacionar.php?&correo=htmlspecialchars($_COOKIE["mail"]);">Volver </a></div></h3></div>
+<!--h3 align="center"><div align="center"><a href="estacionar.php">Volver </a></div></h3></div-->
 
  
 </div>
-	</body>
+    </body>
 </html>

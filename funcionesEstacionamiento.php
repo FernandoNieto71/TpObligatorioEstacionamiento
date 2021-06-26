@@ -103,6 +103,27 @@ function recorreSalidas(){
   return $listadoSalidas;
 }
 
+function generaTicket($renglon){
+    $archivo=fopen("ticket.txt", "w");
+    fwrite($archivo,$renglon);
+    fclose($archivo);
+}
+
+function recorreTicket(){
+  $listadoTicket=array();
+  $archivo=fopen("ticket.txt", "r");
+  while(!feof($archivo)){
+    
+    $renglon=fgets($archivo);
+    $datosSalidas=explode("=>", $renglon);
+    if(isset($datosSalidas[1]))//[0]!=" ")
+    {
+      $listadoTicket[]=$datosSalidas;
+    }
+  }
+  fclose($archivo);
+  return $listadoTicket;
+}
 
 //guardar cobrado
 function modificarEstacionado($patente, $tipo, $horaIngreso, $gnc, $categoria,$mail)
@@ -118,6 +139,8 @@ function modificarEstacionado($patente, $tipo, $horaIngreso, $gnc, $categoria,$m
         
         file_put_contents("estacionado.txt", $listadoDePatentes);
     }
+
+
 
 
 ?>

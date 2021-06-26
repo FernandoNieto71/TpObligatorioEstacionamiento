@@ -3,7 +3,10 @@
 /*
 echo "<br/>";
 
-var_dump($_POST);*/
+var_dump($_POST);
+echo $_POST["movimiento"];
+echo "<br>";
+echo $_POST["patente"];*/
 //vincula con archivo que contiene funciones
 include_once "funcionesEstacionamiento.php";
 include_once "estacionamiento.php";
@@ -16,7 +19,7 @@ if(isset($_POST["movimiento"]) && isset($_POST["patente"])){
 	
 }else{
 	//die();
-	header ("Location: error.php");
+	//header ("Location: error.php");
 }
 if(isset($_POST["gnc"])){
 	$gnc=$_POST["gnc"];
@@ -41,13 +44,13 @@ if($gnc==1){
 	$gnc=0;
 }
 $renglon="\n".$patente."=>".$movimiento."=>".$ahora."=>".$gnc."=>".$categoria."=>".$correo;
-/*$funcion que guarda en archivo el ingreso*/
+//$funcion que guarda en archivo el ingreso
 guardarEstacionado($renglon);
 //estacionamiento::crearTablaEstacionado();
 include_once "generarAutocompletar.php";  
 $nada="ingrese_patente a";
 estacionamiento::crearTablaCobro("",$valor,3,$entrada,$salida,$segundo);
-header ("Location: estacionar.php");//?&correo=$correo&patente=$nada
+header ("Location: estacionar.php?&correo=$correo");//?&correo=$correo&patente=$nada
 } else{
 	//echo "patente ".$patente." movimiento ".$movimiento;
 	//funcion que busca registros en estacionado y devuelve vector
@@ -62,7 +65,7 @@ header ("Location: estacionar.php");//?&correo=$correo&patente=$nada
 			//echo "Auto egresado existe";
 			$salida=date("Y-m-d H:i:s");
 			$egreso=$salida;
-			//llama a funcion que calcula el tiempo*/
+			//llama a funcion que calcula el tiempo
 			$entrada=$datos[2];
 			$segundo=calculaTiempo($datos[2], $salida);
 			
@@ -70,6 +73,8 @@ header ("Location: estacionar.php");//?&correo=$correo&patente=$nada
 			$valor=calculaImporte($segundo,$datos[3],$datos[4]);
 			$renglon="\n".$patente."=>".$movimiento."=>".$egreso."=>".$valor."=>".$correo."=>".$datos[2]."=>".$datos[3]."=>".$datos[4]."=>".$datos[5];
 			guardarSalidas($renglon);
+			$ticket="\n".$patente."=>".$entrada."=>".$egreso."=>".$valor."=>".$correo."=>".$datos[3]."=>".$datos[4];
+			generaTicket($ticket);
 			
 			$NoExiste = 2;
 			//echo "<br>entrada ".$datos[2]." salida ".$salida." duracion ".$minutos. " valor $".$valor;
@@ -88,19 +93,10 @@ header ("Location: estacionar.php");//?&correo=$correo&patente=$nada
 		}
 
 	}
-	/*estacionamiento::crearTablaEstacionado();
-	estacionamiento::crearTablaSalidas();*/
+	
 	estacionamiento::crearTablaCobro($patente,$valor,$NoExiste,$entrada,$salida,$segundo);
-	/*if($NoExiste==1){
-		//echo "<br>la patente ".$patente." ya se retiro";
-		$mostrar="$patente_se_retiro a";
-	}
-	if($NoExiste==0){
-		//echo "<br>No existe el vehiculo";
-		$mostrar="No_existe_vehiculo a";
-	}
-	//$mostrar="hola";*/
-	header ("Location: estacionar.php"); 		//&correo=$correo&patente=$mostrar");
+
+	header ("Location: estacionar.php?&correo=$correo"); 		//&correo=$correo&patente=$mostrar");
 }
 //var_dump($listadoDeUsuario);
   
