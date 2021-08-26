@@ -1,7 +1,7 @@
 $(function(){
 			  var patentes = [ 
 
-			   "tgv123","ab345re","dfg555","poi444", 
+			   "tgv123","poi555","ab345re","dfg555","gfg555","poi444","vts935", 
 
 			   
 			  ];
