@@ -71,5 +71,18 @@ class baseEstacionados
 				return $Obj_Acceso_Datos->RetornarUltimoIdInsertado();
 	 }
 
+	 	public function traerDatosEstacionados()
+	 {
+
+			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
+			$consulta =$Obj_Acceso_Datos->RetornarConsulta("
+				SELECT id FROM estacionados where patente = :patente");	
+				$consulta->bindValue(':patente',$this->patente, PDO::PARAM_INT);		
+				$consulta->execute();
+				$UsuarioBuscado= $consulta->fetchObject('baseEstacionados');//fetchColumn();
+				return $UsuarioBuscado;
+
+	 }
+
 }
 ?>

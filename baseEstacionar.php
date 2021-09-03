@@ -3,6 +3,7 @@
 //&& isset($_POST["patente"]))
 if(isset($_GET["correo"])) {
 $correo = $_GET["correo"];
+$usuarioID=$_GET["usuarioID"];
 }
 else {
   //$correo ="";
@@ -170,7 +171,7 @@ $correo=htmlspecialchars($_COOKIE["mail"]);
   <div class="container">
     <!--div class="card-deck mb-3 text-center"-->
 
-      <form id=miform"  action="hacerestacionar.php" method="post"><!--action="primerPag.html"-->
+      <form id=miform"  action="baseHacerEstacionar.php" method="post"><!--action="primerPag.html"-->
         <input name="correo" type="text" id="correo" class="btn btn-lg btn-block btn-outline-primary mayusc-text" value="<?php echo $correo;?>"> 
         <br>
         <!--input name="patente" type="text" id="patente" class="btn btn-lg btn-block btn-outline-primary mayusc-text"-->

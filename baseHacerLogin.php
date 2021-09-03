@@ -20,7 +20,8 @@ if(isset($buscadoID->id)){
 	if($buscadoID->password == $clave){
 		setcookie("mail",$mail);
         $nada="ingrese_patente del";
-		header ("Location: baseEstacionar.php?&correo=$mail&patente=$nada");
+        $usuarioID=$buscadoID->id;
+		header ("Location: baseEstacionar.php?&correo=$mail&patente=$nada&usuarioID=$usuarioID");
 	}
 	else{
 		echo "error en clave";
