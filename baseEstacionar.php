@@ -2,7 +2,8 @@
 //var_dump($_GET);
 //&& isset($_POST["patente"]))
 if(isset($_GET["correo"])) {
-$correo = $_GET["correo"];
+//$correo = $_GET["correo"];
+$correo=htmlspecialchars($_COOKIE["mail"]);
 $usuarioID=$_GET["usuarioID"];
 }
 else {
@@ -19,8 +20,8 @@ else {
 include_once "estacionamiento.php";
 estacionamiento::crearTablaEstacionado();
 estacionamiento::crearTablaSalidas();
-echo '¡Hola ' . htmlspecialchars($_COOKIE["mail"]) . '!';
-$correo=htmlspecialchars($_COOKIE["mail"]);
+/*echo '¡Hola ' . htmlspecialchars($_COOKIE["mail"]) . '!';
+$correo=htmlspecialchars($_COOKIE["mail"]);*/
 ?>
 
 <!doctype html>
@@ -90,13 +91,13 @@ $correo=htmlspecialchars($_COOKIE["mail"]);
     
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
   <h5 class="my-0 mr-md-auto font-weight-normal">Estacionamiento Wilde</h5>
-  <nav class="my-2 my-md-0 mr-md-3">
+  <!--nav class="my-2 my-md-0 mr-md-3">
     <a class="p-2 text-dark" href="list_salidas.php">Listar Salidas</a>
     <a class="p-2 text-dark" href="list_estacionados.php">Listar Entradas</a>
     <a class="p-2 text-dark" href="gen_salidasPDF.php">Salida PDF</a>
     <!--a class="p-2 text-dark" href="#">Pricing</a-->
   <!--/nav-->
-  <form enctype="multipart/form-data" action="upload.php" method="POST">
+  <!--form enctype="multipart/form-data" action="upload.php" method="POST">
     <input type="hidden" name="MAX_FILE_SIZE" value="512000" />
    <p> Enviar mi archivo: <input name="subir_archivo" type="file" /></p>
    <p> <input type="submit" value="Enviar Archivo" /></p>
@@ -104,7 +105,7 @@ $correo=htmlspecialchars($_COOKIE["mail"]);
   <form enctype="multipart/form-data" action="estacionarXlistado.php" method="POST">
     <!--input type="hidden" name="MAX_FILE_SIZE" value="512000" /-->
    <!--p> Listado por empleado <input name="subir_archivo" type="file" /></p-->
-   <input name="correo" type="text" class="recuadro">
+   <!--input name="correo" type="text" class="recuadro">
    <p> <input type="submit" value="Listado por empleado" /></p>
 </form>  
 </nav>
@@ -211,7 +212,7 @@ $correo=htmlspecialchars($_COOKIE["mail"]);
     <!--/div-->
   </div>
 </div>
-<table>
+<!--table>
   <tr>
   <th width="250"></th>
   <th width="450"><?php include "tablaCobro.php"; ?></th>
@@ -228,7 +229,7 @@ $correo=htmlspecialchars($_COOKIE["mail"]);
     <?php include "tablaSalidas.php";?>
   </th>
 </tr>
-</table>
+</table-->
 <br><br>
 </div>
 

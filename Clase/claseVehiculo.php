@@ -17,7 +17,7 @@ class claseVehiculo
   	public static function TraerTodoLosVehiculos()
 	{
 			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
-			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT patente, color, foto FROM Vehiculos");
+			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT patente, color, foto FROM Vehiculo");
 			$consulta->execute();			
 			return $consulta->fetchAll(PDO::FETCH_CLASS, 'claseVehiculo');		
 	}
@@ -25,7 +25,7 @@ class claseVehiculo
 	public static function TraerUnRegistro($id) 
 	{
 			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
-			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT patente, color, foto FROM Vehiculos where id = $id");
+			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT patente, color, foto FROM Vehiculo where id = $id");
 			$consulta->execute();
 			$cdBuscado= $consulta->fetchObject('claseVehiculo');
 			return $cdBuscado;				
@@ -38,7 +38,7 @@ class claseVehiculo
 
 			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
 			$consulta =$Obj_Acceso_Datos->RetornarConsulta("
-				SELECT id FROM Vehiculos where patente = :patente");	
+				SELECT id FROM Vehiculo where patente = :patente");	
 				$consulta->bindValue(':patente',$this->patente, PDO::PARAM_INT);		
 				$consulta->execute();
 				$VehiculoBuscado= $consulta->fetchObject('claseVehiculo');//fetchColumn();
@@ -51,7 +51,7 @@ class claseVehiculo
 
 			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
 			$consulta =$Obj_Acceso_Datos->RetornarConsulta("
-				update Vehiculos 
+				update Vehiculo
 				set patente='$this->patente',
 				color='$this->color',
 				foto='$this->foto' 
@@ -63,7 +63,7 @@ class claseVehiculo
 	 public function InsertarVehiculoParametros()
 	 {
 				$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
-				$consulta =$Obj_Acceso_Datos->RetornarConsulta("INSERT into Vehiculos (patente,color,foto)values(:patente,:color,:foto)");
+				$consulta =$Obj_Acceso_Datos->RetornarConsulta("INSERT into Vehiculo (patente,color,foto)values(:patente,:color,:foto)");
 				$consulta->bindValue(':patente',$this->patente, PDO::PARAM_STR);
 				$consulta->bindValue(':color', $this->color, PDO::PARAM_STR);
 				$consulta->bindValue(':foto', $this->foto, PDO::PARAM_STR);

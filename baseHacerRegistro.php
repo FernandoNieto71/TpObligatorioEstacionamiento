@@ -32,33 +32,6 @@ else{
 		header ("Location: baseRegistro.php");
 	}
 }
-// revisa si existe el usuario 
-/*$pasar=
-if($pasar == 0){
-	if($clave==$copiaclave){
-		date_default_timezone_set("America/Argentina/Buenos_Aires");
-		$ahora=date("Y-m-d H:i:s");
-		$renglon="\n".$mail."=>".$clave."=>".$ahora;
-		$archivo=fopen("usuarios.txt", "a");
-		fwrite($archivo, $renglon);
-		fclose($archivo);
-		header ("Location: login.php");
-	}
-	else{
-		echo "Error en CLAVE!!";
-	}	
-} else {
-	header ("Location: errorUsuario.php");
-}*/
-
-/*
-//inserta en usuarios el nuevo usuario
-
-$unUsuario=claseUsuario::dameUnUsuario($_POST["nombre"], $_POST["correo"], $_POST["clave"]);
-$ultimoID=$unUsuario->insertarUsuarioParametros();
-
-//print("Ultimo ID: $ultimoID <br>");
-*/
 
 
 ?>

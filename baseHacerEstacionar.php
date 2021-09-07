@@ -32,19 +32,25 @@ if(!isset($buscadoID->id)){
 	//insertar en vehiculo
 	$unVehiculo->color="azul";
 	$unVehiculo->foto="una foto";
-	$buscadoID=InsertarVehiculoParametros()
-	
+	$buscadoID=$unVehiculo->InsertarVehiculoParametros();
+	//var_dump($buscadoID);	
+	$unVehiculo->patente=$patente;
+$buscadoID=$unVehiculo->traerIDVehiculo();		
 }
 $unEmail=new claseUsuario();
 $unEmail->email=$correo;
 $usuarioID=$unEmail->traerDatosUsuario();
 
+
+if($movimiento=='I'){
 $unEstacionardo=new baseEstacionados();
-$unEstacionardo->id_usuario=$usuarioID;
-$unEstacionardo->id_vehiculo=$buscadoID;
+
+$unEstacionardo->id_usuario=$usuarioID->id;
+$unEstacionardo->id_vehiculo=$buscadoID->id;
 $unEstacionardo->fechaingreso=getdate();
 $estacionadID=$unEstacionardo->insertarUsuarioParametros();
 
+}
 //insertar estacionado
 
 
