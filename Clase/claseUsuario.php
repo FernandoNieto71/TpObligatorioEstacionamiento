@@ -80,5 +80,12 @@ class claseUsuario
 			return $unUsuario;
 	 }
 
+	 public static function usuarioEstacionar($correo){
+	 	$unEmail=new claseUsuario();
+		$unEmail->email=$correo;
+		$usuarioID=$unEmail->traerDatosUsuario();
+		return $usuarioID;
+	 }
+
 }
 ?>

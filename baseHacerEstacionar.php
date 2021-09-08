@@ -25,30 +25,14 @@ if(isset($_POST["movimiento"]) && isset($_POST["patente"])){
 	//die();
 	//header ("Location: error.php");
 }
-$unVehiculo=new claseVehiculo();
-$unVehiculo->patente=$patente;
-$buscadoID=$unVehiculo->traerIDVehiculo();
-if(!isset($buscadoID->id)){
-	//insertar en vehiculo
-	$unVehiculo->color="azul";
-	$unVehiculo->foto="una foto";
-	$buscadoID=$unVehiculo->InsertarVehiculoParametros();
-	//var_dump($buscadoID);	
-	$unVehiculo->patente=$patente;
-$buscadoID=$unVehiculo->traerIDVehiculo();		
-}
-$unEmail=new claseUsuario();
-$unEmail->email=$correo;
-$usuarioID=$unEmail->traerDatosUsuario();
+
+$buscadoID=claseVehiculo::vehiculoEstacionar($patente);
+$usuarioID=claseUsuario::usuarioEstacionar($correo);
 
 
 if($movimiento=='I'){
-$unEstacionardo=new baseEstacionados();
 
-$unEstacionardo->id_usuario=$usuarioID->id;
-$unEstacionardo->id_vehiculo=$buscadoID->id;
-$unEstacionardo->fechaingreso=getdate();
-$estacionadID=$unEstacionardo->insertarUsuarioParametros();
+	$estacionadID=baseEstacionados::estacionarUnVehiculoUsuario($usuarioID->id, $buscadoID->id);
 
 }
 //insertar estacionado

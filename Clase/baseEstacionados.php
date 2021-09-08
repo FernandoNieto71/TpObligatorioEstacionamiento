@@ -85,5 +85,14 @@ class baseEstacionados
 
 	 }
 
+	 public static function estacionarUnVehiculoUsuario($usuario, $vehiculo){
+	 	$unEstacionardo=new baseEstacionados();
+		$unEstacionardo->id_usuario=$usuario;
+		$unEstacionardo->id_vehiculo=$vehiculo;
+		$unEstacionardo->fechaingreso=getdate();
+		$estacionadID=$unEstacionardo->insertarUsuarioParametros();
+		return $estacionadID;
+	 }
+
 }
 ?>

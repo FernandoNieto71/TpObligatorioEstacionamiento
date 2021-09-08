@@ -80,5 +80,24 @@ class claseVehiculo
 			return $unVehiculo;
 	 }
 
+	 //nuevo
+	 public static function vehiculoEstacionar($patente){
+
+	 	$unVehiculo=new claseVehiculo();
+		$unVehiculo->patente=$patente;
+		$buscadoID=$unVehiculo->traerIDVehiculo();
+		if(!isset($buscadoID->id)){
+			//insertar en vehiculo
+			$unVehiculo->color="azul";
+			$unVehiculo->foto="una foto";
+			$buscadoID=$unVehiculo->InsertarVehiculoParametros();
+			//var_dump($buscadoID);	
+			$unVehiculo->patente=$patente;
+		$buscadoID=$unVehiculo->traerIDVehiculo();		
+		}
+
+		return $buscadoID;
+	 }
+
 }
 ?>
