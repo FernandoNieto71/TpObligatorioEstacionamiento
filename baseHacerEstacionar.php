@@ -31,7 +31,10 @@ $usuarioID=claseUsuario::usuarioEstacionar($correo);
 
 
 if($movimiento=='I'){
-
+	//$date= new DateTime();
+	//$date=date('Y-m-d');
+	//$fecha=strftime(format);
+	//var_dump($date);
 	$estacionadID=baseEstacionados::estacionarUnVehiculoUsuario($usuarioID->id, $buscadoID->id);
 
 }

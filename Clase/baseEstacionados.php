@@ -63,11 +63,11 @@ class baseEstacionados
 	 public function InsertarUsuarioParametros()
 	 {
 				$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
-				/*$consulta =$Obj_Acceso_Datos->RetornarConsulta("INSERT into estacionados (id_usuario, id_vehiculo, fechaingreso) values(:id_usuario,:id_vehiculo,:fechaingreso)");*/
-				$consulta =$Obj_Acceso_Datos->RetornarConsulta("INSERT into estacionados (id_usuario, id_vehiculo) values(:id_usuario,:id_vehiculo)");
+				$consulta =$Obj_Acceso_Datos->RetornarConsulta("INSERT into estacionados (id_usuario, id_vehiculo, fechaingreso) values(:id_usuario,:id_vehiculo,:fechaingreso)");
+				/*$consulta =$Obj_Acceso_Datos->RetornarConsulta("INSERT into estacionados (id_usuario, id_vehiculo) values(:id_usuario,:id_vehiculo)");*/
 				$consulta->bindValue(':id_usuario',$this->id_usuario, PDO::PARAM_STR);
 				$consulta->bindValue(':id_vehiculo', $this->id_vehiculo, PDO::PARAM_STR);
-				//$consulta->bindValue(':fechaingreso', $this->fechaingreso, PDO::PARAM_STR);
+				$consulta->bindValue(':fechaingreso', $this->fechaingreso, PDO::PARAM_STR);
 				$consulta->execute();		
 				return $Obj_Acceso_Datos->RetornarUltimoIdInsertado();
 	 }
@@ -89,7 +89,10 @@ class baseEstacionados
 	 	$unEstacionardo=new baseEstacionados();
 		$unEstacionardo->id_usuario=$usuario;
 		$unEstacionardo->id_vehiculo=$vehiculo;
-		$unEstacionardo->fechaingreso=getdate();
+		date_default_timezone_set("America/Argentina/Buenos_Aires");
+
+		$date=date('Y-m-d');
+		$unEstacionardo->fechaingreso=$date;
 		$estacionadID=$unEstacionardo->insertarUsuarioParametros();
 		return $estacionadID;
 	 }
