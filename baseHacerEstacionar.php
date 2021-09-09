@@ -27,14 +27,12 @@ if(isset($_POST["movimiento"]) && isset($_POST["patente"])){
 }
 
 $buscadoID=claseVehiculo::vehiculoEstacionar($patente);
-$usuarioID=claseUsuario::usuarioEstacionar($correo);
+//$usuarioID=claseUsuario::usuarioEstacionar($correo);
+$usuarioID=claseUsuario::buscaUsuario($correo);
 
 
 if($movimiento=='I'){
-	//$date= new DateTime();
-	//$date=date('Y-m-d');
-	//$fecha=strftime(format);
-	//var_dump($date);
+	
 	$estacionadID=baseEstacionados::estacionarUnVehiculoUsuario($usuarioID->id, $buscadoID->id);
 
 }

@@ -15,9 +15,8 @@ $copiaclave=$_POST["copiaclave"];
 }
 include_once ("clase/AccesoBase.php");
 include_once ("clase/ClaseUsuario.php");
-$unEmail=new claseUsuario();
-$unEmail->email=$mail;
-$buscadoID=$unEmail->traerDatosUsuario();
+
+$buscadoID=claseUsuario::buscaUsuario($mail);
 if(isset($buscadoID->id)){
 	echo "ya existe el usuario";
 }
@@ -27,9 +26,8 @@ else{
 		header ("Location: baseRegistro.php");
 	} 
 	else{
-		$unUsuario=claseUsuario::dameUnUsuario($name, $mail, $clave);
-		$ultimoID=$unUsuario->insertarUsuarioParametros();
-		header ("Location: baseRegistro.php");
+		$ultimoID=claseUsuario::nuevoUsuario($name, $mail, $clave);
+		header ("Location: baseLogin.php");
 	}
 }
 

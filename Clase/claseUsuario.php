@@ -80,11 +80,28 @@ class claseUsuario
 			return $unUsuario;
 	 }
 
-	 public static function usuarioEstacionar($correo){
+
+	 //busca mail, duplicada en buscaUsuario
+	/* public static function usuarioEstacionar($correo){
 	 	$unEmail=new claseUsuario();
 		$unEmail->email=$correo;
 		$usuarioID=$unEmail->traerDatosUsuario();
 		return $usuarioID;
+	 }*/
+
+	 //buscar usuario por mail y devuelve id y password
+	 public static function buscaUsuario($mail){
+	 	$unEmail=new claseUsuario();
+		$unEmail->email=$mail;
+		$buscadoID=$unEmail->traerDatosUsuario();
+		return $buscadoID;
+	 }
+
+	 // genera ambiente para grabar en usuario uno nuevo
+	 public static function nuevoUsuario($name, $mail, $clave){
+	 	$unUsuario=claseUsuario::dameUnUsuario($name, $mail, $clave);
+		$ultimoID=$unUsuario->insertarUsuarioParametros();
+		return $ultimoID;
 	 }
 
 }

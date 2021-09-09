@@ -13,9 +13,8 @@ if(isset($_POST["correo"]) && isset($_POST["clave"])){
 
 include_once ("clase/AccesoBase.php");
 include_once ("clase/ClaseUsuario.php");
-$unEmail=new claseUsuario();
-$unEmail->email=$mail;
-$buscadoID=$unEmail->traerDatosUsuario();
+
+$buscadoID=claseUsuario::buscaUsuario($mail);
 if(isset($buscadoID->id)){
 	if($buscadoID->password == $clave){
 		setcookie("mail",$mail);

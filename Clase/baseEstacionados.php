@@ -85,7 +85,9 @@ class baseEstacionados
 
 	 }
 
-	 public static function estacionarUnVehiculoUsuario($usuario, $vehiculo){
+	
+	 //con los datos usuario y vehiculo ID genera un nuevo estacionado
+	public static function estacionarUnVehiculoUsuario($usuario, $vehiculo){
 	 	$unEstacionardo=new baseEstacionados();
 		$unEstacionardo->id_usuario=$usuario;
 		$unEstacionardo->id_vehiculo=$vehiculo;

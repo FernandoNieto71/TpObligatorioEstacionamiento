@@ -80,7 +80,7 @@ class claseVehiculo
 			return $unVehiculo;
 	 }
 
-	 //nuevo
+	 //nuevo -> busca patente si no existe crea nuevo, luego exista o no devuelve id vehiculo
 	 public static function vehiculoEstacionar($patente){
 
 	 	$unVehiculo=new claseVehiculo();
