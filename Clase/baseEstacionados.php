@@ -53,7 +53,7 @@ class baseEstacionados
 			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
 			$consulta =$Obj_Acceso_Datos->RetornarConsulta("
 				update estacionados 
-				set id_fechaegreso='$this->fechaegreso',
+				set fechaegreso='$this->fechaegreso',
 				importe='$this->importe'
 				WHERE id='$this->id'");
 			return $consulta->execute();
@@ -77,8 +77,8 @@ class baseEstacionados
 
 			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
 			$consulta =$Obj_Acceso_Datos->RetornarConsulta("
-				SELECT id FROM estacionados where patente = :patente");	
-				$consulta->bindValue(':patente',$this->patente, PDO::PARAM_INT);		
+				SELECT * FROM estacionados where id_vehiculo = :id_vehiculo and fechaingreso is not null and fechaegreso is null");
+				$consulta->bindValue(':id_vehiculo',$this->id, PDO::PARAM_INT);
 				$consulta->execute();
 				$UsuarioBuscado= $consulta->fetchObject('baseEstacionados');//fetchColumn();
 				return $UsuarioBuscado;
@@ -97,6 +97,18 @@ class baseEstacionados
 		$unEstacionardo->fechaingreso=$date;
 		$estacionadID=$unEstacionardo->insertarUsuarioParametros();
 		return $estacionadID;
+	 }
+
+	 public static function salidaEstacionado($idV){
+		$buscarSalida=new baseEstacionados();
+		$buscarSalida->id=$idV;
+		$salidaID=$buscarSalida->traerDatosEstacionados();
+		//var_dump($salidaID->id);
+		$buscarSalida->id=$salidaID->id;
+		$date=date('Y-m-d');
+		$buscarSalida->fechaegreso=$date;
+		$buscarSalida->importe=360;
+		$buscarSalida->ModificarEstacionado();	 	
 	 }
 
 }

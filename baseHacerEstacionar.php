@@ -32,11 +32,13 @@ $usuarioID=claseUsuario::buscaUsuario($correo);
 
 
 if($movimiento=='I'){
-	
+	//insertar estacionado
 	$estacionadID=baseEstacionados::estacionarUnVehiculoUsuario($usuarioID->id, $buscadoID->id);
 
 }
-//insertar estacionado
+else{
+	baseEstacionados::salidaEstacionado($buscadoID->id);
+}
 
 
 
