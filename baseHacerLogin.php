@@ -24,43 +24,13 @@ if(isset($buscadoID->id)){
 	}
 	else{
 		echo "error en clave";
-		header ("Location: baseLogin.php");
+		header ("Location: baseLogin.php?error=Clave incorrecta");
 	}
 	
 }
 else{
-	header ("Location: baseRegistro.php");
+	header ("Location: baseRegistro.php?error=No exite usuario, tiene que generar uno nuevo");
 }
 
-/*
-//include_once "funcionesLogin.php";
-
-//devuelve los datos de usuarios
-//$listadoDeUsuario=cargaUsuarios();
-
-
-$ingreso=0;
-
-//revisa si existe usuario, si la clave esta bien y da acceso
-$ingreso=func_ingreso($listadoDeUsuario, $mail, $clave);
-
-
-echo $ingreso;
-
-switch($ingreso){
-	case 0:
-		header ("Location: errorLogin.php");
-		break;
-	case 1:
-		header ("Location: errorLoginClave.php");
-		break;
-	case 2:
-		
-        setcookie("mail",$mail);
-        $nada="ingrese_patente del";
-		header ("Location: estacionar.php?&correo=$mail&patente=$nada");
-		break;
-}
-    */
 
 ?>

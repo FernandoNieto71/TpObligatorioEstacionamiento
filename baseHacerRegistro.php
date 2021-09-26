@@ -18,12 +18,13 @@ include_once ("clase/ClaseUsuario.php");
 
 $buscadoID=claseUsuario::buscaUsuario($mail);
 if(isset($buscadoID->id)){
-	echo "ya existe el usuario";
+	//echo "ya existe el usuario";
+	header ("Location: baseRegistro.php?error=Ya existe el usuario");
 }
 else{
 	//echo "no lo encontro";
 	if(!($clave==$copiaclave)){
-		header ("Location: baseRegistro.php");
+		header ("Location: baseRegistro.php?error=Usuario inexistente");
 	} 
 	else{
 		$ultimoID=claseUsuario::nuevoUsuario($name, $mail, $clave);

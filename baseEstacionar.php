@@ -2,9 +2,12 @@
 //var_dump($_GET);
 //&& isset($_POST["patente"]))
 if(isset($_GET["correo"])) {
-//$correo = $_GET["correo"];
+ 
 $correo=htmlspecialchars($_COOKIE["mail"]);
-$usuarioID=$_GET["usuarioID"];
+
+if(isset($_GET["usuarioID"])){
+  $usuarioID=$_GET["usuarioID"];
+  }
 }
 else {
   //$correo ="";
@@ -91,10 +94,11 @@ $correo=htmlspecialchars($_COOKIE["mail"]);*/
     
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
   <h5 class="my-0 mr-md-auto font-weight-normal">Estacionamiento Wilde</h5>
-  <!--nav class="my-2 my-md-0 mr-md-3">
+
+  <!nav class="my-2 my-md-0 mr-md-3">
     <a class="p-2 text-dark" href="list_salidas.php">Listar Salidas</a>
-    <a class="p-2 text-dark" href="list_estacionados.php">Listar Entradas</a>
-    <a class="p-2 text-dark" href="gen_salidasPDF.php">Salida PDF</a>
+    <a class="p-2 text-dark" href="baseListEstacionados.php">Listar Entradas</a>
+    <a class="p-2 text-dark" href="baseGenSalidasPDF.php">Salida PDF</a>
     <!--a class="p-2 text-dark" href="#">Pricing</a-->
   <!--/nav-->
   <!--form enctype="multipart/form-data" action="upload.php" method="POST">
@@ -103,17 +107,20 @@ $correo=htmlspecialchars($_COOKIE["mail"]);*/
    <p> <input type="submit" value="Enviar Archivo" /></p>
 </form>
   <form enctype="multipart/form-data" action="estacionarXlistado.php" method="POST">
-    <!--input type="hidden" name="MAX_FILE_SIZE" value="512000" /-->
+    <input type="hidden" name="MAX_FILE_SIZE" value="512000" /-->
    <!--p> Listado por empleado <input name="subir_archivo" type="file" /></p-->
    <!--input name="correo" type="text" class="recuadro">
    <p> <input type="submit" value="Listado por empleado" /></p>
 </form>  
 </nav>
-  <!--a class="btn btn-outline-primary" href="#">Sign up</a-->
+  <a class="btn btn-outline-primary" href="#">Sign up</a-->
 </div>
 
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h1 class="display-4">Estacionamiento Wilde</h1>
+  <?php
+    echo "<h3>¡Hola " . htmlspecialchars($_COOKIE["mail"]) . "!</h3>";
+  ?>
   <p class="lead">Bienvenidos a la pagina de tareas de nuestra playa de estacionamiento. <br>
   Ingrese el numero de dominio y seleccione Ingreso o Egreso</p>
 </div>
@@ -172,7 +179,7 @@ $correo=htmlspecialchars($_COOKIE["mail"]);*/
   <div class="container">
     <!--div class="card-deck mb-3 text-center"-->
 
-      <form id=miform"  action="baseHacerEstacionar.php" method="post"><!--action="primerPag.html"-->
+      <form id="miform"  action="baseHacerEstacionar.php" method="post"><!--action="primerPag.html"-->
         <input name="correo" type="text" id="correo" class="btn btn-lg btn-block btn-outline-primary mayusc-text" value="<?php echo $correo;?>"> 
         <br>
         <!--input name="patente" type="text" id="patente" class="btn btn-lg btn-block btn-outline-primary mayusc-text"-->
@@ -180,7 +187,7 @@ $correo=htmlspecialchars($_COOKIE["mail"]);*/
         <ul class="list-unstyled mt-3 mb-4">
          <h5 align = "center">Ingrese Patente del Vehiculo</h5>
          <br>
-         <div style="text-align:center;">
+         <!--div style="text-align:center;">
          <a class="btn btn-primary btn-lg" href="webcam-master/webcam.php" role="button">Usar Webcam </a>
          <br><br><br>
          <table>
@@ -196,7 +203,7 @@ $correo=htmlspecialchars($_COOKIE["mail"]);*/
             <input name="gnc" type="checkbox" id="decla" value="1" "text-align:center; vertical-align: middle;"> Vehiculo a GNC</td>
           </tr>
         </table>
-      </div>
+      </div-->
         </ul>
         
         <div align = "center">

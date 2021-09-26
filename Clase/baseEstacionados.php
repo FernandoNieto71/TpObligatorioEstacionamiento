@@ -1,4 +1,5 @@
 <?php
+include_once "basefuncionesEstacionamiento.php";
 
 class baseEstacionados
 {
@@ -93,7 +94,7 @@ class baseEstacionados
 		$unEstacionardo->id_vehiculo=$vehiculo;
 		date_default_timezone_set("America/Argentina/Buenos_Aires");
 
-		$date=date('Y-m-d');
+		$date=date("Y-m-d H:i:s");
 		$unEstacionardo->fechaingreso=$date;
 		$estacionadID=$unEstacionardo->insertarUsuarioParametros();
 		return $estacionadID;
@@ -103,12 +104,32 @@ class baseEstacionados
 		$buscarSalida=new baseEstacionados();
 		$buscarSalida->id=$idV;
 		$salidaID=$buscarSalida->traerDatosEstacionados();
-		//var_dump($salidaID->id);
 		$buscarSalida->id=$salidaID->id;
-		$date=date('Y-m-d');
+		$date=date("Y-m-d H:i:s");
 		$buscarSalida->fechaegreso=$date;
-		$buscarSalida->importe=360;
+		$buscarSalida->importe=$buscarSalida->buscaImporte($salidaID->fechaingreso, $salidaID->id_vehiculo, $date);
 		$buscarSalida->ModificarEstacionado();	 	
+	 }
+
+	 public static function buscaImporte($entrada, $id_vehiculo,$salida){
+	 	$segundo=calculaTiempo($entrada, $salida);
+	 	return calculaImporte($segundo,$id_vehiculo);
+
+	 }
+
+
+	 public static function mostrarEstacionadosCompleto(){
+			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
+			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT b.patente as patente, c.email as email, b.gnc as gnc, b.clase as categoria, a.fechaingreso as ingreso FROM estacionados as a inner join vehiculo as b on a.id_vehiculo = b.id inner join usuarios as c on a.id_usuario = c.id WHERE fechaegreso is null");
+			$consulta->execute();			
+			return $consulta->fetchAll(PDO::FETCH_CLASS, 'baseEstacionados');	
+	 }
+
+	 public static function mostrarRetiradosCompleto(){
+			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
+			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT b.patente as patente, c.email as email, b.gnc as gnc, b.clase as categoria, a.fechaingreso as ingreso, a.fechaegreso as salida, a.importe as importe FROM estacionados as a inner join vehiculo as b on a.id_vehiculo = b.id inner join usuarios as c on a.id_usuario = c.id WHERE fechaegreso is not null");
+			$consulta->execute();			
+			return $consulta->fetchAll(PDO::FETCH_CLASS, 'baseEstacionados');	
 	 }
 
 }

@@ -12,20 +12,32 @@ echo $_POST["patente"];*/
 include_once "estacionamiento.php";*/
 include_once ("clase/AccesoBase.php");
 include_once ("clase/claseVehiculo.php");
-include_once ("clase/baseEstacionados.php");
-include_once ("clase/ClaseUsuario.php");
+//include_once ("clase/baseEstacionados.php");
+//include_once ("clase/ClaseUsuario.php");
 
-if(isset($_POST["movimiento"]) && isset($_POST["patente"])){
+if(isset($_POST["color"]) && isset($_POST["patente"])){
 	$correo=$_POST["correo"];
-	$movimiento=$_POST["movimiento"];
+	$color=$_POST["color"];
 	$patente=$_POST["patente"];
-	//$usuarioID=$_POST["usuarioID"];
+	$foto="WebCam-master/archivos/".$_POST["patente"];
+	if($_POST["gnc"]){
+	$gnc=$_POST["gnc"];
+	} else {
+		$gnc=0;
+	}
+	$clase=$_POST["categoria"];
+	//$buscadoID=
+	claseVehiculo::vehiculoNuevo($patente,$color,$foto,$gnc,$clase);
+	
+	header ("Location: baseEstacionar.php?&correo=$correo&patente=$patente");
+
 	
 }else{
+	
 	//die();
 	//header ("Location: error.php");
 }
-//$usuarioID=claseUsuario::usuarioEstacionar($correo);
+/*$usuarioID=claseUsuario::usuarioEstacionar($correo);
 $usuarioID=claseUsuario::buscaUsuario($correo);
 
 $buscadoID=claseVehiculo::vehiculoEstacionar($patente);
@@ -41,11 +53,10 @@ if(!$buscadoID){
 if($movimiento=='I'){
 	//insertar estacionado
 	$estacionadID=baseEstacionados::estacionarUnVehiculoUsuario($usuarioID->id, $buscadoID->id);
-	header ("Location: baseEstacionar.php?&correo=$correo&patente=$patente");
+
 }
 else{
 	baseEstacionados::salidaEstacionado($buscadoID->id);
-	header ("Location: baseEstacionar.php?&correo=$correo&patente=$patente");
 }
 
 

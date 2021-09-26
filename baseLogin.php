@@ -53,6 +53,13 @@
       <input type="checkbox" value="remember-me"> Recordarme
     </label>
   </div>
+  <?php
+    if(isset($_GET['error'])){
+      echo "<h3>El error es ".$_GET['error']."</h3>";
+    }
+
+  ?>
+
   <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
   <p class="mt-5 mb-3 text-muted">&copy; 2017-2021</p>
 </form>

@@ -44,6 +44,12 @@
 <form class="form-signin" action="baseHacerRegistro.php" method="post">
   <img class="mb-4" src="https://uxwing.com/wp-content/themes/uxwing/download/07-design-and-development/bootstrap-4.png" width="72" height="72">
   <h1 class="h3 mb-3 font-weight-normal">Registrate</h1>
+    <?php
+    if(isset($_GET['error'])){
+      echo "<h3>".$_GET['error']."</h3>";
+    }
+
+  ?>
   <label for="inputName" class="sr-only">Apellido y nombre</label>
   <input name="nombre" type="name" id="inputName" class="form-control" placeholder="Apellido y nombre" required autofocus>
   <label for="inputEmail" class="sr-only">Email address</label>

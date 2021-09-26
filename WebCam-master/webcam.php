@@ -2,7 +2,7 @@
 	<head>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 		<script type="text/javascript">
-			var username = prompt("Enter a username","");
+			var username = prompt("Ingrese patente","");
 			window.addEventListener("DOMContentLoaded",function(){
 				//Grab elements
 				var canvas,video,context,videoObj,url,upload;
@@ -73,5 +73,8 @@
 		<button id="snap" type="button">Snap</button>
 		<canvas id="c" width="100" height="100"></canvas>
 		<button type="button" id="upload">Upload</button>
+		<a class="text-muted" type="button" href="javascript: history.go(-1)">Volver</a>
 	</body>
+	
+
 </html>
