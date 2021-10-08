@@ -28,8 +28,8 @@ class baseEstacionados
 			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
 			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT id_usuario, id_vehiculo, fechaingreso, fechaegreso, importe FROM estacionados where id = $id");
 			$consulta->execute();
-			$cdBuscado= $consulta->fetchObject('baseEstacionados');
-			return $cdBuscado;				
+			$idBuscado= $consulta->fetchObject('baseEstacionados');
+			return $idBuscado;				
 
 			
 	}
@@ -190,7 +190,7 @@ class baseEstacionados
 		{
 			echo "<table border=1 cellpadding=5px>";
 			echo "<th> Patente </th>";
-			echo "<th> Usuario Ingreso </th>";
+			echo "<th> Usuario Engreso </th>";
 			echo "<th> Fecha Egreso </th>";
 			echo "<th> Importe </th>";
 
@@ -202,6 +202,44 @@ class baseEstacionados
 				echo "<td>$datos->egreso</td>";
 				echo "<td>$datos->importe</td></tr>";
 			}
+	
+			echo "</table>";
+	
+		}
+	}
+
+
+
+
+	 	public static function traerDatosSalido() 
+	{
+			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
+			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT b.patente as patente, c.email as email, a.fechaegreso as egreso, a.importe as importe FROM estacionados as a inner join vehiculo as b on a.id_vehiculo = b.id inner join usuarios as c on a.id_usuario = c.id where a.fechaegreso is not null order by a.fechaegreso DESC LIMIT 1");
+			$consulta->execute();
+			$idBuscado= $consulta->fetchObject('baseEstacionados');
+			return $idBuscado;				
+
+			
+	}
+
+		 public static function mostrarCobroSalido()
+	{
+		//$id = 29;
+		$estacionados = baseEstacionados::traerDatosSalido();
+	
+		if(isset($estacionados))
+		{
+			echo "<table border=1 cellpadding=5px>";
+			echo "<th> Patente </th>";
+			echo "<th> Usuario Engreso </th>";
+			echo "<th> Fecha Egreso </th>";
+			echo "<th> Importe </th>";
+			
+			echo "<tr><td>$estacionados->patente</td>";
+			echo "<td>$estacionados->email</td>";
+			echo "<td>$estacionados->egreso</td>";
+			echo "<td>$estacionados->importe</td></tr>";
+			//}
 	
 			echo "</table>";
 	

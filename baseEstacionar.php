@@ -98,7 +98,7 @@ $correo=htmlspecialchars($_COOKIE["mail"]);*/
   <h5 class="my-0 mr-md-auto font-weight-normal">Estacionamiento Wilde</h5>
 
   <!nav class="my-2 my-md-0 mr-md-3">
-    <a class="p-2 text-dark" href="list_salidas.php">Listar Salidas</a>
+    <a class="p-2 text-dark" href="baselistSalidas.php">Listar Salidas</a>
     <a class="p-2 text-dark" href="baseListEstacionados.php">Listar Entradas</a>
     <a class="p-2 text-dark" href="baseGenSalidasPDF.php">Salida PDF</a>
     <!--a class="p-2 text-dark" href="#">Pricing</a-->
@@ -221,13 +221,19 @@ $correo=htmlspecialchars($_COOKIE["mail"]);*/
     <!--/div-->
   </div>
 </div>
-<!--table>
+
+<br><br>
+<table align="center">
+  <th align="justify-content-center">Ticket</th>
   <tr>
-  <th width="250"></th>
-  <th width="450"><?php include "tablaCobro.php"; ?></th>
-  <th><a class="btn btn-primary btn-lg" href="list_salidas.php" role="button">Ticket </a></th>
+    <th width="250"></th>
+    <th width="450"><?php include_once "clase/baseEstacionados.php"; 
+    include_once "clase/AccesoBase.php";
+
+    baseEstacionados::mostrarCobroSalido(); ?></th>
+  <!--th><a class="btn btn-primary btn-lg" href="list_salidas.php" role="button">Ticket </a></th-->
   </tr>
-  </table-->
+  </table>
 
 <br><br>
 <div>
