@@ -56,10 +56,10 @@
         <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="login.php">Login</a>
+        <a class="nav-link" href="baseLogin.php">Login</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="registro.php">Registrate</a>
+        <a class="nav-link" href="baseRegistro.php">Registrate</a>
       </li>
       <!--li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>

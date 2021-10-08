@@ -1,7 +1,0 @@
-carlos@mail.com=>qaz=>2021-05-22 02:58:11
-pedro@mail.com=>qwer=>2021-05-22 03:03:44
-sofia@mail.com=>sofia=>2021-05-22 18:37:50
-nata@mail.com=>natalia=>2021-05-22 18:59:55
-fernando@mail.com=>fernando=>2021-05-22 19:04:13
-estela@mail.com=>estela=>2021-06-04 15:17:59
-octavio@mail.com=>octavio=>2021-06-24 20:38:24

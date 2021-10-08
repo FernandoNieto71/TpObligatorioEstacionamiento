@@ -18,9 +18,9 @@ else {
   $patente =" ";
 }*/
 //echo "el correo es ".$correo;
-include_once "estacionamiento.php";
-estacionamiento::crearTablaEstacionado();
-estacionamiento::crearTablaSalidas();
+include_once "baseEstacionamiento.php";
+//estacionamiento::crearTablaEstacionado();
+//estacionamiento::crearTablaSalidas();
 /*echo '¡Hola ' . htmlspecialchars($_COOKIE["mail"]) . '!';
 $correo=htmlspecialchars($_COOKIE["mail"]);*/
 ?>

@@ -1,14 +1,13 @@
 <?php
 
-include_once ("clase/claseVehiculo.php");
-include_once ("clase/baseEstacionados.php");
+//include_once ("clase/baseEstacionados.php");
+//include_once ("clase/claseVehiculo.php");
 
 //funcion que calcula el tiempo
-/*
 function calculaTiempo($entrada, $salida){
   $segundo= (strtotime($salida)-strtotime($entrada)); 
   /*$segundo = abs($segundo); 
-  $segundo = floor($segundo);
+  $segundo = floor($segundo);*/
   return $segundo;
 }
 
@@ -30,8 +29,8 @@ function calculaImporte($segundo,$id_vehiculo){ //$gnc,$categoria
       break;   
     /*default:
       // code...
-      break;
-  }
+      break;*/
+    }
 
   if($segundo<3600){//menor a una hora
         //$valor=$segundo*.075;
@@ -60,16 +59,25 @@ function calculaImporte($segundo,$id_vehiculo){ //$gnc,$categoria
   return sprintf('%.2f', $valor);//$valor;
 }
 
+/*
+public static function salidaEstacionado($idV){
+    $buscarSalida=new baseEstacionados();
+    $buscarSalida->id=$idV;
+    $salidaID=$buscarSalida->traerDatosEstacionados();
+    $buscarSalida->id=$salidaID->id;
+    $date=date("Y-m-d H:i:s");
+    $buscarSalida->fechaegreso=$date;
+    $buscarSalida->importe=$buscarSalida->buscaImporte($salidaID->fechaingreso, $salidaID->id_vehiculo, $date);
+    $buscarSalida->ModificarEstacionado();    
+   }
+
+   public static function buscaImporte($entrada, $id_vehiculo,$salida){
+    $segundo=calculaTiempo($entrada, $salida);
+    return calculaImporte($segundo,$id_vehiculo);
+
+   }
+
+
 */
-/******************* copiado de la funciona anterior************************/
-
-
-function recorreEstacionado(){
-  $listadoEstacionado=array();
-  //$archivo=fopen("estacionado.txt", "r");
-  $listadoEstacionado = baseEstacionados::mostrarEstacionadosCompleto();
-  
-  return $listadoEstacionado;
-}
 
 ?>

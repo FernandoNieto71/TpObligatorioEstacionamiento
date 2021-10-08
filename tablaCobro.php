@@ -1,1 +1,0 @@
-<h4>Cobrado</h4><table border=1><tr><th>patente</th><td></td></tr><tr><th>Importe</th><td></td></tr></table>

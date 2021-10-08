@@ -1,6 +1,6 @@
 <?php
-include_once "estacionamiento.php";
-$listadoPatentes=estacionamiento::retornarListadoAutocomplit();
+include_once "baseEstacionamiento.php";
+$listadoPatentes=baseEstacionamiento::retornarListadoAutocomplit();
 
 $textoDelArchivoJS="$(function(){
 			  var patentes = [ 

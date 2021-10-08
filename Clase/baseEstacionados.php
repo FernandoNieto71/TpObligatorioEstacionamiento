@@ -1,5 +1,5 @@
 <?php
-include_once "basefuncionesEstacionamiento.php";
+include_once "basefuncionesCalculo.php";
 
 class baseEstacionados
 {
@@ -100,6 +100,7 @@ class baseEstacionados
 		return $estacionadID;
 	 }
 
+	 
 	 public static function salidaEstacionado($idV){
 		$buscarSalida=new baseEstacionados();
 		$buscarSalida->id=$idV;
@@ -131,6 +132,80 @@ class baseEstacionados
 			$consulta->execute();			
 			return $consulta->fetchAll(PDO::FETCH_CLASS, 'baseEstacionados');	
 	 }
+
+	 public static function TraerEstacionadosEstacionar(){
+			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
+			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT b.patente as patente, c.email as email, a.fechaingreso as ingreso, b.foto as foto FROM estacionados as a inner join vehiculo as b on a.id_vehiculo = b.id inner join usuarios as c on a.id_usuario = c.id WHERE a.fechaegreso is null");
+			$consulta->execute();			
+			return $consulta->fetchAll(PDO::FETCH_CLASS, 'baseEstacionados');	
+	 }
+
+
+
+
+
+	 public static function mostrarTablaEstacionados()
+	{
+		$estacionados = baseEstacionados::TraerEstacionadosEstacionar();
+	
+		if(isset($estacionados))
+		{
+			echo "<table border=1 cellpadding=5px>";
+			echo "<th> Patente </th>";
+			echo "<th> Usuario Ingreso </th>";
+			echo "<th> Fecha Ingreso </th>";
+			echo "<th> Foto </th>";
+
+			foreach($estacionados as $datos)
+			{
+				
+				echo "<tr><td>$datos->patente</td>";
+				echo "<td>$datos->email</td>";
+				echo "<td>$datos->ingreso</td>";
+				echo "<td><img src='$datos->foto'></td></tr>";
+			}
+	
+			echo "</table>";
+	
+		}
+	}
+
+		 public static function TraerEstacionadosSalidos(){
+			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
+			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT b.patente as patente, c.email as email, a.fechaegreso as egreso, a.importe as importe FROM estacionados as a inner join vehiculo as b on a.id_vehiculo = b.id inner join usuarios as c on a.id_usuario = c.id WHERE a.fechaegreso is not null");
+			$consulta->execute();			
+			return $consulta->fetchAll(PDO::FETCH_CLASS, 'baseEstacionados');	
+	 }
+
+
+
+
+
+	 public static function mostrarTablaSalidos()
+	{
+		$estacionados = baseEstacionados::TraerEstacionadosSalidos();
+	
+		if(isset($estacionados))
+		{
+			echo "<table border=1 cellpadding=5px>";
+			echo "<th> Patente </th>";
+			echo "<th> Usuario Ingreso </th>";
+			echo "<th> Fecha Egreso </th>";
+			echo "<th> Importe </th>";
+
+			foreach($estacionados as $datos)
+			{
+				
+				echo "<tr><td>$datos->patente</td>";
+				echo "<td>$datos->email</td>";
+				echo "<td>$datos->egreso</td>";
+				echo "<td>$datos->importe</td></tr>";
+			}
+	
+			echo "</table>";
+	
+		}
+	}
 
 }
 ?>

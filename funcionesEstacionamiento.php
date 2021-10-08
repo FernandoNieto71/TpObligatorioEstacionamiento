@@ -70,6 +70,8 @@ function guardarSalidas($renglon){
 }
 
 //recorre estacionado
+/*
+sacado luego de prueba autocomplete
 function recorreEstacionado(){
   $listadoEstacionado=array();
   $archivo=fopen("estacionado.txt", "r");
@@ -84,7 +86,7 @@ function recorreEstacionado(){
   }
   fclose($archivo);
   return $listadoEstacionado;
-}
+}*/
 
 //recorre salida
 function recorreSalidas(){

@@ -20,9 +20,11 @@ else {
   $patente =" ";
 }*/
 //echo "el correo es ".$correo;
-include_once "estacionamiento.php";
-estacionamiento::crearTablaEstacionado();
-estacionamiento::crearTablaSalidas();
+//include_once "baseEstacionamiento.php";
+
+//hacer
+//baseEstacionamiento::crearTablaEstacionado();
+//baseEstacionamiento::crearTablaSalidas();
 /*echo '¡Hola ' . htmlspecialchars($_COOKIE["mail"]) . '!';
 $correo=htmlspecialchars($_COOKIE["mail"]);*/
 ?>
@@ -225,18 +227,28 @@ $correo=htmlspecialchars($_COOKIE["mail"]);*/
   <th width="450"><?php include "tablaCobro.php"; ?></th>
   <th><a class="btn btn-primary btn-lg" href="list_salidas.php" role="button">Ticket </a></th>
   </tr>
-  </table>
+  </table-->
+
+<br><br>
+<div>
 <table>
-<tr>
-  <th width="150"></th>
-  <th width="650">
-    <?php include "tablaEstacionado.php";?>
-  </th>
-  <th width="350">
-    <?php include "tablaSalidas.php";?>
-  </th>
-</tr>
-</table-->
+  <th align="center">Estacionados</th>
+  <th>Salidas</th>
+  <tr>
+    <td>
+    <?php include_once "clase/baseEstacionados.php"; 
+    include_once "clase/AccesoBase.php";
+    baseEstacionados::mostrarTablaEstacionados();   ?>
+  </td>
+  <td>
+  <!--th width="350"-->
+    <?php include_once "clase/baseEstacionados.php"; 
+    include_once "clase/AccesoBase.php";
+    baseEstacionados::mostrarTablaSalidos();   ?>
+  </td>
+  </tr>
+
+</table>
 <br><br>
 </div>
 

@@ -1,6 +1,6 @@
 <?php
 
-include_once "funcionesEstacionamiento.php";
+include_once "basefuncionesEstacionamiento.php";
 
 class estacionamiento{
 	
@@ -55,7 +55,7 @@ class estacionamiento{
 		fclose($archivo);
 	}
 
-	public static function crearTablaEstacionado(){
+	/*public static function crearTablaEstacionado(){
 
 		$listado=estacionamiento::leer();
 		$tablaHtml="<h4>Estacionados</h4><table border=1>";
@@ -80,7 +80,7 @@ class estacionamiento{
 		$archivo=fopen("tablaEstacionado.php","w");
 		fwrite($archivo,$tablaHtml);
 		fclose($archivo);
-	}
+	}*/
 
 	public static function GuardarListado($arrayListado){
 		$archivo=fopen("estacionado.txt","w");

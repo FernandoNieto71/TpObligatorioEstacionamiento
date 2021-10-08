@@ -1,7 +1,0 @@
-tgv123=>I=>2021-06-18 19:10:33=>0=>A=>fernando@mail.com
-poi555=>I=>2021-06-25 19:06:01=>0=>S=>octavio@mail.com
-ab345re=>I=>2021-06-21 00:36:17=>0=>C=>fernando@mail.com
-dfg555=>I=>2021-06-25 18:31:05=>1=>S=>fernando@mail.com
-gfg555=>I=>2021-06-25 18:31:05=>1=>S=>octavio@mail.com
-poi444=>I=>2021-06-25 20:06:01=>0=>S=>fernando@mail.com
-vts935=>I=>2021-07-02 18:15:04=>1=>S=>fernando@mail.com
