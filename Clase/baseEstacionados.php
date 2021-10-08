@@ -106,6 +106,7 @@ class baseEstacionados
 		$buscarSalida->id=$idV;
 		$salidaID=$buscarSalida->traerDatosEstacionados();
 		$buscarSalida->id=$salidaID->id;
+		date_default_timezone_set("America/Argentina/Buenos_Aires");
 		$date=date("Y-m-d H:i:s");
 		$buscarSalida->fechaegreso=$date;
 		$buscarSalida->importe=$buscarSalida->buscaImporte($salidaID->fechaingreso, $salidaID->id_vehiculo, $date);
