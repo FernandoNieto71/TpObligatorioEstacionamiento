@@ -98,10 +98,12 @@ $correo=htmlspecialchars($_COOKIE["mail"]);*/
   <h5 class="my-0 mr-md-auto font-weight-normal">Estacionamiento Wilde</h5>
 
   <!nav class="my-2 my-md-0 mr-md-3">
+
     <a class="p-2 text-dark" href="baselistSalidas.php">Listar Salidas</a>
     <a class="p-2 text-dark" href="baseListEstacionados.php">Listar Entradas</a>
     <a class="p-2 text-dark" href="baseGenSalidasPDF.php">Salida PDF</a>
-    <!--a class="p-2 text-dark" href="#">Pricing</a-->
+    <a class="p-2 text-dark" href="baseConsultas.php?&correo">Consultas</a>
+    <!--a class="recuadro" href="baseConsultas.php">Consultas</a-->
   <!--/nav-->
   <!--form enctype="multipart/form-data" action="upload.php" method="POST">
     <input type="hidden" name="MAX_FILE_SIZE" value="512000" />

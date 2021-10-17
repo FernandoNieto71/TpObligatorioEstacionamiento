@@ -1,3 +1,10 @@
+<?php
+
+ 
+$correo=htmlspecialchars($_COOKIE["mail"]);
+
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,11 +13,9 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.80.0">
-    <title>Consulta de usuarios</title>
+    <title>Usuarios Consultan</title>
     <link rel="shortcut icon" href="imagen/favicon.ico">
-    <?php 
-    //include_once("titulo.php");
-    ?>
+   
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/pricing/">
 
@@ -68,31 +73,36 @@
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h1 class="display-4">Estacionamiento Wilde</h1>
   <?php
-    //echo "<h3>¡Hola " . htmlspecialchars($_COOKIE["mail"]) . "!</h3>";
+    echo "<h3>¡Hola " . htmlspecialchars($_COOKIE["mail"]) . "!</h3>";
+    
   ?>
-  <p class="lead">Bienvenido administrador a las consultas de los usuarios</p>
-</div>  	
+  <p class="lead">Bienvenidos usuarios al sistema de consultas al administrador</p>
 
-	<table align="center">
-  		<th align="center"></th>
-  		<th></th>
-  		<tr>
-    		<td>
-    <?php include_once "clase/claseConsulta.php"; 
-    include_once "clase/AccesoBase.php";
-    claseConsulta::mostrarTablaConsultas();  
-     ?>
-  			</td>
- 		 
-		</tr>
 
-	</table>
+<div class ="justify-content-center">
+  <div class="container">
+    <!--div class="card-deck mb-3 text-center"-->
 
-	<br><br>
-	<div align="center-h ">
-		<a class="recuadro" href="index.php">Volver</a>
-    <!--a href="index.php" class="btn btn-primary btn-lg disabled" role="button" aria-disabled="true">Volver</a-->
-	</div>
+      <form id="miform"  action="baseHacerConsultas.php" method="post"><!--action="primerPag.html"-->
+        <input name="correo" type="hidden" value="<?php echo $correo;?>">
+
+        <label> <?php echo $correo;?></lable><!--name="correo" type="text" id="correo" class="btn btn-lg btn-block btn-outline-primary mayusc-text" value="<?php echo $correo;?>"--> 
+         <!--input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"-->
+        <br>
+        <ul class="list-unstyled mt-3 mb-4">
+         <h5 align = "center">Ingrese Consultas</h5>
+        <textarea name="comentarios" rows="5" cols="60"></textarea> 
+        
+        
+         <br><br>
+          <input type="submit" value="Enviar">
+        </div>
+
+      </form>
+
+    <!--/div-->
+  </div>
+</div>
 
 </body>
 </html>
