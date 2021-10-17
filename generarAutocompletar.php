@@ -1,11 +1,20 @@
 <?php
-include_once "baseEstacionamiento.php";
-$listadoPatentes=baseEstacionamiento::retornarListadoAutocomplit();
+//include_once "baseEstacionamiento.php";
+//$listadoPatentes=baseEstacionamiento::retornarListadoAutocomplit();
+include_once ("clase/AccesoBase.php");
+include_once ("clase/claseVehiculo.php");
+
+$listadoPatentes=claseVehiculo::TraerTodoLosVehiculos();
+$patentes = "";
+foreach($listadoPatentes as $dato){
+	$patentes.="'".$dato->patente."',";
+}
+
 
 $textoDelArchivoJS="$(function(){
 			  var patentes = [ 
 
-			   $listadoPatentes 
+			   $patentes
 
 			   
 			  ];

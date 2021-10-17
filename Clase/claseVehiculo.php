@@ -46,6 +46,15 @@ class claseVehiculo
 
 	 }
 
+  	public static function TraerPatenteVehiculo()
+	{
+			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
+			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT patente FROM Vehiculo");
+			$consulta->execute();			
+			return $consulta->fetchColumn();		
+	}
+
+
 	 public function ModificarVehiculo()
 	 {
 

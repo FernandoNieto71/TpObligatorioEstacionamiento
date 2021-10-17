@@ -151,7 +151,9 @@ class baseEstacionados
 	
 		if(isset($estacionados))
 		{
+			
 			echo "<table border=1 cellpadding=5px>";
+			echo "<tr><th colspan =\"4\" align= \"center\">Estacionados</th></tr>";
 			echo "<th> Patente </th>";
 			echo "<th> Usuario Ingreso </th>";
 			echo "<th> Fecha Ingreso </th>";
@@ -188,7 +190,9 @@ class baseEstacionados
 	
 		if(isset($estacionados))
 		{
+			
 			echo "<table border=1 cellpadding=5px>";
+			echo "<tr><th colspan =\"4\" align=\"center\">Salidas</th></tr>";
 			echo "<th> Patente </th>";
 			echo "<th> Usuario Engreso </th>";
 			echo "<th> Fecha Egreso </th>";
@@ -230,17 +234,16 @@ class baseEstacionados
 		if(isset($estacionados))
 		{
 			echo "<table border=1 cellpadding=5px>";
-			echo "<th> Patente </th>";
-			echo "<th> Usuario Engreso </th>";
-			echo "<th> Fecha Egreso </th>";
-			echo "<th> Importe </th>";
-			
-			echo "<tr><td>$estacionados->patente</td>";
-			echo "<td>$estacionados->email</td>";
-			echo "<td>$estacionados->egreso</td>";
+			echo "<td colspan =\"2\" align = \"center\">TICKET</td>";
+			echo "<tr><th> Patente </th>";
+			echo "<td>$estacionados->patente</td></tr>";
+			echo "<tr><th> Usuario Engreso </th>";
+			echo "<td>$estacionados->email</td></tr>";
+			echo "<tr><th> Fecha Egreso </th>";
+			echo "<td>$estacionados->egreso</td></tr>";
+			echo "<tr><th> Importe </th>";
 			echo "<td>$estacionados->importe</td></tr>";
-			//}
-	
+				
 			echo "</table>";
 	
 		}

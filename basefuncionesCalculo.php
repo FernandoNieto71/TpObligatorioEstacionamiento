@@ -1,7 +1,6 @@
 <?php
 
-//include_once ("clase/baseEstacionados.php");
-//include_once ("clase/claseVehiculo.php");
+
 
 //funcion que calcula el tiempo
 function calculaTiempo($entrada, $salida){

@@ -28,7 +28,7 @@ if(isset($_POST["color"]) && isset($_POST["patente"])){
 	$clase=$_POST["categoria"];
 	//$buscadoID=
 	claseVehiculo::vehiculoNuevo($patente,$color,$foto,$gnc,$clase);
-	
+	include_once ("generarAutocompletar.php");
 	header ("Location: baseEstacionar.php?&correo=$correo&patente=$patente");
 
 	

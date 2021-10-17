@@ -224,7 +224,7 @@ $correo=htmlspecialchars($_COOKIE["mail"]);*/
 
 <br><br>
 <table align="center">
-  <th align="justify-content-center">Ticket</th>
+  
   <tr>
     <th width="250"></th>
     <th width="450"><?php include_once "clase/baseEstacionados.php"; 
@@ -238,8 +238,8 @@ $correo=htmlspecialchars($_COOKIE["mail"]);*/
 <br><br>
 <div>
 <table>
-  <th align="center">Estacionados</th>
-  <th>Salidas</th>
+  <th align="center"></th>
+  <th></th>
   <tr>
     <td>
     <?php include_once "clase/baseEstacionados.php"; 
