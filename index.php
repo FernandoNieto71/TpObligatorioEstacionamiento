@@ -61,10 +61,13 @@
       <li class="nav-item">
         <a class="nav-link" href="baseRegistro.php">Registrate</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="baseLoginAdm.php">Administrador</a>
+      </li>
       <!--li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
         <div class="dropdown-menu" aria-labelledby="dropdown01">
-          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="baseLogin.php">Administrador</a>
           <a class="dropdown-item" href="#">Another action</a>
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
