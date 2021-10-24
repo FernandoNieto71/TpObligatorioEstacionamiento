@@ -11,6 +11,7 @@
     <?php 
       include_once "clase/AccesoBase.php";
       include_once "clase/baseEstacionados.php"; 
+      include_once "clase/claseConsulta.php";
       
     ?>
 
@@ -81,8 +82,8 @@
     $listaCantSalidosUsuario = baseEstacionados::TraerCantidadSalidosUsuario();
     ?>
     <table>
-      <th>Listado estacionado por usuario</th>
-      <th>Listado salidos por usuario</th>
+      <th width="400">Cantidad estacionado por usuario</th>
+      <th width="900">Cantidad salidos por usuario y monto</th>
       <tr>
         <td>
           <?php 
@@ -98,7 +99,7 @@
           <?php
             if(isset($listaCantSalidosUsuario) ){
               foreach($listaCantSalidosUsuario as $dato){
-                print("Usuario: $dato->email: $dato->cantidad, total cobrado: $dato->monto");
+                print("Usuario: $dato->email: $dato->cantidad, total cobrado: \$ $dato->monto");
                 echo("<br>");
               }
             }  
@@ -107,18 +108,28 @@
       </tr>
     </table>
 
-    <br>
+    <br><br>
     
   <p class="lead">Bienvenido administrador a las consultas de los usuarios</p>
 </div>  	
 
+<div align="center">
+<?php 
+$leido= claseConsulta::TraerCantidadTotal();
+$noLeido = claseConsulta::TraerCantidadNoLeidos();
+echo "Cantidad de mensajes No Leidos: " .$leido;
+echo "<br>";
+echo "Cantidad de mensajes No Leidos: " .$noLeido;
+?>
+</div>
+<br><br>
 	<table align="center">
   		<th align="center"></th>
   		<th></th>
   		<tr>
     		<td>
-    <?php include_once "clase/claseConsulta.php"; 
-    include_once "clase/AccesoBase.php";
+    <?php //include_once "clase/claseConsulta.php"; 
+    
     claseConsulta::mostrarTablaConsultas();  
      ?>
   			</td>
@@ -130,7 +141,7 @@
 	<br><br>
 	<!--div align="center-h ">
 		<a class="recuadro" href="index.php">Volver</a>
-    <!--a href="index.php" class="btn btn-primary btn-lg disabled" role="button" aria-disabled="true">Volver</a-->
+    <a href="index.php" class="btn btn-primary btn-lg disabled" role="button" aria-disabled="true">Volver</a>
 	</div-->
 
     <footer class="pt-4 my-md-5 pt-md-5 border-top">

@@ -9,6 +9,7 @@ class baseEstacionados
   	public $fechaingreso;
   	public $fechaegreso;
   	public $importe;
+  	public $id_usu_egreso;
 
   	public function mostrarDatos()
 	{
