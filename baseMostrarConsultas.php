@@ -9,7 +9,9 @@
     <title>Consulta de usuarios</title>
     <link rel="shortcut icon" href="imagen/favicon.ico">
     <?php 
-    //include_once("titulo.php");
+      include_once "clase/AccesoBase.php";
+      include_once "clase/baseEstacionados.php"; 
+      
     ?>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/pricing/">
@@ -67,9 +69,46 @@
 
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h1 class="display-4">Estacionamiento Wilde</h1>
+  
   <?php
     //echo "<h3>¡Hola " . htmlspecialchars($_COOKIE["mail"]) . "!</h3>";
-  ?>
+    $datoEstacionado = baseEstacionados::TraerCantidadEstacionados();
+    $datoSalido = baseEstacionados::TraerCantidadSalidos();
+    print("Estacionados: $datoEstacionado - Salidos: $datoSalido ");
+    echo("<br>");
+    echo("<br>");
+    $listaCantEstacionadoUsuario = baseEstacionados::TraerCantidadEstacionadosUsuario();
+    $listaCantSalidosUsuario = baseEstacionados::TraerCantidadSalidosUsuario();
+    ?>
+    <table>
+      <th>Listado estacionado por usuario</th>
+      <th>Listado salidos por usuario</th>
+      <tr>
+        <td>
+          <?php 
+            if(isset($listaCantEstacionadoUsuario) ){
+             foreach($listaCantEstacionadoUsuario as $dato){
+                print("Usuario: $dato->email: $dato->cantidad");
+                echo("<br>");
+              }
+            }
+          ?>
+        </td>
+        <td>
+          <?php
+            if(isset($listaCantSalidosUsuario) ){
+              foreach($listaCantSalidosUsuario as $dato){
+                print("Usuario: $dato->email: $dato->cantidad, total cobrado: $dato->monto");
+                echo("<br>");
+              }
+            }  
+          ?> 
+        </td>
+      </tr>
+    </table>
+
+    <br>
+    
   <p class="lead">Bienvenido administrador a las consultas de los usuarios</p>
 </div>  	
 
@@ -89,10 +128,28 @@
 	</table>
 
 	<br><br>
-	<div align="center-h ">
+	<!--div align="center-h ">
 		<a class="recuadro" href="index.php">Volver</a>
     <!--a href="index.php" class="btn btn-primary btn-lg disabled" role="button" aria-disabled="true">Volver</a-->
-	</div>
+	</div-->
+
+    <footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+      <div class="col-12 col-md">
+        
+      </div>
+      <div class="col-6 col-md">
+         <a href="index.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Estadisticas</a>
+      </div>
+      <div class="col-6 col-md">
+       
+        
+      </div>
+      <div class="col-6 col-md">
+        <a href="index.php" class="btn btn-success btn-lg active" role="button" aria-pressed="true">Salir</a
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>

@@ -265,5 +265,45 @@ class baseEstacionados
 		}
 	}
 
+  	public static function TraerCantidadEstacionados()
+	{
+			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
+			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT count(*) as estacionados FROM `estacionados` WHERE fechaingreso is not null and fechaegreso is null");
+			$consulta->execute();			
+			//return $consulta->fetchAll(PDO::FETCH_CLASS, 'baseEstacionados');	
+			return $consulta->fetchColumn(0);	
+	}
+
+  	public static function TraerCantidadSalidos()
+	{
+			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
+			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT count(*) as estacionados FROM `estacionados` WHERE fechaingreso is not null and fechaegreso is not null");
+			$consulta->execute();			
+			//return $consulta->fetchAll(PDO::FETCH_CLASS, 'baseEstacionados');	
+			return $consulta->fetchColumn(0);	
+	}	
+
+  	public static function TraerCantidadEstacionadosUsuario()
+	{
+			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
+			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT b.email as email, count(*) as cantidad FROM `estacionados` as a inner join usuarios as b on b.id = a.id_usuario WHERE a.fechaingreso is not null and a.fechaegreso is null group by email");
+			$consulta->execute();			
+			return $consulta->fetchAll(PDO::FETCH_CLASS, 'baseEstacionados');	
+			//return $consulta->fetchObject('baseEstacionados');	
+
+			
+	}	
+
+  	public static function TraerCantidadSalidosUsuario()
+	{
+			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
+			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT b.email as email, count(*) as cantidad, sum(a.importe) as monto FROM `estacionados` as a inner join usuarios as b on b.id = a.id_usuario WHERE a.fechaingreso is not null and a.fechaegreso is not null group by email");
+			$consulta->execute();			
+			return $consulta->fetchAll(PDO::FETCH_CLASS, 'baseEstacionados');	
+			//return $consulta->fetchObject('baseEstacionados');	
+
+			
+	}		
+
 }
 ?>
