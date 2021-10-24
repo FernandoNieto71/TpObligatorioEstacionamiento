@@ -44,7 +44,7 @@ if($movimiento=='I'){
 	header ("Location: baseEstacionar.php?&correo=$correo&patente=$patente");
 }
 else{
-	baseEstacionados::salidaEstacionado($buscadoID->id);
+	baseEstacionados::salidaEstacionado($buscadoID->id, $usuarioID->id);
 	header ("Location: baseEstacionar.php?&correo=$correo&patente=$patente");
 }
 

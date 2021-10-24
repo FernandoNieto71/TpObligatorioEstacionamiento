@@ -12,13 +12,13 @@ class baseEstacionados
 
   	public function mostrarDatos()
 	{
-	  	return "Metodo mostar:".$this->id_usuario."  ".$this->id_vehiculo."  ".$this->fechaingreso."  ".$this->fechaegreso."  ".$this->importe;
+	  	return "Metodo mostar:".$this->id_usuario."  ".$this->id_vehiculo."  ".$this->fechaingreso."  ".$this->fechaegreso."  ".$this->importe."  ".$this->id_usu_egreso;
 	}
 
   	public static function TraerTodoLosEstacionados()
 	{
 			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
-			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT id_usuario, id_vehiculo, fechaingreso, fechaegreso, importe FROM estacionados");
+			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT id_usuario, id_vehiculo, fechaingreso, fechaegreso, importe, id_usu_egreso FROM estacionados");
 			$consulta->execute();			
 			return $consulta->fetchAll(PDO::FETCH_CLASS, 'baseEstacionados');		
 	}
@@ -26,7 +26,7 @@ class baseEstacionados
 	public static function TraerUnRegistro($id) 
 	{
 			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
-			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT id_usuario, id_vehiculo, fechaingreso, fechaegreso, importe FROM estacionados where id = $id");
+			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT id_usuario, id_vehiculo, fechaingreso, fechaegreso, importe, id_usu_egreso FROM estacionados where id = $id");
 			$consulta->execute();
 			$idBuscado= $consulta->fetchObject('baseEstacionados');
 			return $idBuscado;				
@@ -55,7 +55,22 @@ class baseEstacionados
 			$consulta =$Obj_Acceso_Datos->RetornarConsulta("
 				update estacionados 
 				set fechaegreso='$this->fechaegreso',
-				importe='$this->importe'
+				importe='$this->importe',
+				id_usu_egreso='$this->id_usu_egreso'
+				WHERE id='$this->id'");
+			return $consulta->execute();
+
+	 }
+
+	 public function ModificarEstacionadoUsu($idU)
+	 {
+
+			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
+			$consulta =$Obj_Acceso_Datos->RetornarConsulta("
+				update estacionados 
+				set fechaegreso='$this->fechaegreso',
+				importe='$this->importe',
+				id_usu_egreso=$idU 
 				WHERE id='$this->id'");
 			return $consulta->execute();
 
@@ -101,7 +116,7 @@ class baseEstacionados
 	 }
 
 	 
-	 public static function salidaEstacionado($idV){
+	 public static function salidaEstacionado($idV, $idU){
 		$buscarSalida=new baseEstacionados();
 		$buscarSalida->id=$idV;
 		$salidaID=$buscarSalida->traerDatosEstacionados();
@@ -110,6 +125,7 @@ class baseEstacionados
 		$date=date("Y-m-d H:i:s");
 		$buscarSalida->fechaegreso=$date;
 		$buscarSalida->importe=$buscarSalida->buscaImporte($salidaID->fechaingreso, $salidaID->id_vehiculo, $date);
+		$buscarSalida->id_usu_egreso=$idU;
 		$buscarSalida->ModificarEstacionado();	 	
 	 }
 
@@ -129,7 +145,7 @@ class baseEstacionados
 
 	 public static function mostrarRetiradosCompleto(){
 			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
-			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT b.patente as patente, c.email as email, b.gnc as gnc, b.clase as categoria, a.fechaingreso as ingreso, a.fechaegreso as salida, a.importe as importe FROM estacionados as a inner join vehiculo as b on a.id_vehiculo = b.id inner join usuarios as c on a.id_usuario = c.id WHERE fechaegreso is not null");
+			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT b.patente as patente, c.email as email, b.gnc as gnc, b.clase as categoria, a.fechaingreso as ingreso, a.fechaegreso as salida, a.importe as importe FROM estacionados as a inner join vehiculo as b on a.id_vehiculo = b.id inner join usuarios as c on a.id_usu_egreso = c.id WHERE fechaegreso is not null");
 			$consulta->execute();			
 			return $consulta->fetchAll(PDO::FETCH_CLASS, 'baseEstacionados');	
 	 }
@@ -165,7 +181,7 @@ class baseEstacionados
 				echo "<tr><td>$datos->patente</td>";
 				echo "<td>$datos->email</td>";
 				echo "<td>$datos->ingreso</td>";
-				echo "<td><img src='$datos->foto'></td></tr>";
+				echo "<td><img src='$datos->foto' width=\"50\" height=\"50\"></td></tr>";
 			}
 	
 			echo "</table>";
@@ -175,7 +191,7 @@ class baseEstacionados
 
 		 public static function TraerEstacionadosSalidos(){
 			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
-			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT b.patente as patente, c.email as email, a.fechaegreso as egreso, a.importe as importe FROM estacionados as a inner join vehiculo as b on a.id_vehiculo = b.id inner join usuarios as c on a.id_usuario = c.id WHERE a.fechaegreso is not null");
+			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT b.patente as patente, c.email as email, a.fechaegreso as egreso, a.importe as importe FROM estacionados as a inner join vehiculo as b on a.id_vehiculo = b.id inner join usuarios as c on a.id_usu_egreso = c.id WHERE a.fechaegreso is not null");
 			$consulta->execute();			
 			return $consulta->fetchAll(PDO::FETCH_CLASS, 'baseEstacionados');	
 	 }
@@ -218,7 +234,7 @@ class baseEstacionados
 	 	public static function traerDatosSalido() 
 	{
 			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
-			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT b.patente as patente, c.email as email, a.fechaegreso as egreso, a.importe as importe FROM estacionados as a inner join vehiculo as b on a.id_vehiculo = b.id inner join usuarios as c on a.id_usuario = c.id where a.fechaegreso is not null order by a.fechaegreso DESC LIMIT 1");
+			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT b.patente as patente, c.email as email, a.fechaegreso as egreso, a.importe as importe FROM estacionados as a inner join vehiculo as b on a.id_vehiculo = b.id inner join usuarios as c on a.id_usu_egreso = c.id where a.fechaegreso is not null order by a.fechaegreso DESC LIMIT 1");
 			$consulta->execute();
 			$idBuscado= $consulta->fetchObject('baseEstacionados');
 			return $idBuscado;				
@@ -237,7 +253,7 @@ class baseEstacionados
 			echo "<td colspan =\"2\" align = \"center\">TICKET</td>";
 			echo "<tr><th> Patente </th>";
 			echo "<td>$estacionados->patente</td></tr>";
-			echo "<tr><th> Usuario Engreso </th>";
+			echo "<tr><th> Usuario Egreso </th>";
 			echo "<td>$estacionados->email</td></tr>";
 			echo "<tr><th> Fecha Egreso </th>";
 			echo "<td>$estacionados->egreso</td></tr>";
