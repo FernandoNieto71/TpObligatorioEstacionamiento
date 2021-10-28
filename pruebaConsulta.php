@@ -1,4 +1,8 @@
     <?php include_once "clase/claseConsulta.php"; 
     include_once "clase/AccesoBase.php";
-    claseConsulta::mostrarTablaConsultasprueba();  
+    include_once "clase/baseEstacionados.php";
+    //claseConsulta::mostrarTablaConsultasprueba(); 
+    $id = 32;
+    $buscar=baseEstacionados::TraerRegistroEstadistica($id); 
+    echo $buscar->fechaingreso;
      ?>

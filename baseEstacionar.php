@@ -191,23 +191,7 @@ $correo=htmlspecialchars($_COOKIE["mail"]);*/
         <ul class="list-unstyled mt-3 mb-4">
          <h5 align = "center">Ingrese Patente del Vehiculo</h5>
          <br>
-         <!--div style="text-align:center;">
-         <a class="btn btn-primary btn-lg" href="webcam-master/webcam.php" role="button">Usar Webcam </a>
-         <br><br><br>
-         <table>
-          <tr>
-            <input name="categoria" type="radio" value="S" checked> Normal  <input name="categoria" type="radio" value="C"> Camioneta <input name="categoria" type="radio" value="A"> Alta Gama 
-          </tr>
-          <tr>
-            <br>
-            <br>
-          </tr>
-          
-          <tr>
-            <input name="gnc" type="checkbox" id="decla" value="1" "text-align:center; vertical-align: middle;"> Vehiculo a GNC</td>
-          </tr>
-        </table>
-      </div-->
+         
         </ul>
         
         <div align = "center">
@@ -228,7 +212,7 @@ $correo=htmlspecialchars($_COOKIE["mail"]);*/
 <table align="center">
   
   <tr>
-    <th width="250"></th>
+    <th width="250"><a class="btn btn-primary btn-lg" href="baseTicketPDF.php" role="button">Ticket </a></th>
     <th width="450"><?php include_once "clase/baseEstacionados.php"; 
     include_once "clase/AccesoBase.php";
 

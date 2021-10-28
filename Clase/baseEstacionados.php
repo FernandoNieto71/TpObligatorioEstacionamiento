@@ -304,7 +304,38 @@ class baseEstacionados
 			//return $consulta->fetchObject('baseEstacionados');	
 
 			
-	}		
+	}
+
+	public static function TraerRegistroEstadistica($id) 
+	{
+			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
+			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT b.patente as patente, a.fechaingreso as fechaingreso, a.fechaegreso as fechaegreso, a.importe as importe FROM estacionados as a inner join vehiculo as b on a.id_vehiculo = b.id where b.id = $id");
+			//$consulta->bindValue(':id',$this->id, PDO::PARAM_INT);
+			$consulta->execute();
+			$idBuscado= $consulta->fetchAll(PDO::FETCH_CLASS, 'baseEstacionados');
+			return $idBuscado;				
+
+			
+	}
+
+	public static function TraerRegEstadUsuario($id) 
+	{
+			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
+			$consulta =$Obj_Acceso_Datos->RetornarConsulta("select a.patente as patente, dato.fechaingreso as ingreso, dato.fechaegreso as egreso, dato.importe as importe from (
+SELECT id_vehiculo, fechaingreso, fechaegreso, importe FROM `estacionados` WHERE id_usuario = id_usu_egreso and id_usuario = $id UNION SELECT id_vehiculo, fechaingreso, fechaegreso = null, importe = null FROM `estacionados` WHERE id_usuario != id_usu_egreso and id_usuario = $id UNION SELECT id_vehiculo, fechaingreso = null, fechaegreso , importe FROM `estacionados` WHERE id_usuario != id_usu_egreso and id_usu_egreso = $id) as dato inner join vehiculo as a on dato.id_vehiculo = a.id ORDER by dato.importe DESC, dato.fechaingreso DESC");
+			//$consulta->bindValue(':id',$this->id, PDO::PARAM_INT);
+			$consulta->execute();
+			$idBuscado= $consulta->fetchAll(PDO::FETCH_CLASS, 'baseEstacionados');
+			return $idBuscado;				
+
+			
+	}
+
+
+
+
+
+
 
 }
 ?>

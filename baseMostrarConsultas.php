@@ -66,8 +66,10 @@
     <!-- Custom styles for this template -->
     <link href="pricing.css" rel="stylesheet">
   </head>
-  <body>
-
+  
+  <body class="text-center">
+    <br><br><br>
+  <img class="mb-4" src="imagen/descarga.png" width="72" height="72">
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h1 class="display-4">Estacionamiento Wilde</h1>
   
@@ -150,7 +152,7 @@ echo "Cantidad de mensajes No Leidos: " .$noLeido;
         
       </div>
       <div class="col-6 col-md">
-         <a href="index.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Estadisticas</a>
+         <a href="baseEstadistica.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Estadisticas</a>
       </div>
       <div class="col-6 col-md">
        

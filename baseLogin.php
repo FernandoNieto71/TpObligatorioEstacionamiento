@@ -42,7 +42,8 @@
   <body class="text-center">
     
 <form class="form-signin" action="baseHacerLogin.php" method="post">
-  <img class="mb-4" src="https://uxwing.com/wp-content/themes/uxwing/download/07-design-and-development/bootstrap-4.png" width="72" height="72">
+  <!--img class="mb-4" src="https://uxwing.com/wp-content/themes/uxwing/download/07-design-and-development/bootstrap-4.png" width="72" height="72"-->
+  <img class="mb-4" src="imagen/descarga.png" width="72" height="72">
   <h1 class="h3 mb-3 font-weight-normal">Por favor ingrese al sistema</h1>
   <label for="inputEmail" class="sr-only">Email address</label>
   <input name="correo" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>

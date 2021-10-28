@@ -126,11 +126,11 @@ class claseConsulta
 		if(isset($consultadas))
 		{	 
 			echo "<form id=\"consultaForm\" action=\"baseConsultaMarcar.php\" method=\"post\">";
-			echo "<table border=1cellpadding=1px>";
-			echo "<tr><th colspan =\"5\" align= \"center\">Consultas</th></tr>";
+			echo "<table border=1cellpadding=1px width=\"800\">";
+			echo "<tr><th colspan =\"5\" align= \"center\" width=\"800\">Consultas</th></tr>";
 			echo "<th> Usuario </th>";
-			echo "<th> Texto ingresado por usuario </th>";
-			echo "<th> Fecha </th>";
+			echo "<th width=\"500\"> Texto ingresado por usuario </th>";
+			echo "<th NOWRAP> Fecha </th>";
 			echo "<th> Leido </th>";
 			echo "<th> Marcar </th>";
 
@@ -138,8 +138,8 @@ class claseConsulta
 			{
 				echo "<input type=\"hidden\" value=$datos->id name=\"idConsulta\">";
 				echo "<tr><td>$datos->email</td>";
-				echo "<td>$datos->texto</td>";
-				echo "<td>$datos->fecha</td>";
+				echo "<td width=\"500\">$datos->texto</td>";
+				echo "<td NOWRAP>$datos->fecha</td>";
 				if($datos->leido == 1 ){
 					echo "<td>Si</td>";
 				} else {
