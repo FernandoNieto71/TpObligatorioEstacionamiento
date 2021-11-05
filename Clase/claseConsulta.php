@@ -204,5 +204,47 @@ class claseConsulta
 			return $consulta->fetchColumn(0);	
 		}
 
+	public static function TraerConsulta2fechas($fecha1, $fecha2) 
+	{
+			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
+			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT b.email as email, a.texto as mensaje, a.fechaevento as fecha FROM `consulta` as a inner join usuarios as b on a.id_usuario = b.id
+				WHERE substring(a.fechaevento,1,10) BETWEEN $fecha1 and $fecha2");
+			//$consulta->bindValue(':id',$this->id, PDO::PARAM_INT);
+			$consulta->execute();
+			$idBuscado= $consulta->fetchAll(PDO::FETCH_CLASS, 'claseConsulta');
+			return $idBuscado;				
+
+			
+	}	
+
+	public static function TraerConsulta3fechas($fecha1, $fecha2) 
+	{
+			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
+			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT b.email as email, a.texto as mensaje, a.fechaevento as fecha FROM `consulta` as a inner join usuarios as b on a.id_usuario = b.id
+				WHERE substring(a.fechaevento,1,10) BETWEEN '2021-09-25' and '2021-10-05'");
+			//$consulta->bindValue(':id',$this->id, PDO::PARAM_INT);
+			$consulta->execute();
+			$idBuscado= $consulta->fetchAll(PDO::FETCH_CLASS, 'claseConsulta');
+			return $idBuscado;				
+
+			
+	}	
+
+	public static function TraerConsultaHoras($hora1, $hora2) 
+	{
+			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
+			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT b.email as email, a.texto as mensaje, a.fechaevento as fecha FROM `consulta` as a inner join usuarios as b on a.id_usuario = b.id
+				WHERE substring(fechaevento,12,20) BETWEEN '13:00:01' and '14:00:00'");
+			//$consulta->bindValue(':id',$this->id, PDO::PARAM_INT);
+			$consulta->execute();
+			$idBuscado= $consulta->fetchAll(PDO::FETCH_CLASS, 'claseConsulta');
+			return $idBuscado;				
+
+			
+	}	
+		
+
+
+
 }
 ?>

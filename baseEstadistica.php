@@ -29,7 +29,7 @@
           foreach($carro as $dato){
             $fechaingreso=$dato->fechaingreso;
             $fechaegreso=$dato->fechaegreso;
-              $patente = $dato->patente;
+            $patente = $dato->patente;
             $importe=$dato->importe;
             //echo $patente." ".$fechaingreso." ".$fechaegreso." ".$importe."<br>";
             }
@@ -43,10 +43,13 @@
         $mail = $_POST["usuario"];
         //echo $mail. "<br>";  
         $idUsuario = claseUsuario::buscaUsuario($mail);
-        var_dump($idUsuario->id);
-        $datoUsu = baseEstacionados::TraerRegEstadUsuario($idUsuario->id);
-        //var_dump($datoUsu);
-        $flag2 = 1;
+        //var_dump($idUsuario->id);
+        if(isset($idUsuario->id)){
+          $datoUsu = baseEstacionados::TraerRegEstadUsuario($idUsuario->id);
+          //var_dump($datoUsu);
+          $flag2 = 1;
+       }else{$flag2 = 0; }
+
       } else{
           $flag2 = 0;
       }

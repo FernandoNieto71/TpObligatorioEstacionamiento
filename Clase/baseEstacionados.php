@@ -298,7 +298,7 @@ class baseEstacionados
   	public static function TraerCantidadSalidosUsuario()
 	{
 			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
-			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT b.email as email, count(*) as cantidad, sum(a.importe) as monto FROM `estacionados` as a inner join usuarios as b on b.id = a.id_usuario WHERE a.fechaingreso is not null and a.fechaegreso is not null group by email");
+			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT b.email as email, count(*) as cantidad, sum(a.importe) as monto FROM `estacionados` as a inner join usuarios as b on b.id = a.id_usu_egreso WHERE a.fechaingreso is not null and a.fechaegreso is not null group by email");
 			$consulta->execute();			
 			return $consulta->fetchAll(PDO::FETCH_CLASS, 'baseEstacionados');	
 			//return $consulta->fetchObject('baseEstacionados');	
@@ -321,8 +321,7 @@ class baseEstacionados
 	public static function TraerRegEstadUsuario($id) 
 	{
 			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
-			$consulta =$Obj_Acceso_Datos->RetornarConsulta("select a.patente as patente, dato.fechaingreso as ingreso, dato.fechaegreso as egreso, dato.importe as importe from (
-SELECT id_vehiculo, fechaingreso, fechaegreso, importe FROM `estacionados` WHERE id_usuario = id_usu_egreso and id_usuario = $id UNION SELECT id_vehiculo, fechaingreso, fechaegreso = null, importe = null FROM `estacionados` WHERE id_usuario != id_usu_egreso and id_usuario = $id UNION SELECT id_vehiculo, fechaingreso = null, fechaegreso , importe FROM `estacionados` WHERE id_usuario != id_usu_egreso and id_usu_egreso = $id) as dato inner join vehiculo as a on dato.id_vehiculo = a.id ORDER by dato.importe DESC, dato.fechaingreso DESC");
+			$consulta =$Obj_Acceso_Datos->RetornarConsulta("select a.patente as patente, dato.fechaingreso as ingreso, dato.fechaegreso as egreso, dato.importe as importe from (SELECT id_vehiculo, fechaingreso, fechaegreso, importe FROM `estacionados` WHERE id_usuario = id_usu_egreso and id_usuario = $id UNION SELECT id_vehiculo, fechaingreso, '' as fechaegreso, 0.00 as importe FROM `estacionados` WHERE id_usuario != id_usu_egreso and id_usuario = $id and id_usu_egreso != $id UNION SELECT id_vehiculo, '' as fechaingreso, fechaegreso , importe FROM `estacionados` WHERE id_usuario != id_usu_egreso and id_usu_egreso = $id and id_usuario != $id) as dato inner join vehiculo as a on dato.id_vehiculo = a.id ORDER by dato.importe DESC, dato.fechaingreso DESC");
 			//$consulta->bindValue(':id',$this->id, PDO::PARAM_INT);
 			$consulta->execute();
 			$idBuscado= $consulta->fetchAll(PDO::FETCH_CLASS, 'baseEstacionados');

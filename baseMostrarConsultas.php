@@ -119,7 +119,7 @@
 <?php 
 $leido= claseConsulta::TraerCantidadTotal();
 $noLeido = claseConsulta::TraerCantidadNoLeidos();
-echo "Cantidad de mensajes No Leidos: " .$leido;
+echo "Cantidad de mensajes: " .$leido;
 echo "<br>";
 echo "Cantidad de mensajes No Leidos: " .$noLeido;
 ?>
