@@ -13,7 +13,7 @@ function calculaTiempo($entrada, $salida){
 //funcion que calcula importe
 function calculaImporte($segundo,$id_vehiculo){ //$gnc,$categoria
   $objVehiculo=claseVehiculo::TraerUnRegistro($id_vehiculo);
-  $indice=0;
+  $indice=.75;
   $porcentaje=1;
 
   switch ($objVehiculo->clase) {
@@ -33,20 +33,23 @@ function calculaImporte($segundo,$id_vehiculo){ //$gnc,$categoria
 
   if($segundo<3600){//menor a una hora
         //$valor=$segundo*.075;
-        $indice=.075;
+        $indice=$indice;
         if($segundo>3000){
-          $indice=.041667;
+         // $indice=.041667;
+          $indice = $indice * .055556;
         }
       } else if($segundo < 10800){//menor a 3 horas
-        //$valor=$segundo*.041667;
-        $indice=.041667;
+        
+        //$indice=.041667;
+        $indice = $indice * .055556;
         
       } else if($segundo < 43200){//menor a 12 horas
-        $valor=450 * $porcentaje;
+        $valor=(337.5/$indice) * $porcentaje;
         $indice=0;
       } else {
         //$valor=$segundo*.00521;//diario
-        $indice=.00521;
+        //$indice=.00521;
+        $indice = $indice * .00694667;
       }
       if($indice!=0){
         $valor=$segundo*$indice * $porcentaje;
