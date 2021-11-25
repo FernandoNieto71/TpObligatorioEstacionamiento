@@ -224,11 +224,11 @@ echo "Cantidad de mensajes No Leidos: " .$noLeido;*/
          <a href="index.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Estadisticas</a>
       </div-->
       <div class="col-6 col-md">
-       
+       <a href="baseEstadisticaConsultas.php" class="btn btn-success btn-lg active" role="button" aria-pressed="true">Otras Estadisticas</a>
         
       </div>
       <div class="col-6 col-md">
-        <a href="index.php" class="btn btn-success btn-lg active" role="button" aria-pressed="true">Salir</a
+        <a href="index.php" class="btn btn-success btn-lg active" role="button" aria-pressed="true">Salir</a>
       </div>
     </div>
   </footer>
