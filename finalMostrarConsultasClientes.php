@@ -10,8 +10,8 @@
     <link rel="shortcut icon" href="imagen/favicon.ico">
     <?php 
       include_once "clase/AccesoBase.php";
-      include_once "clase/baseEstacionados.php"; 
-      include_once "clase/claseConsulta.php";
+     // include_once "clase/baseEstacionados.php"; 
+      include_once "clase/claseClientes.php";
       
     ?>
 
@@ -72,73 +72,20 @@
   <img class="mb-4" src="imagen/descarga.png" width="72" height="72">
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h1 class="display-4">Estacionamiento Wilde</h1>
-  
+  <p class="lead">Bienvenido administrador a las consultas de los clientes</p>
   <?php
     //echo "<h3>¡Hola " . htmlspecialchars($_COOKIE["mail"]) . "!</h3>";
-    $datoEstacionado = baseEstacionados::TraerCantidadEstacionados();
-    $datoSalido = baseEstacionados::TraerCantidadSalidos();
-    print("Estacionados: $datoEstacionado - Salidos: $datoSalido ");
-    echo("<br>");
-    echo("<br>");
-    $listaCantEstacionadoUsuario = baseEstacionados::TraerCantidadEstacionadosUsuario();
-    $listaCantSalidosUsuario = baseEstacionados::TraerCantidadSalidosUsuario();
+    $datoCliente = claseClientes::mostrarTablaclientes();
+    
     ?>
-    <table>
-      <th width="400">Cantidad estacionado por usuario</th>
-      <th width="900">Cantidad salidos por usuario y monto</th>
-      <tr>
-        <td>
-          <?php 
-            if(isset($listaCantEstacionadoUsuario) ){
-             foreach($listaCantEstacionadoUsuario as $dato){
-                print("Usuario: $dato->email: $dato->cantidad");
-                echo("<br>");
-              }
-            }
-          ?>
-        </td>
-        <td>
-          <?php
-            if(isset($listaCantSalidosUsuario) ){
-              foreach($listaCantSalidosUsuario as $dato){
-                print("Usuario: $dato->email: $dato->cantidad, total cobrado: \$ $dato->monto");
-                echo("<br>");
-              }
-            }  
-          ?> 
-        </td>
-      </tr>
-    </table>
+    
 
     <br><br>
     
-  <p class="lead">Bienvenido administrador a las consultas de los usuarios</p>
+  
 </div>  	
 
-<div align="center">
-<?php 
-$leido= claseConsulta::TraerCantidadTotal();
-$noLeido = claseConsulta::TraerCantidadNoLeidos();
-echo "Cantidad de mensajes: " .$leido;
-echo "<br>";
-echo "Cantidad de mensajes No Leidos: " .$noLeido;
-?>
-</div>
-<br><br>
-	<table align="center">
-  		<th align="center"></th>
-  		<th></th>
-  		<tr>
-    		<td>
-    <?php //include_once "clase/claseConsulta.php"; 
-    
-    claseConsulta::mostrarTablaConsultas();  
-     ?>
-  			</td>
- 		 
-		</tr>
 
-	</table>
 
 	<br><br>
 	<!--div align="center-h ">
@@ -152,10 +99,10 @@ echo "Cantidad de mensajes No Leidos: " .$noLeido;
         
       </div>
       <div class="col-6 col-md">
-         <a href="baseEstadistica.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Estadisticas</a>
+         <a href="baseMostrarConsultas.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Volver</a>
       </div>
       <div class="col-6 col-md">
-          <a href="finalMostrarConsultasClientes.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Consultas Clientes</a>
+          
         
       </div>
       <div class="col-6 col-md">

@@ -61,17 +61,17 @@
       <li class="nav-item">
         <a class="nav-link" href="baseRegistro.php">Registrate</a>
       </li>
-      <li class="nav-item">
+      <!--li class="nav-item">
         <a class="nav-link" href="baseLoginAdm.php">Administrador</a>
-      </li>
-      <!--li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-        <div class="dropdown-menu" aria-labelledby="dropdown01">
-          <a class="dropdown-item" href="baseLogin.php">Administrador</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
       </li-->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu Desplegable</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" href="baseLoginAdm.php">Administrador</a>
+          <a class="dropdown-item" href="finalConsultasClientes.php">Clientes</a>
+          <!--a class="dropdown-item" href="#">Something else here</a-->
+        </div>
+      </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
