@@ -21,7 +21,7 @@ class claseTarifa
 			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
 			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT fecha, indice, cgama, agama, gnc FROM tarifa");
 			$consulta->execute();			
-			return $consulta->fetchAll(PDO::FETCH_CLASS, 'baseTarifa');		
+			return $consulta->fetchAll(PDO::FETCH_CLASS, 'claseTarifa');		
 	}
 	
 	public function InsertarTarifaParametros()
@@ -38,13 +38,13 @@ class claseTarifa
 	 }	
 	public static function mostrarTablaTarifa()
 	{
-		$tarifas = baseEstacionados::TraerTodosTarifa();
+		$tarifas = claseTarifa::TraerTodosTarifa();
 	
 		if(isset($tarifas))
 		{
 			
 			echo "<table border=1 cellpadding=5px>";
-			echo "<tr><th colspan =\"5\" align= \"center\">Tarifas</th></tr>";
+			echo "<tr><th colspan =\"5\" align= \"center\">Historico de Tarifas</th></tr>";
 			echo "<th> Fecha </th>";
 			echo "<th> Indice </th>";
 			echo "<th> Camioneta </th>";
@@ -64,6 +64,18 @@ class claseTarifa
 			echo "</table>";
 	
 		}
+	}	
+
+
+	 	public static function traerDatosTarifa() 
+	{
+			$Obj_Acceso_Datos = AccesoBase::dameUnObjetoAcceso(); 
+			$consulta =$Obj_Acceso_Datos->RetornarConsulta("SELECT * FROM `tarifa` order by fecha DESC, id DESC LIMIT 1");
+			$consulta->execute();
+			$idBuscado= $consulta->fetchObject('claseTarifa');
+			return $idBuscado;				
+
+			
 	}	 	
 
 }

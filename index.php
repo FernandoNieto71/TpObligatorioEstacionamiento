@@ -10,6 +10,20 @@
     <link rel="shortcut icon" href="imagen/favicon.ico"-->
     <?php 
     include_once("titulo.php");
+    include_once ("clase/AccesoBase.php");
+    include_once "clase/claseTarifa.php"; 
+    //claseTarifa::mostrarTablaTarifa();
+    $tarifaBuscada=claseTarifa::traerDatosTarifa();
+    $fecha= $tarifaBuscada->fecha;
+    $indice=$tarifaBuscada->indice;
+    $cgama=$tarifaBuscada->cgama;
+    $agama=$tarifaBuscada->agama;
+    $gnc=$tarifaBuscada->gnc;  
+    $indicestr=strval($indice);  
+    setcookie("indice", $indicestr);
+    setcookie("cgama", "$cgama");
+    setcookie("agama", "$agama");
+    setcookie("gnc", "$gnc");
     ?>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/jumbotron/">
 

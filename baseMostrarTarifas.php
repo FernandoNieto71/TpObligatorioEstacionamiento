@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.80.0">
-    <title>Consulta de usuarios</title>
+    <title>Tarifas</title>
     <link rel="shortcut icon" href="imagen/favicon.ico">
     <?php 
       include_once "clase/AccesoBase.php";
@@ -68,77 +68,71 @@
   </head>
   
   <body class="text-center">
-    <br><br><br>
+    <br>
+    <?php
+    $indiceCokie= htmlspecialchars($_COOKIE["indice"]);
+    $cgamaCokie= htmlspecialchars($_COOKIE["cgama"]);
+    $gncCokie= htmlspecialchars($_COOKIE["gnc"]);
+    $agamaCokie= htmlspecialchars($_COOKIE["agama"]);   
+    echo $indiceCokie." ".$cgamaCokie." ".$agamaCokie." ".$gncCokie; 
+
+    ?>
+    <br><br>
   <img class="mb-4" src="imagen/descarga.png" width="72" height="72">
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h1 class="display-4">Estacionamiento Wilde</h1>
   
-  <?php
-    //echo "<h3>¡Hola " . htmlspecialchars($_COOKIE["mail"]) . "!</h3>";
-    $datoEstacionado = baseEstacionados::TraerCantidadEstacionados();
-    $datoSalido = baseEstacionados::TraerCantidadSalidos();
-    print("Estacionados: $datoEstacionado - Salidos: $datoSalido ");
-    echo("<br>");
-    echo("<br>");
-    $listaCantEstacionadoUsuario = baseEstacionados::TraerCantidadEstacionadosUsuario();
-    $listaCantSalidosUsuario = baseEstacionados::TraerCantidadSalidosUsuario();
-    ?>
-    <table>
-      <th width="400">Cantidad estacionado por usuario</th>
-      <th width="900">Cantidad salidos por usuario y monto</th>
-      <tr>
-        <td>
-          <?php 
-            if(isset($listaCantEstacionadoUsuario) ){
-             foreach($listaCantEstacionadoUsuario as $dato){
-                print("Usuario: $dato->email: $dato->cantidad");
-                echo("<br>");
-              }
-            }
-          ?>
-        </td>
-        <td>
-          <?php
-            if(isset($listaCantSalidosUsuario) ){
-              foreach($listaCantSalidosUsuario as $dato){
-                print("Usuario: $dato->email: $dato->cantidad, total cobrado: \$ $dato->monto");
-                echo("<br>");
-              }
-            }  
-          ?> 
-        </td>
-      </tr>
-    </table>
+  
+    
 
     <br><br>
     
-  <p class="lead">Bienvenido administrador a las consultas de los usuarios</p>
+  <p class="lead">Bienvenido administrador a las consultas de las tarifas</p>
 </div>  	
 
 <div align="center">
-<?php 
-$leido= claseConsulta::TraerCantidadTotal();
-$noLeido = claseConsulta::TraerCantidadNoLeidos();
-echo "Cantidad de mensajes: " .$leido;
-echo "<br>";
-echo "Cantidad de mensajes No Leidos: " .$noLeido;
-?>
+<?php
+    //echo "<h3>¡Hola " . htmlspecialchars($_COOKIE["mail"]) . "!</h3>";
+     include_once "clase/claseTarifa.php"; 
+     claseTarifa::mostrarTablaTarifa();
+     $tarifaBuscada=claseTarifa::traerDatosTarifa();
+     $fecha= $tarifaBuscada->fecha;
+     $indice=$tarifaBuscada->indice;
+     $cgama=$tarifaBuscada->cgama;
+     $agama=$tarifaBuscada->agama;
+     $gnc=$tarifaBuscada->gnc;
+    ?>
 </div>
 <br><br>
-	<table align="center">
-  		<th align="center"></th>
-  		<th></th>
-  		<tr>
-    		<td>
-    <?php //include_once "clase/claseConsulta.php"; 
-    
-    claseConsulta::mostrarTablaConsultas();  
-     ?>
-  			</td>
- 		 
-		</tr>
+<div align="center">
+  <h5>Los datos mostrados son de la tarifa vigente, Ingrese los nuevos valores</h5>
+  <div class="container">
+    <!--div class="card-deck mb-3 text-center"-->
 
-	</table>
+      <form id="miform"  action="baseHacerTarifa.php" method="post">
+        <label align = "center">Indice</label>
+        <input name="indice" type="text" id="indice" value="<?php echo "$indice"; ?>" >
+        <br>
+        <label align = "center">% camioneta</label>
+        <input name="cgama" type="text" id="cgama" value="<?php echo "$cgama"; ?>" >
+        <br>       
+        <label align = "center">% Alta Gama</label>
+        <input name="agama" type="text" id="agama" value="<?php echo "$agama"; ?>" >
+        <br>
+        <label align = "center">GNC</label>
+        <input name="gnc" type="text" id="gnc" value="<?php echo "$gnc"; ?>" >
+        <br>        
+        <br>
+
+         <br><br>
+          <input type="submit" value="Enviar">
+        </div>
+
+      </form>
+
+    <!--/div-->
+  </div>
+</div>
 
 	<br><br>
 	<!--div align="center-h ">
@@ -152,23 +146,20 @@ echo "Cantidad de mensajes No Leidos: " .$noLeido;
         
       </div>
       <div class="col-6 col-md">
-        <a href="baseMostrarTarifas.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Tarifas</a>
-      </div>
-      <div class="col-6 col-md">
-         <a href="baseEstadistica.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Estadisticas</a>
-      </div>
-      <div class="col-6 col-md">
-          <a href="finalMostrarConsultasClientes.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Consultas Clientes</a>
         
       </div>
       <div class="col-6 col-md">
-        <a href="index.php" class="btn btn-success btn-lg active" role="button" aria-pressed="true">Salir</a
+         <a href="baseMostrarConsultas.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Volver</a>
+      </div>
+      <div class="col-6 col-md">
+         <a href="index.php" class="btn btn-success btn-lg active" role="button" aria-pressed="true">Ir a Inicio</a>
+        
+      </div>
+      <div class="col-6 col-md">
+        
       </div>
     </div>
   </footer>
 
 </body>
 </html>
-
-
-
