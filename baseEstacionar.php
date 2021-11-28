@@ -4,6 +4,10 @@
 if(isset($_GET["correo"])) {
  
 $correo=htmlspecialchars($_COOKIE["mail"]);
+$indice=htmlspecialchars($_COOKIE["indice"]);
+/*$cgama=htmlspecialchars($_COOKIE["cgama"]);
+$agama=htmlspecialchars($_COOKIE["agama"]);
+$gnc=htmlspecialchars($_COOKIE["gnc"]);*/
 
 if(isset($_GET["usuarioID"])){
   $usuarioID=$_GET["usuarioID"];
@@ -136,7 +140,7 @@ $correo=htmlspecialchars($_COOKIE["mail"]);*/
         <h4 class="my-0 font-weight-normal">Fraccion hora</h4>
       </div>
       <div class="card-body">
-        <h1 class="card-title pricing-card-title">$45 <!--small class="text-muted">/ mo</small--></h1>
+        <h1 class="card-title pricing-card-title"><?php $mostrar = $indice * 600; echo "$mostrar"; ?> <!-- $45small class="text-muted">/ mo</small--></h1>
         <ul class="list-unstyled mt-3 mb-4">
           <li>Cada 10 minutos.</li>
           <li>Pasado los 60</li>
@@ -151,7 +155,7 @@ $correo=htmlspecialchars($_COOKIE["mail"]);*/
         <h4 class="my-0 font-weight-normal">Hora</h4>
       </div>
       <div class="card-body">
-        <h1 class="card-title pricing-card-title">$150 <!--small class="text-muted">/ mo</small--></h1>
+        <h1 class="card-title pricing-card-title"><?php $mostrar2 = $indice * .55556 * 3600; echo "$mostrar2"; ?> <!-- $150 small class="text-muted">/ mo</small--></h1>
         <ul class="list-unstyled mt-3 mb-4">
           <li>Por el total de horas</li>
           <li>y proporcional minutos</li>
@@ -167,7 +171,7 @@ $correo=htmlspecialchars($_COOKIE["mail"]);*/
         <h4 class="my-0 font-weight-normal">Estadia</h4>
       </div>
       <div class="card-body">
-        <h1 class="card-title pricing-card-title">$450 <!--small class="text-muted">/ mo</small--></h1>
+        <h1 class="card-title pricing-card-title"><?php $mostrar3 = $indice * 6000; echo "$mostrar3"; ?> <!--$450small class="text-muted">/ mo</small--></h1>
         <ul class="list-unstyled mt-3 mb-4">
           <li>Desde la tercer hora</li>
           <li>hasta la duodecima</li>

@@ -9,7 +9,11 @@ function calculaTiempo($entrada, $salida){
 
 //funcion que calcula importe
 function calculaImporte($segundo,$gnc,$categoria){
-  $indice=0;
+$indice=htmlspecialchars($_COOKIE["indice"]);
+$cgama=htmlspecialchars($_COOKIE["cgama"]);
+$agama=htmlspecialchars($_COOKIE["agama"]);
+$gnc=htmlspecialchars($_COOKIE["gnc"]);  
+  //$indice=0;
   $porcentaje=1;
 
   switch ($categoria) {
@@ -17,10 +21,10 @@ function calculaImporte($segundo,$gnc,$categoria){
       // code...
       break;
     case 'C':
-      $porcentaje=$porcentaje+0.1;
+      $porcentaje=$porcentaje+cgama;
       break;
     case 'A':
-      $porcentaje=$porcentaje+0.2;
+      $porcentaje=$porcentaje+agama;
       break;   
     /*default:
       // code...
@@ -30,25 +34,25 @@ function calculaImporte($segundo,$gnc,$categoria){
         //$valor=$segundo*.075;
         $indice=.075;
         if($segundo>3000){
-          $indice=.041667;
+          $indice= $indice * .55556; //.041667;
         }
       } else if($segundo < 10800){//menor a 3 horas
         //$valor=$segundo*.041667;
-        $indice=.041667;
+        $indice=$indice * .55556;
         
       } else if($segundo < 43200){//menor a 12 horas
-        $valor=450 * $porcentaje;
+        $valor= $indice * 6000 * $porcentaje;  //450 * $porcentaje;
         $indice=0;
       } else {
         //$valor=$segundo*.00521;//diario
-        $indice=.00521;
+        $indice=$indice * .06946667;//.00521;
       }
       if($indice!=0){
         $valor=$segundo*$indice * $porcentaje;
       }
   
   if($gnc==1){
-    $valor=$valor + 50;
+    $valor=$valor + gnc;
   }  
       return sprintf('%.2f', $valor);//$valor;
 }

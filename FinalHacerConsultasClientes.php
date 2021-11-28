@@ -30,6 +30,7 @@ if(isset($_POST["correo"]) && isset($_POST["motivo"])){
 	$unCliente->InsertarclientesParametros();
 	$textoCodigo=$_POST["correo"]." ".$date." ".$texto." ".$_POST["comentarios"];
 	//var_dump($textoCodigo);
+
 	generaQR($textoCodigo);
 
 	
@@ -44,3 +45,4 @@ if(isset($_POST["correo"]) && isset($_POST["motivo"])){
 }
 
 ?>
+
