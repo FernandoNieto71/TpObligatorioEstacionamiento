@@ -29,8 +29,7 @@ $pdf->Cell(32,10,'PersonaEgreso',0,1,'L');
 //$pdf->Cell(10,10,'Patente;Salida;Cobrado;PersonaEgreso;Entrada;GNC;Categoria;PersonaIngreso',0,0,'L'); 
 
 $pdf->SetFont('Arial','B',9);
-//foreach ($listadoEstacionado as $datos) {
-   //if(isset($datos->patente)){
+
       $patente=$listadoEstacionado->patente;
       $pdf->Cell(15,10,$patente,0,0,'L');
       /*$ingreso=$datos->ingreso;
@@ -51,13 +50,14 @@ $pdf->SetFont('Arial','B',9);
       $pdf->Cell(35,10,$PerIngreso,0,0,'L');*/
       $PerEgreso=$listadoEstacionado->email;
       $pdf->Cell(32,10,$PerEgreso,0,1,'L');
-      //$renglones .= $patente." ".$salida." ".$valor." ".$PerEgreso." ".$ingreso." ".$gnc." ".$categ." ".$PerIngreso;
+      $renglones .= $patente." ".$salida." ".$valor." ".$PerEgreso;//." ".$ingreso." ".$gnc." ".$categ." ".$PerIngreso;
       
       
    //}
 
 //}
-$pdf->MultiCell(170,5,$renglones,0,'L',0);
+//$pdf->MultiCell(170,5,$renglones,0,'L',0);
+$pdf->Image('https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=http://localhost/TpObligatorioEstacionamiento/index.php&.png',40,70,50);
 $pdf->Output(); //Mostramos el PDF creado
 
 ?>
